@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Física I · Unidad 10 · Rotación y traslación combinados</title><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script><script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><style>:root{--ink:#14283e;--blue:#17618d;--pale:#eaf3f8;--line:#d9e5eb;--orange:#a95314}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:17px/1.7 system-ui,Segoe UI,sans-serif;background:#f6f9fb}header{background:linear-gradient(120deg,#102b46,#17618d);color:white;padding:52px max(25px,calc((100vw - 1150px)/2))}header h1{font-size:clamp(30px,4vw,49px);line-height:1.18;margin:10px 0}header p{max-width:800px}header small{letter-spacing:.12em;text-transform:uppercase}main{display:grid;grid-template-columns:245px minmax(0,850px);gap:35px;max-width:1220px;margin:28px auto;padding:0 20px}nav{position:sticky;top:18px;align-self:start;background:white;border:1px solid var(--line);border-radius:14px;padding:18px;max-height:92vh;overflow:auto}nav a{display:block;color:#225d7c;text-decoration:none;padding:5px 0;font-size:14px}article{min-width:0}section{background:white;border:1px solid var(--line);padding:26px 32px;margin-bottom:24px;border-radius:16px;box-shadow:0 3px 14px #163c5210}h2{font-size:26px;line-height:1.3;color:#114c72;margin-top:0}h3{font-size:20px;color:#195c83;margin-top:28px}p{margin:12px 0}figure{margin:25px 0;padding:14px;border:1px solid #d7e5eb;border-radius:12px;background:#fbfdff;text-align:center}figure svg{max-width:100%;height:auto}figcaption{font-size:14px;color:#52677a;margin-top:8px}.formula{overflow-x:auto;text-align:center;padding:10px;background:#f3f8fb;border-radius:9px}.note,.error,.example{padding:16px 20px;margin:18px 0;border-left:4px solid #2c83b0;background:#eff7fb;border-radius:5px}.error{border-color:#b87930;background:#fff8ed}.example{border-color:#25816b;background:#eef9f5}table{width:100%;border-collapse:collapse;font-size:15px}td,th{padding:10px;border-bottom:1px solid #dae5ec;text-align:left}th{background:#eaf3f8}input[type=range]{width:100%}button,select{border:1px solid #9fc2d6;border-radius:8px;padding:9px;background:white;color:#17486a;font-size:15px}button{cursor:pointer;background:#17618d;color:white}.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.sim{background:#edf5fa;border-radius:12px;padding:16px}.simgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}.miniout{margin-top:10px;font-size:15px}.statuspill{display:inline-block;padding:4px 10px;border-radius:999px;font-weight:700;font-size:14px}.status-ok{background:#e8f6ef;color:#186847}.status-warn{background:#fff3df;color:#8a5b00}.status-bad{background:#fdebec;color:#b0392f}.legendline{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:#4f6472;margin-top:8px}.legendline span{display:inline-flex;align-items:center;gap:7px}.swatch{width:14px;height:14px;border-radius:50%;display:inline-block}.small{font-size:14px;color:#556a7a}footer{text-align:center;padding:28px;color:#637789}@media(max-width:950px){.simgrid{grid-template-columns:1fr}}@media(max-width:850px){main{display:block}nav{position:static;margin-bottom:22px}section{padding:21px 17px}.controls{grid-template-columns:1fr}}@media print{nav,.controls,button{display:none!important}main{display:block}section{break-inside:avoid;box-shadow:none}body{background:white}}
+@media(max-width:680px){section{padding:20px 16px}table{display:block;overflow-x:auto}figure{padding:8px}figure svg{width:100%}}
+
+/* Lector accesible, con barra fija y guiones docentes */
+.reader-panel{position:fixed;z-index:9999;right:14px;bottom:14px;width:min(560px,calc(100vw - 28px));background:#fff;color:#16354a;border:1px solid #aac6d7;border-radius:16px;box-shadow:0 12px 48px #163c5250;padding:13px 15px;font-size:14px;line-height:1.4}
+.reader-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.reader-panel h2{font-size:17px;margin:0;color:#154c70}.reader-main{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:11px 0}.reader-panel label{display:flex;flex-direction:column;gap:3px;font-size:12px;font-weight:600}.reader-panel select,.reader-panel input,.reader-panel textarea{width:100%;padding:7px;border:1px solid #b7cdd9;border-radius:7px;background:white;font:inherit;color:inherit}.reader-panel input[type=range]{padding:0}.reader-actions{display:flex;flex-wrap:wrap;gap:7px}.reader-panel button{font-size:12px;padding:7px 9px}.reader-panel .rsecondary{color:#17486a;background:#eef6fa}.reader-panel [hidden]{display:none!important}.reader-status{margin-top:8px;font-size:12px;color:#4b6170}.reader-script{max-height:115px;overflow:auto;padding:8px;margin:7px 0 0;border-radius:8px;background:#edf5fa;font-size:13px;line-height:1.5}.reader-edit{margin-top:7px}.reader-edit textarea{height:110px;resize:vertical}.reader-current{background:#fff4d9!important;outline:3px solid #edc46a!important;outline-offset:3px;scroll-margin-top:40px}.reader-mini{font-size:11px;color:#657d8b}.reader-panel.collapsed{width:auto;min-width:210px}.reader-panel.collapsed .reader-body{display:none}.reader-panel.collapsed .reader-top{gap:18px}body.reader-space{padding-bottom:245px}@media(max-width:680px){.reader-main{grid-template-columns:1fr}.reader-panel{max-height:70vh;overflow:auto}body.reader-space{padding-bottom:360px}}@media print{.reader-panel{display:none!important}.reader-current{background:transparent!important;outline:none!important}}
+
+/* Unidad 10 V1.4: prácticas de predicción, contraste y explicación */
+.activity{margin:22px 0 12px;padding:19px 22px;border:1px solid #b8d4e3;border-left:5px solid #17618d;border-radius:12px;background:#f8fcff}
+.activity h4{margin:0 0 10px;font-size:18px;color:#164f73}
+.activity .question{font-weight:650;margin:10px 0}
+.activity fieldset{border:0;padding:0;margin:12px 0}
+.activity fieldset legend{font-weight:650;margin-bottom:7px}
+.activity label.choice{display:block;padding:7px 10px;margin:5px 0;border:1px solid #d2e2eb;background:#fff;border-radius:7px;cursor:pointer}
+.activity label.choice:has(input:checked){border-color:#17618d;background:#eaf3f8}
+.activity label.choice input{margin-right:9px;accent-color:#17618d}
+.activity .feedback{margin-top:13px;border-radius:9px;background:#edf5fa;border-left:4px solid #2a6b90;padding:11px 14px;font-size:15px}
+.activity .feedback[hidden]{display:none}
+.activity .feedback[data-result="ok"]{border-color:#248264;background:#eaf7f1}
+.activity .feedback[data-result="review"]{border-color:#b57e24;background:#fff7e8}
+.activity .activity-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.activity .activity-actions button{font-size:14px}
+.activity .instruction{font-size:15px;color:#37596c}
+.activity .reflection{margin-top:12px;padding:10px 13px;border-radius:8px;background:#edf5fa;font-size:15px}
+.activity .activity-status{font-size:13px;color:#506b7c;margin-top:8px}
+@media print{.activity{break-inside:avoid}.activity .activity-actions{display:none}}
+
+/* Etapa 5 · Autoevaluación integradora accesible y autónoma */
+.quiz-intro{background:#eef6fa;border-left:4px solid #287ca5;padding:15px 18px;border-radius:7px}
+.quiz-toolbar{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center;gap:12px;margin:18px 0}
+.quiz-progress{height:12px;overflow:hidden;border-radius:20px;background:#dce8ed;flex:1;min-width:180px}
+.quiz-progress>div{height:100%;background:#238268;transition:width .2s ease;width:0}
+.quiz-question{border:1px solid #d3e3eb;border-radius:12px;padding:18px;margin:16px 0;background:#fff}
+.quiz-question h3{font-size:17px;margin:0 0 7px;line-height:1.5;color:#174f70}
+.quiz-meta{font-size:12px;letter-spacing:.02em;color:#4f6878;font-weight:650;margin-bottom:7px}
+.quiz-options{border:0;padding:0;margin:10px 0;display:grid;gap:8px;min-width:0}
+.quiz-option{display:flex;gap:11px;align-items:flex-start;padding:10px 12px;border:1px solid #d6e4eb;border-radius:9px;background:#f8fbfd;cursor:pointer;font-size:15px;line-height:1.55}
+.quiz-option input{width:17px;height:17px;flex-shrink:0;margin-top:4px;accent-color:#17618d}
+.quiz-option:has(input:focus-visible){outline:3px solid #75a6be;outline-offset:2px}
+.quiz-option.is-correct{border-color:#278369;background:#eaf7f1}
+.quiz-option.is-wrong{border-color:#c9845a;background:#fff5ec}
+.quiz-feedback{display:none;padding:12px 15px;margin-top:10px;border-left:4px solid #267a9d;border-radius:7px;background:#eef7fb;font-size:15px}
+.quiz-feedback.visible{display:block}
+.quiz-feedback.bad{border-color:#b46c42;background:#fff6ef}
+.quiz-actions{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.quiz-actions button{font-weight:600}
+.quiz-actions .secondary{background:#f5fafc;color:#145578}
+.quiz-summary{margin-top:20px;border:1px solid #a7c6d6;border-radius:14px;padding:18px;background:#f0f7fb}
+.quiz-summary[hidden],.quiz-feedback[hidden]{display:none!important}
+.quiz-results-table td,.quiz-results-table th{padding:7px 10px}
+.quiz-hint{font-size:14px;color:#4a6171}
+.quiz-question[aria-invalid="true"]{border-color:#bc7247}
+@media print{.quiz-actions,.quiz-option input{display:none}.quiz-question{break-inside:avoid}}
+</style></head><body><aside aria-label="Lector guiado del apunte" class="reader-panel collapsed" id="readerPanel" role="region"><div class="reader-top"><h2>🔊 Lector del apunte</h2><button aria-expanded="false" class="rsecondary" id="readerToggle" type="button">Abrir lector</button></div><div class="reader-body" id="readerBody">
+<p class="reader-mini">Guiones para ecuaciones, esquemas y simulaciones. Elegí lectura por sección o lectura continua hasta el final. Voz del navegador, en español.</p>
+<div class="reader-main"><label>Sección de inicio<select id="readerSection"></select></label><label>Alcance de lectura<select id="readerScope"><option value="section">Solo sección seleccionada</option><option value="continuous">Continuar hasta el final del apunte</option></select></label><label>Voz disponible<select id="readerVoice"><option value="">Voz predeterminada</option></select></label><label>Velocidad <span id="readerRateValue">1,0×</span><input id="readerRate" max="12" min="0.7" step="0.1" type="range" value="1"/></label><label>Modo<select id="readerMode"><option value="all">Explicación completa</option><option value="key">Solo conceptos, fórmulas e imágenes</option></select></label></div>
+<div class="reader-actions"><button id="readerPlay" type="button">▶ Leer</button><button class="rsecondary" id="readerPause" type="button">⏸ Pausar</button><button class="rsecondary" id="readerPrev" type="button">◀ Anterior</button><button class="rsecondary" id="readerNext" type="button">Siguiente ▶</button><button class="rsecondary" id="readerStop" type="button">■ Detener</button></div>
+<div aria-live="polite" class="reader-status" id="readerStatus">Elegí una sección y presioná Leer.</div>
+<div class="reader-script" id="readerScript">El guion del fragmento seleccionado aparecerá aquí.</div>
+<div class="reader-actions" style="margin-top:7px"><button class="rsecondary" id="readerEditBtn" type="button">✎ Editar este guion</button><button class="rsecondary" id="readerExport" type="button">Exportar guiones JSON</button></div>
+<div class="reader-edit" hidden="" id="readerEditBox"><label>Texto que leerá la voz<textarea aria-label="Editar guion" id="readerEditor"></textarea></label><div class="reader-actions"><button id="readerSave" type="button">Guardar este cambio</button><button class="rsecondary" id="readerCancelEdit" type="button">Cancelar</button><button class="rsecondary" id="readerRestore" type="button">Restaurar original</button></div></div>
+<p class="reader-mini">La voz depende del equipo y navegador. Algunas voces limitan la velocidad efectiva máxima aunque el control llegue hasta 12×. Los guiones editados quedan guardados solo en este navegador; podés exportarlos para compartirlos.</p>
+</div></aside><header><small>UTN · Facultad Regional La Plata · Física I</small><h1>Unidad 10<br/>Rotación y traslación combinados</h1><p>Apunte de cátedra para primer año de Ingeniería · Fundamentos, esquemas físicos, ejemplos y simulación interactiva.</p><small>Versión 1.6 · Juego integrador y autoevaluación formativa · Programa Física I 1030</small></header><main><nav><strong>Índice de contenidos</strong><a href="#guia-ejercicios">Guía de ejercicios resueltos 10 (PDF)</a><a href="#objetivos">Propósitos y conocimientos previos</a><a href="#equilibrio">1. Equilibrio: métodos y ejemplos</a><a href="#paralelas">2. Fuerzas paralelas</a><a href="#gravedad">3. Centro de gravedad</a><a href="#estabilidad">4. Estabilidad, vuelco y simulaciones</a><a href="#combinado">5. Repaso de cantidad de movimiento angular</a><a href="#cinematica">6. Rototraslación, rodadura y C.I.R.</a><a href="#dinamica">7. Dinámica de rodadura</a><a href="#energia">8. Trabajo, energía y rozamiento</a><a href="#comparacion">9. Comparación de cuerpos</a><a href="#simulacion">10. Simulación</a><a href="#ejemplos">11. Ejemplos guiados</a><a href="#autoevaluacion">12. Autoevaluación integradora</a><a href="#cierre">Síntesis y bibliografía</a></nav><article><section id="guia-ejercicios" style="background:#fffbe9;border:1px solid #e8d08a;padding:22px 26px;margin-bottom:24px;border-radius:16px;box-shadow:0 3px 14px #163c5210"><h2 style="margin-top:0;color:#7a5200">Guía de ejercicios resueltos 10 (PDF)</h2><p>Material complementario para la Unidad 10. Incluye solamente ejercicios de <strong>Estática y Rototraslación</strong>, con enunciados, gráficos explicativos y resoluciones fundamentadas paso a paso.</p><p><a href="guia_ejercicios_resueltos_unidad10.pdf" style="display:inline-block;background:#17618d;color:#fff;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:700">Abrir guía en PDF</a></p></section>
+<section id="objetivos"><h2>Presentación y alcance del apunte</h2>
+<div class="note" data-tts="Aviso sobre el alcance del material. Este apunte es un resumen de los contenidos de la Unidad diez de Física uno. No reemplaza los apuntes de clase de la comisión S dieciséis ni la bibliografía recomendada. Para estudiar y profundizar cada tema, se recomienda consultar ambos materiales. Las referencias bibliográficas se encuentran en el anexo, al final del documento."><strong>Importante — Alcance del material:</strong> este apunte constituye <strong>un resumen de los contenidos de la Unidad 10</strong> de Física I. Su finalidad es acompañar el estudio y facilitar la revisión de los conceptos fundamentales; <strong>no reemplaza los apuntes de clase (comisión S16) ni la bibliografía recomendada</strong>. Para profundizar los fundamentos teóricos, los desarrollos matemáticos y las aplicaciones, se recomienda consultar ambos materiales. La bibliografía de referencia se incluye en el <a href="#bibliografia-anexo">anexo bibliográfico, al final del apunte</a>.</div>
+<h2>Propósitos de aprendizaje</h2><p>Un cuerpo rígido puede trasladarse, girar o realizar ambos movimientos simultáneamente. El propósito de esta unidad es integrar los modelos de traslación, torque y energía para interpretar cuerpos apoyados, ruedas, rodillos, mecanismos y sistemas de transporte.</p><p>Al finalizar, se espera que puedas: determinar condiciones de equilibrio; hallar resultantes de fuerzas paralelas; identificar el centro de gravedad y la estabilidad; describir velocidades de puntos de un sólido; formular las condiciones de rodadura sin deslizamiento; aplicar las ecuaciones de Newton a la rototraslación; y justificar la influencia del momento de inercia en la aceleración.</p><div class="note"><strong>Conocimientos previos:</strong> vectores, diagramas de cuerpo libre, segunda ley de Newton, momento de una fuerza, centro de masa, momento de inercia, trabajo y energía.</div></section>
+<section id="equilibrio">
+<h2>1. Equilibrio de un cuerpo rígido: fuerzas y momentos</h2>
+<p>En las unidades anteriores se aplicó la segunda ley de Newton para estudiar la traslación y se introdujo el torque para estudiar la rotación. Ahora ambas condiciones se emplean simultáneamente para describir estructuras, apoyos, cuerpos sometidos a empujes y sistemas suspendidos. Una fuerza puede ser incapaz de trasladar un objeto y, sin embargo, generar un momento que tienda a hacerlo girar.</p>
+<h3>1.1. Condiciones de equilibrio y diagrama de cuerpo libre</h3>
+<p>Un cuerpo rígido permanece en equilibrio estático cuando la aceleración lineal de su centro de masa y su aceleración angular son nulas. En problemas planos deben satisfacerse <strong>simultáneamente</strong> las tres condiciones:</p>
+<div class="formula" data-tts="Condiciones generales del equilibrio plano: suma de fuerzas horizontales igual a cero; suma de fuerzas verticales igual a cero; y suma de los momentos de las fuerzas respecto de un punto O igual a cero.">\[\boxed{\sum F_x=0,\qquad \sum F_y=0,\qquad \sum\tau_O=0}\]</div>
+<p>El momento de una fuerza respecto del punto \(O\) se calcula mediante \(\vec\tau_O=\vec r\times\vec F\); en el plano, \(\tau_O=r_x F_y-r_y F_x\). Elegimos antihorario positivo. El punto \(O\) puede elegirse libremente para un cuerpo en equilibrio.</p>
+<div class="note"><strong>Método de resolución:</strong> representar todas las fuerzas (incluidas las reacciones), elegir ejes, indicar el punto para calcular momentos, escribir <em>las tres ecuaciones</em>, sustituir los datos, resolver y verificar resultados. Una ecuación trivial —por ejemplo \(\sum F_x=0\) cuando no hay fuerzas horizontales— también debe quedar expresada.</div>
+<h4>Ejemplo introductorio. Viga simplemente apoyada</h4>
+<p>Viga horizontal homogénea de longitud \(L\), peso \(P=400\,\mathrm N\) aplicado en su centro; apoyos A y B con reacciones verticales \(R_A\) y \(R_B\). Suponemos que no actúan fuerzas horizontales y que los apoyos no ejercen momentos.</p>
+<figure data-tts="Esquema de una viga simplemente apoyada. En el extremo izquierdo está el apoyo A con reacción vertical R sub A hacia arriba. En el extremo derecho está el apoyo B con reacción vertical R sub B hacia arriba. En el centro de la viga actúa el peso P igual a cuatrocientos newtons hacia abajo. Las distancias desde cada apoyo al centro valen L sobre dos.">
+<svg aria-label="Viga simplemente apoyada con reacciones verticales en los apoyos y peso aplicado en el centro" role="img" viewbox="0 0 760 240">
+<path d="M90 145H670" stroke="#2b5f7c" stroke-linecap="round" stroke-width="8"></path>
+<path d="M120 145l-24 38h48z" fill="#dbeaf2" stroke="#2b5f7c" stroke-width="3"></path>
+<circle cx="610" cy="183" fill="#dbeaf2" r="10" stroke="#2b5f7c" stroke-width="3"></circle>
+<circle cx="640" cy="183" fill="#dbeaf2" r="10" stroke="#2b5f7c" stroke-width="3"></circle>
+<path d="M95 194H665" stroke="#7d97a6" stroke-width="4"></path>
+<g fill="#1b7c62" stroke="#1b7c62" stroke-width="5">
+<path d="M120 192V112"></path><path d="M120 112l-12 16h24z"></path>
+<path d="M625 192V112"></path><path d="M625 112l-12 16h24z"></path>
+</g>
+<g fill="#b35639" stroke="#b35639" stroke-width="5">
+<path d="M380 70V145"></path><path d="M380 145l-12 -16h24z"></path>
+</g>
+<g stroke="#88a3b3" stroke-dasharray="6 5" stroke-width="2">
+<path d="M120 145V72"></path><path d="M380 145V72"></path><path d="M625 145V72"></path>
+</g>
+<g fill="none" stroke="#4c6777" stroke-width="2">
+<path d="M120 60H380"></path><path d="M380 60H625"></path>
+</g>
+<g fill="#17384f" font-size="18">
+<text x="107" y="210">A</text><text x="621" y="210">B</text>
+<text x="130" y="120">R<tspan baseline-shift="sub" font-size="13">A</tspan></text>
+<text x="635" y="120">R<tspan baseline-shift="sub" font-size="13">B</tspan></text>
+<text x="392" y="108">P = 400 N</text>
+<text x="230" y="54">L/2</text><text x="495" y="54">L/2</text>
+</g>
+</svg>
+<figcaption>Figura 1. Viga simplemente apoyada: las reacciones \(R_A\) y \(R_B\) equilibran el peso de la viga aplicado en su centro. El esquema permite identificar con claridad fuerzas, apoyos y brazos de palanca.</figcaption>
+</figure>
+<div class="formula" data-tts="Viga simplemente apoyada. En horizontal, cero igual a cero, pues no hay fuerzas horizontales. En vertical: reacción en A, más reacción en B, menos cuatrocientos newtons, igual a cero. Momentos respecto de A: reacción en B por longitud L, menos cuatrocientos por L sobre dos; la reacción en A no produce momento porque su brazo es cero.">\[\begin{aligned}
+\sum F_x&amp;=0:\quad 0=0\\
+\sum F_y&amp;=0:\quad R_A+R_B-400=0\\
+\sum\tau_A&amp;=0:\quad R_B L-400\frac L2+R_A(0)=0
+\end{aligned}\]</div>
+<p>De momentos: \(R_B L=200L\Rightarrow R_B=200\,\mathrm N\). De la ecuación vertical: \(R_A=400-200=200\,\mathrm N\).</p>
+<div class="formula" data-tts="Verificación: doscientos más doscientos menos cuatrocientos es cero. En momentos: doscientos por L menos cuatrocientos por L dividido por dos, también es cero.">\[\begin{aligned}
+\text{Verificación: }\sum F_y&amp;=200+200-400=0\\
+\sum\tau_A&amp;=200L-400(L/2)=0.
+\end{aligned}\]</div>
+<h3>1.2. Ejemplo clásico — escalera apoyada contra una pared</h3>
+<p>Una escalera uniforme de longitud \(L=5{,}00\,\mathrm m\), peso \(P_e=200\,\mathrm N\), se apoya en una <strong>pared lisa</strong>. Su pie A está a \(3{,}00\,\mathrm m\) de la pared y el contacto superior B se encuentra a \(4{,}00\,\mathrm m\) de altura. Una persona de peso \(P_p=600\,\mathrm N\) está a \(2{,}00\,\mathrm m\) a lo largo de la escalera desde el pie. Se busca la reacción de la pared, la normal del piso y el rozamiento necesario.</p>
+<figure data-tts="Esquema de la escalera: pared vertical lisa a la derecha, escalera inclinada desde el suelo hasta la pared. La pared aplica una reacción horizontal; el piso ejerce normal vertical y rozamiento horizontal. Los pesos de la escalera y de la persona apuntan hacia abajo, a diferentes distancias del pie. El pie A se elige como centro de momentos."><svg aria-label="Diagrama de escalera con peso propio, persona, reacción de pared, normal y rozamiento" role="img" viewbox="0 0 700 350"><path d="M80 310H660M575 25V310" stroke="#7c91a0" stroke-width="5"></path><path d="M235 310L575 70" stroke="#a27b45" stroke-linecap="round" stroke-width="10"></path><path d="M405 190V265M371 214V285" stroke="#be633f" stroke-width="4"></path><path d="M405 265l-9 -15h18zM371 285l-9 -15h18z" fill="#be633f"></path><path d="M575 70H505M235 310V248M235 310H305" stroke="#25836d" stroke-width="4"></path><path d="M505 70l13 -8v16zM235 248l-8 14h16zM305 310l-14 -8v16z" fill="#25836d"></path><g fill="#244960" font-size="17"><text x="410" y="185">Pₑ = 200 N</text><text x="295" y="210">Pₚ = 600 N</text><text x="505" y="54">Rᵥ</text><text x="202" y="246">N</text><text x="309" y="332">fₛ</text><text x="215" y="332">A</text><text x="585" y="78">B</text><text x="490" y="296">4 m</text><text x="370" y="342">3 m</text></g></svg><figcaption>Esquema del sistema aislado. La pared lisa ejerce únicamente una reacción horizontal; en el pie actúan la normal y el rozamiento estático.</figcaption></figure>
+<p><strong>Paso 1. Geometría.</strong> Por el triángulo de lados 3, 4 y 5: \(\cos\alpha=3/5=0{,}60\) y \(\sin\alpha=4/5=0{,}80\). El peso de la escalera actúa en su punto medio, cuya distancia horizontal al pie es \(x_e=(5/2)(0{,}60)=1{,}50\,\mathrm m\). La persona tiene un brazo horizontal \(x_p=2(0{,}60)=1{,}20\,\mathrm m\).</p>
+<p><strong>Paso 2. Fuerzas.</strong> Eje \(x\) positivo hacia la pared, eje \(y\) positivo hacia arriba. La pared ejerce \(R_w\) hacia afuera; el piso ejerce \(f_s\) hacia la pared y \(N\) hacia arriba.</p>
+<div class="formula" data-tts="Escalera. Fuerzas horizontales: rozamiento estático menos reacción de la pared, igual a cero. Fuerzas verticales: normal del piso menos peso de escalera menos peso de persona, igual a cero. Momentos sobre el pie: cuatro metros por la reacción de pared, menos uno coma cinco metros por peso de escalera, menos uno coma dos metros por peso de persona, igual a cero.">\[\begin{aligned}
+\sum F_x=0 &amp;: \quad f_s-R_w=0\\
+\sum F_y=0 &amp;: \quad N-P_e-P_p=0\\
+\sum \tau_A=0 &amp;: \quad (4{,}00)R_w-(1{,}50)P_e-(1{,}20)P_p+0N+0f_s=0.
+\end{aligned}\]</div>
+<p><strong>Paso 3. Resolución.</strong> Sustituimos valores en la ecuación de momentos:</p>
+<div class="formula" data-tts="Sustituimos. Cuatro por reacción de pared, menos uno coma cinco por doscientos, menos uno coma dos por seiscientos, igual a cero. De aquí resulta reacción de pared igual a mil veinte dividido por cuatro: doscientos cincuenta y cinco newtons.">\[\begin{aligned}
+4R_w-1{,}50(200)-1{,}20(600)&amp;=0\\
+4R_w-300-720&amp;=0\\
+R_w&amp;=\frac{1020}{4}=\boxed{255\,\mathrm N}.
+\end{aligned}\]</div>
+<div class="formula" data-tts="La fuerza de rozamiento iguala a la reacción de pared: doscientos cincuenta y cinco newtons. La normal equilibra ambos pesos: doscientos más seiscientos igual a ochocientos newtons.">\[\begin{aligned}
+f_s-R_w=0 &amp;\Rightarrow \boxed{f_s=255\,\mathrm N}\\
+N-200-600=0 &amp;\Rightarrow \boxed{N=800\,\mathrm N}.
+\end{aligned}\]</div>
+<p><strong>Paso 4. Condición de rozamiento y comprobación.</strong> \(f_s\leq\mu_sN\), de modo que \(\mu_{s,\min}=f_s/N=255/800=\boxed{0{,}319}\). La verificación da \(255-255=0\), \(800-200-600=0\) y \(4(255)-1{,}5(200)-1{,}2(600)=0\,\mathrm{N\,m}\).</p>
+<div class="note"><strong>Interpretación:</strong> al subir la persona aumenta su brazo respecto del pie y se incrementa el rozamiento necesario. No reemplazar automáticamente \(f_s\) por \(\mu_sN\): solo coinciden en el umbral del deslizamiento.</div>
+<h3>1.3. Ejemplo clásico — cuadro suspendido mediante dos cables</h3>
+<p>Un cuadro de peso \(P=120\,\mathrm N\) está sostenido por dos cables simétricos que forman \(35^\circ\) con la horizontal. El esquema ideal representa dos fuerzas de tensión aplicadas en puntos simétricos de un cuadro rígido homogéneo; el peso actúa en su centro.</p>
+<figure data-tts="Cuadro colgado de dos cables simétricos. Cada tensión apunta hacia arriba a lo largo de su cable. Sus componentes horizontales se compensan; las verticales suman el peso del cuadro."><svg aria-label="Cuadro colgado de dos cables simétricos con tensiones y peso" viewbox="0 0 680 300"><path d="M340 30L190 126M340 30L490 126" stroke="#397996" stroke-width="4"></path><circle cx="340" cy="30" fill="#536b7a" r="6"></circle><rect fill="#f1e4cf" height="115" stroke="#a77d48" stroke-width="8" width="300" x="190" y="126"></rect><path d="M340 183V270" stroke="#ba5d38" stroke-width="4"></path><path d="M340 270l-10 -16h20z" fill="#ba5d38"></path><g fill="#244960" font-size="19"><text x="222" y="87">T₁</text><text x="440" y="87">T₂</text><text x="353" y="257">P</text><text x="217" y="121">35°</text><text x="425" y="121">35°</text></g></svg><figcaption>Modelo simétrico; los cables tienen el mismo ángulo con la horizontal.</figcaption></figure>
+<p><strong>Paso 1. Componentes de las tensiones.</strong> Por simetría \(T_1=T_2=T\); sin embargo, primero escribimos las tres ecuaciones para no ocultar la condición de momentos.</p>
+<div class="formula" data-tts="Cuadro con dos cables. En horizontal: menos tensión uno por coseno de treinta y cinco grados, más tensión dos por el mismo coseno, igual a cero. En vertical: las dos tensiones por seno de treinta y cinco grados, menos ciento veinte newtons, igual a cero.">\[\begin{aligned}
+\sum F_x=0 &amp;: -T_1\cos35^\circ+T_2\cos35^\circ=0\\
+\sum F_y=0 &amp;: T_1\sin35^\circ+T_2\sin35^\circ-120=0.
+\end{aligned}\]</div>
+<p><strong>Paso 2. Momentos.</strong> Tomamos momentos respecto del centro del cuadro C. Cada punto de fijación está a distancia horizontal \(d\) del centro y una distancia vertical \(q\) por encima de él. Al calcular el momento de cada tensión intervienen tanto sus componentes horizontales como verticales: \(\tau_C=r_xF_y-r_yF_x\).</p>
+<div class="formula" data-tts="Momentos respecto del centro C: los dos cables generan momentos opuestos. Por simetría, se cancelan cuando las tensiones son iguales; el peso aplicado en C tiene brazo nulo.">\[\sum\tau_C=0:\quad -\bigl(d\sin35^\circ+q\cos35^\circ\bigr)T_1+\bigl(d\sin35^\circ+q\cos35^\circ\bigr)T_2+0P=0.\]</div>
+<p>Como los brazos de los dos cables son simétricos, la ecuación de momentos confirma que T₁ = T₂. Si los cables convergen exactamente en el punto superior común, también se puede tomar ese punto como origen de momentos: las tres fuerzas pasan por su vertical o por el propio punto y la sumatoria de momentos vale cero.</p>
+<p><strong>Paso 3. Despeje.</strong></p>
+<div class="formula" data-tts="La suma de fuerzas verticales da dos por T por seno de treinta y cinco grados, igual a ciento veinte. Como el seno vale cero coma cinco siete tres seis, dos T por cero coma cinco siete tres seis es ciento veinte. La tensión en cada cable resulta ciento cuatro coma seis newtons.">\[\begin{aligned}
+2T\sin35^\circ-120&amp;=0\\
+2T(0{,}5736)&amp;=120\\
+T&amp;=\frac{120}{1{,}1472}=\boxed{104{,}6\,\mathrm N}.
+\end{aligned}\]</div>
+<p><strong>Verificación:</strong> \(\sum F_x=-104{,}6\cos35^\circ+104{,}6\cos35^\circ=0\) y \(\sum F_y=2(104{,}6)\sin35^\circ-120\simeq0\,\mathrm N\). Cada cable soporta una tensión mayor que la mitad del peso porque únicamente su componente vertical sostiene el cuadro.</p>
+<h3>1.4. Ejemplo clásico — cartel suspendido en el extremo de una barra</h3>
+<p>Una barra homogénea horizontal de longitud \(L=3{,}00\,\mathrm m\) y masa \(m_b=10\,\mathrm{kg}\) está articulada a una pared en A. Del extremo B cuelga un cartel de masa \(m_c=20\,\mathrm{kg}\). Un cable unido a B tira hacia la pared formando \(40^\circ\) con la barra. Determinar \(T\), \(A_x\) y \(A_y\). Se adopta \(g=9{,}81\,\mathrm{m/s^2}\).</p>
+<figure data-tts="Barra horizontal articulada a una pared por A, con cartel en el extremo derecho y cable inclinado desde el extremo hacia arriba. El peso de la barra actúa en su centro; el peso del cartel, en el extremo. La articulación aporta dos reacciones."><svg aria-label="Diagrama de cuerpo libre del cartel: barra horizontal, cable de cuarenta grados, reacciones y pesos" role="img" viewbox="0 0 720 350">
+<defs><marker id="signArrow" markerheight="9" markerwidth="9" orient="auto" refx="8" refy="4"><path d="M0 0L8 4L0 8Z" fill="context-stroke"></path></marker></defs>
+<!-- Wall, hinge, geometrically accurate 40 degree cable: 300 px horizontal / 251.73 px vertical -->
+<path d="M125 12V318" stroke="#8ba2b0" stroke-width="9"></path>
+<g stroke="#b7cbd4" stroke-width="1.7"><path d="M103 35l22 -18M103 65l22 -18M103 95l22 -18M103 125l22 -18M103 155l22 -18M103 185l22 -18M103 215l22 -18M103 245l22 -18M103 275l22 -18"></path></g>
+<path d="M125 267H425" stroke="#997646" stroke-linecap="round" stroke-width="10"></path>
+<path d="M125 15L425 267" stroke="#397996" stroke-width="4"></path>
+<circle cx="125" cy="267" fill="#244960" r="8"></circle><circle cx="425" cy="267" fill="#397996" r="5"></circle>
+<!-- Tension acts from B toward wall-top, with actual slope 40 deg -->
+<path d="M425 267L350 204.1" marker-end="url(#signArrow)" stroke="#14836e" stroke-width="5"></path>
+<!-- Weight on bar center and sign at end -->
+<path d="M275 267V321" marker-end="url(#signArrow)" stroke="#b85739" stroke-width="4"></path>
+<path d="M425 267V327" marker-end="url(#signArrow)" stroke="#b85739" stroke-width="4"></path>
+<!-- Ideal hinge components -->
+<path d="M125 267H184" marker-end="url(#signArrow)" stroke="#2b6285" stroke-width="4"></path>
+<path d="M125 267V207" marker-end="url(#signArrow)" stroke="#2b6285" stroke-width="4"></path>
+<!-- Angle measured between B->A horizontal left, and B->upper wall -->
+<path d="M374 267A51 51 0 0 1 386 234" fill="none" stroke="#b37630" stroke-width="2.5"></path>
+<text fill="#85531b" font-size="18" x="369" y="250">40°</text>
+<text fill="#234960" font-size="17" x="93" y="289">A</text>
+<text fill="#234960" font-size="17" x="435" y="278">B</text>
+<text fill="#2b6285" font-size="16" x="194" y="283">Aₓ</text>
+<text fill="#2b6285" font-size="16" x="131" y="199">Aᵧ</text>
+<text fill="#14836e" font-size="17" x="342" y="190">T</text>
+<text fill="#b85739" font-size="16" x="239" y="339">Pᵦ = mᵦg</text>
+<text fill="#b85739" font-size="16" x="436" y="326">P𝒸 = m𝒸g</text>
+<path d="M125 303H425M125 297V309M425 297V309" stroke="#6a8594" stroke-width="2"></path>
+<text fill="#234960" font-size="16" x="337" y="296">L = 3,00 m</text>
+</svg><figcaption>Barra articulada en A. El cable forma 40° con la horizontal: su tensión actúa en B hacia arriba y hacia la pared. Se muestran Aₓ, Aᵧ, el peso de la barra y el peso del cartel. El esquema usa una geometría coherente con el ángulo del planteo.</figcaption></figure>
+<p><strong>Paso 1. Identificación de fuerzas.</strong> Peso de la barra: \(P_b=m_bg=10(9{,}81)=98{,}1\,\mathrm N\), aplicado a \(L/2=1{,}50\,\mathrm m\). Peso del cartel: \(P_c=m_cg=20(9{,}81)=196{,}2\,\mathrm N\), aplicado a \(L=3{,}00\,\mathrm m\). El cable ejerce \(T_x=-T\cos40^\circ\), \(T_y=T\sin40^\circ\).</p>
+<p><strong>Paso 2. Las tres ecuaciones de equilibrio.</strong></p>
+<div class="formula" data-tts="Cartel. En horizontal, reacción A equis menos tensión por coseno de cuarenta grados igual a cero. En vertical, reacción A ye más tensión por seno de cuarenta grados, menos los pesos de barra y cartel, igual a cero. En momentos respecto de A, los brazos de las reacciones son cero.">\[\begin{aligned}
+\sum F_x=0 &amp;: A_x-T\cos40^\circ=0\\
+\sum F_y=0 &amp;: A_y+T\sin40^\circ-P_b-P_c=0\\
+\sum\tau_A=0 &amp;: 0A_x+0A_y+3T\sin40^\circ-1{,}5P_b-3P_c=0.
+\end{aligned}\]</div>
+<p><strong>Paso 3. Resolver primero los momentos.</strong></p>
+<div class="formula" data-tts="Sustitución de momentos: tres T seno de cuarenta grados menos uno coma cinco por noventa y ocho coma uno, menos tres por ciento noventa y seis coma dos, igual a cero. Se obtiene la componente vertical de la tensión: doscientos cuarenta y cinco coma veinticinco newtons.">\[\begin{aligned}
+3T\sin40^\circ-1{,}5(98{,}1)-3(196{,}2)&amp;=0\\
+3T\sin40^\circ&amp;=147{,}15+588{,}60=735{,}75\\
+T\sin40^\circ&amp;=245{,}25\,\mathrm N\\
+T&amp;=\frac{245{,}25}{0{,}6428}=\boxed{381{,}5\,\mathrm N}.
+\end{aligned}\]</div>
+<p><strong>Paso 4. Reacciones en A.</strong></p>
+<div class="formula" data-tts="Despejamos las reacciones. En horizontal, T por coseno de cuarenta grados da aproximadamente doscientos noventa y dos newtons. En vertical, suma de los pesos menos la componente vertical de tensión, igual a cuarenta y nueve coma cero cinco newtons.">\[\begin{aligned}
+A_x&amp;=T\cos40^\circ=381{,}5(0{,}7660)=\boxed{292{,}2\,\mathrm N}\\
+A_y&amp;=P_b+P_c-T\sin40^\circ\\
+&amp;=98{,}1+196{,}2-245{,}25=\boxed{49{,}05\,\mathrm N}.
+\end{aligned}\]</div>
+<p><strong>Verificación:</strong> \(\sum F_x\simeq292{,}2-381{,}5\cos40^\circ\simeq0\); \(\sum F_y=49{,}05+245{,}25-98{,}1-196{,}2=0\), y \(\sum\tau_A=735{,}75-147{,}15-588{,}60=0\,\mathrm{N\,m}\). Los ligeros residuos horizontales se deben al redondeo.</p>
+<h3>1.5. Ejemplo clásico — balanza romana</h3>
+<p>Una balanza romana posee un brazo corto de \(0{,}15\,\mathrm m\), del que cuelga una carga de \(80\,\mathrm N\), y un brazo largo con un pilón móvil de \(20\,\mathrm N\), colocado a una distancia desconocida \(x\) del apoyo O. Se desprecia inicialmente el peso de la barra.</p>
+<figure data-tts="Balanza romana: fulcro bajo una barra; carga a la izquierda, pesa móvil a la derecha. Sus momentos se equilibran ajustando la distancia de la pesa al apoyo."><svg aria-label="Balanza romana con apoyo y dos pesos" viewbox="0 0 690 250"><path d="M85 95H625" stroke="#9b743d" stroke-linecap="round" stroke-width="12"></path><path d="M260 105l-27 40h54z" fill="#d7e6ec" stroke="#397996" stroke-width="3"></path><path d="M150 105V155M525 105V155" stroke="#6d8191" stroke-width="3"></path><rect fill="#d4e6ef" height="43" rx="7" width="60" x="120" y="155"></rect><rect fill="#d4e6ef" height="43" rx="7" width="54" x="498" y="155"></rect><g fill="#234960" font-size="18"><text x="90" y="230">80 N</text><text x="490" y="230">20 N</text><text x="228" y="166">O</text><text x="163" y="76">0,15 m</text><text x="400" y="76">x</text><text x="280" y="65">Rᵧ</text></g></svg><figcaption>Para los momentos se usa el punto O, donde la reacción de apoyo tiene brazo nulo.</figcaption></figure>
+<p><strong>Paso 1. Diagrama de cuerpo libre y ecuaciones.</strong> La carga y el pilón ejercen fuerzas verticales hacia abajo; el apoyo transmite componentes \(R_x\) y \(R_y\). Elegimos sentido antihorario positivo.</p>
+<div class="formula" data-tts="Balanza romana sin peso de barra. Suma horizontal: reacción horizontal igual a cero. Suma vertical: reacción vertical menos ochenta menos veinte newtons igual a cero. Momentos respecto del apoyo: ochenta por cero coma quince menos veinte por la distancia x, igual a cero.">\[\begin{aligned}
+\sum F_x=0 &amp;: R_x+0=0\\
+\sum F_y=0 &amp;: R_y-80-20=0\\
+\sum\tau_O=0 &amp;: 80(0{,}15)-20x+0R_x+0R_y=0.
+\end{aligned}\]</div>
+<p><strong>Paso 2. Resolución:</strong> \(R_x=0\), \(R_y=100\,\mathrm N\); y \(12-20x=0\Rightarrow \boxed{x=0{,}60\,\mathrm m}\).</p>
+<p><strong>Paso 3. Considerar el peso propio.</strong> Si la barra pesa \(10\,\mathrm N\), con centro de gravedad a \(0{,}10\,\mathrm m\) a la derecha del apoyo, se agrega esa fuerza al diagrama y se replantean <em>las tres ecuaciones</em>:</p>
+<div class="formula" data-tts="Balanza incluyendo la barra. Reacción horizontal cero. Reacción vertical menos ochenta, menos veinte, menos diez, igual a cero. Momentos: ochenta por cero coma quince menos veinte x, menos diez por cero coma diez, igual a cero.">\[\begin{aligned}
+\sum F_x=0 &amp;: R_x=0\\
+\sum F_y=0 &amp;: R_y-80-20-10=0\\
+\sum\tau_O=0 &amp;: 80(0{,}15)-20x-10(0{,}10)=0.
+\end{aligned}\]</div>
+<p>Así, \(R_y=110\,\mathrm N\) y \(12-20x-1=0\Rightarrow 20x=11\Rightarrow \boxed{x=0{,}55\,\mathrm m}\).</p>
+<p><strong>Verificación:</strong> \(\sum F_y=110-80-20-10=0\) y \(\sum\tau_O=12-20(0{,}55)-1=0\,\mathrm{N\,m}\). La diferencia entre \(0{,}60\) y \(0{,}55\,\mathrm m\) revela la importancia de la calibración y tara del instrumento.</p>
+<h3>1.6. Cierre conceptual: una metodología común</h3>
+<table><thead><tr><th>Sistema</th><th>Pregunta central</th><th>Decisión de modelado</th></tr></thead><tbody><tr><td>Bloque empujado</td><td>¿Se desliza, permanece o vuelca?</td><td>Comparar \(F_d\) y \(F_v\), localizar la normal.</td></tr><tr><td>Bloque inclinado</td><td>¿Vuelve o sigue cayendo?</td><td>Comparar \(\theta\) con \(\theta_c\) y ubicar la vertical del peso.</td></tr><tr><td>Escalera</td><td>¿Qué rozamiento evita que caiga?</td><td>Tomar momentos respecto del pie.</td></tr><tr><td>Cuadro o cartel</td><td>¿Cuánto resisten cables y apoyos?</td><td>Descomponer tensiones y sumar momentos.</td></tr><tr><td>Balanza romana</td><td>¿Dónde colocar la pesa móvil?</td><td>Igualar momentos opuestos respecto del fulcro.</td></tr></tbody></table>
+<div class="note"><strong>Para pensar antes de pasar a la sección 2.</strong> Si un cuerpo se encuentra en equilibrio, ¿es necesario que todas las fuerzas tengan igual intensidad? ¿Puede una resultante de fuerzas ser cero y, sin embargo, existir un momento neto? ¿Por qué un empuje aplicado cerca de la parte superior favorece el vuelco?</div>
+</section>
+<section id="paralelas"><h2>2. Resultante de fuerzas paralelas</h2><p>Las fuerzas paralelas pueden reemplazarse, para analizar su efecto externo sobre un sólido rígido, por una fuerza resultante aplicada en una posición que conserve el momento total. Para fuerzas verticales de magnitudes algebraicas \(F_i\) aplicadas en \(x_i\):</p><div class="formula" data-tts="La fuerza resultante vertical es la suma algebraica de las fuerzas. Su posición, cuando la resultante no es nula, se calcula sumando cada fuerza por su coordenada y dividiendo por la resultante.">\[R_y=\sum_i F_i,\qquad x_R=\frac{\sum_i x_i F_i}{\sum_i F_i}\quad (R_y\neq 0)\]</div><p>Si las fuerzas tienen sentidos opuestos, sus signos deben conservarse. Si la fuerza resultante es nula pero el momento no lo es, el sistema constituye un <strong>par de fuerzas</strong>: produce una tendencia a girar y no puede representarse por una sola fuerza.</p><h3>2.1. Par de fuerzas: fuerza resultante nula, momento no nulo</h3><p>Consideremos dos fuerzas paralelas de igual módulo \(F\) y sentidos opuestos, cuyas líneas de acción están separadas una distancia perpendicular \(d\). Aunque no provocan aceleración de traslación, constituyen un <strong>par de fuerzas</strong> que tiende a hacer girar el objeto.</p>
+<div class="formula" data-tts="En un par de fuerzas, la suma horizontal es cero y la suma vertical es F menos F, también cero.">\[\sum F_x=0,\qquad \sum F_y=F-F=0\]</div>
+<div class="formula" data-tts="Sin embargo, el momento neto es fuerza F multiplicada por la separación d: no es cero.">\[\sum\tau_O=F\,d\neq0\]</div>
+<p>El momento de un par es independiente del punto elegido para tomar torques. Por ejemplo, al girar un volante aplicando \(F=30\,\mathrm N\) con cada mano y con líneas de acción separadas \(d=0{,}30\,\mathrm m\):</p>
+<div class="formula" data-tts="Para treinta newtons separados cero coma treinta metros, el momento del par es nueve newton metro.">\[M_{par}=30(0{,}30)=9{,}0\,\mathrm{N\,m}\]</div>
+<p>Un par no puede reemplazarse por una única fuerza resultante, porque esa resultante es cero mientras que el momento total no lo es.</p><div class="example"><strong>Ejemplo.</strong> Dos fuerzas descendentes de 100 N y 200 N actúan a 0 m y 3 m de un origen. La resultante es 300 N hacia abajo y su posición es \(x_R=(100\cdot0+200\cdot3)/300=2\,\mathrm m\).</div>
+<h3>2.2. Tres sistemas de fuerzas paralelas: comparación</h3>
+<p>Una resultante de fuerzas paralelas debe conservar <strong>la suma vectorial de fuerzas y el momento respecto de cualquier punto</strong>. Tomamos hacia arriba como sentido positivo y una coordenada horizontal <em>x</em> medida desde el extremo izquierdo.</p>
+<figure data-tts="Comparación de tres sistemas de fuerzas paralelas. En el primero las fuerzas son ascendentes y la resultante queda entre ambas. En el segundo una fuerza asciende y la otra desciende, y la línea de acción de la resultante queda fuera del segmento. En el tercero las fuerzas son iguales y contrarias: forman un par de fuerzas, con resultante cero y momento diferente de cero.">
+<svg role="img" aria-label="Tres casos de fuerzas paralelas con resultantes y momentos" viewBox="0 0 900 260">
+<g font-size="16" fill="#1b4560"><text x="40" y="28">A. Mismo sentido</text><text x="346" y="28">B. Sentido opuesto</text><text x="654" y="28">C. Par de fuerzas</text></g>
+<g stroke="#497189" stroke-width="7"><path d="M45 170H270"/><path d="M343 170H567"/><path d="M645 170H870"/></g>
+<g fill="none" stroke-width="4" stroke-linecap="round"><path stroke="#298261" d="M90 170V90M235 170V63M440 170V75M510 90V170M694 170V65M816 70V170"/><path stroke="#b55339" d="M184 170V53M349 170V92"/></g>
+<g fill="#298261"><path d="M90 90l-8 15h16zM235 63l-8 15h16zM440 75l-8 15h16zM694 65l-8 15h16z"/></g>
+<g fill="#b55339"><path d="M184 53l-8 15h16zM349 92l-8 15h16z"/></g>
+<g fill="#298261"><path d="M510 170l-8 -15h16zM816 170l-8 -15h16z"/></g>
+<g font-size="16" fill="#234b62"><text x="67" y="83">100 N</text><text x="211" y="54">200 N</text><text x="170" y="44">R</text><text x="405" y="68">300 N</text><text x="494" y="85">100 N</text><text x="344" y="88">R</text><text x="665" y="55">F</text><text x="814" y="68">F</text><text x="705" y="205">R = 0; M ≠ 0</text></g>
+</svg><figcaption>Tres modelos de fuerzas paralelas. Las flechas verdes representan fuerzas aplicadas; las rojizas ilustran la resultante cuando existe. El tercer sistema no tiene fuerza resultante, pero sí produce un momento.</figcaption></figure>
+<div class="example"><strong>Caso A — fuerzas del mismo sentido.</strong> Dos fuerzas ascendentes de \(100\,\mathrm N\) y \(200\,\mathrm N\) se aplican en \(x_1=0\,\mathrm m\) y \(x_2=3\,\mathrm m\).<div class="formula" data-tts="Eje vertical: fuerza resultante igual a cien más doscientos, igual a trescientos newtons hacia arriba.">\[\sum F_x=0,\qquad R_y=100+200=300\,\mathrm N\]</div><div class="formula" data-tts="Momentos respecto del origen: resultante por posición igual a suma de cada fuerza por su brazo. Trescientos por equis erre igual a cien por cero más doscientos por tres.">\[\sum\tau_O=100(0)+200(3)-300x_R=0\]</div><div class="formula" data-tts="Por lo tanto, la resultante está a dos metros del origen.">\[x_R=\frac{600}{300}=2{,}00\,\mathrm m\]</div></div>
+<div class="example"><strong>Caso B — fuerzas opuestas.</strong> Una fuerza de \(+300\,\mathrm N\) actúa en \(x_1=0\) y otra de \(-100\,\mathrm N\) en \(x_2=2\,\mathrm m\).<div class="formula" data-tts="La suma de fuerzas horizontales es cero. La suma de fuerzas verticales es trescientos menos cien, igual a doscientos newtons hacia arriba.">\[\sum F_x=0,\qquad R_y=300-100=200\,\mathrm N\]</div><div class="formula" data-tts="Tomando momentos respecto del origen, menos cien por dos, menos doscientos por equis erre, igual a cero. La resultante se encuentra un metro a la izquierda del origen.">\[\sum\tau_O=(-100)(2)-(200)x_R=0\]</div><div class="formula" data-tts="La posición de la fuerza resultante es menos uno coma cero cero metros respecto del origen elegido.">\[x_R=-1{,}00\,\mathrm m\]</div><p>El valor negativo muestra que la resultante puede ubicarse <strong>fuera del intervalo</strong> comprendido entre las fuerzas.</p></div>
+<div class="example"><strong>Caso C — par puro.</strong> Dos fuerzas verticales de \(100\,\mathrm N\), opuestas, aplicadas con una separación de \(0{,}50\,\mathrm m\), producen:<div class="formula" data-tts="La suma de fuerzas horizontales es cero y la de fuerzas verticales también es cero. El momento neto tiene módulo cien por cero coma cinco, es decir, cincuenta newton metro.">\[\sum F_x=0,\quad\sum F_y=100-100=0,\quad |\sum\tau_O|=100(0{,}50)=50\,\mathrm{N\,m}\]</div><p>El cuerpo no experimentaría aceleración de su centro de masa causada por este par, pero sí puede adquirir aceleración angular. Su momento depende de la distancia perpendicular entre líneas de acción, no del punto elegido para calcularlo.</p></div>
+</section>
+<section id="gravedad"><h2>3. Centro de gravedad y centro de masa</h2><p>El <strong>centro de masa</strong> es una propiedad de la distribución de masa. El <strong>centro de gravedad</strong> es el punto de aplicación de la fuerza gravitatoria resultante. En un campo gravitatorio prácticamente uniforme ambos coinciden.</p><div class="formula" data-tts="La posición vectorial del centro de masa se obtiene dividiendo la suma de cada masa multiplicada por su posición entre la masa total. En campo gravitatorio uniforme, el centro de gravedad coincide aproximadamente con el centro de masa.">\[\vec r_{CM}=\frac{\sum_i m_i\vec r_i}{\sum_i m_i},\qquad \vec r_{CG}\simeq\vec r_{CM}\]</div><p>Para cuerpos homogéneos y simétricos, el centro de masa coincide con el centro geométrico. En un sólido irregular debe calcularse mediante sumas o integrales, o localizarse experimentalmente por suspensión.</p><div class="note"><strong>Aplicación:</strong> la posición del centro de gravedad es decisiva para la estabilidad de grúas, vehículos, estanterías, robots móviles y equipos industriales.</div>
+<h3>3.1. Cálculo del centro de gravedad de un cuerpo compuesto</h3>
+<p>Para una placa homogénea de espesor constante, la masa de cada parte es proporcional a su área: \(m_i=\sigma A_i\), donde \(\sigma\) es la masa por unidad de superficie. La expresión del centro de masa se simplifica:</p>
+<div class="formula" data-tts="La coordenada equis del centro de masa es la suma de área por coordenada equis, dividida por el área total. Análogamente para la coordenada ye.">\[x_{CM}=\frac{\sum_i A_ix_i}{\sum_i A_i},\qquad y_{CM}=\frac{\sum_i A_iy_i}{\sum_i A_i}\]</div>
+<figure data-tts="Placa homogénea en forma de ele. El rectángulo inferior mide cuatro metros de ancho por uno de alto. Sobre su extremo izquierdo se añade un rectángulo de un metro de ancho por dos metros de alto, creando una figura en ele de tres metros de altura total. Se señalan los centroides de ambos rectángulos y el centro de masa conjunto.">
+<svg role="img" aria-label="Placa en L dividida en dos rectángulos para calcular su centro de masa" viewBox="0 0 650 330"><path d="M90 270H545M90 270V32" stroke="#6b8796" stroke-width="3"/><path d="M90 270H450V210H180V90H90Z" fill="#dcecf4" stroke="#276180" stroke-width="4"/><path d="M90 210H180" stroke="#759caf" stroke-width="3" stroke-dasharray="6 5"/><circle cx="270" cy="240" r="6" fill="#b95a40"/><circle cx="135" cy="150" r="6" fill="#b95a40"/><circle cx="225" cy="210" r="8" fill="#187e65"/><g fill="#19455b" font-size="17"><text x="276" y="236">C₁ (2; 0,5)</text><text x="143" y="145">C₂ (0,5; 2)</text><text x="236" y="203">CM</text><text x="95" y="292">O</text><text x="280" y="301">4 m</text><text x="48" y="180">3 m</text><text x="92" y="83">1 m</text></g></svg>
+<figcaption>Placa homogénea en forma de L, modelada mediante dos rectángulos sin superposición. Los puntos rojizos son sus centros geométricos; el punto verde representa el centro de masa total.</figcaption></figure>
+<div class="example"><strong>Ejemplo resuelto — placa en L.</strong> Rectángulo 1: \(4\,\mathrm m\times1\,\mathrm m\), con centro \((2;0{,}5)\,\mathrm m\). Rectángulo 2: \(1\,\mathrm m\times2\,\mathrm m\), colocado encima del sector izquierdo, con centro \((0{,}5;2)\,\mathrm m\).<div class="formula" data-tts="Las áreas son cuatro y dos metros cuadrados; la suma de áreas es seis metros cuadrados.">\[A_1=4(1)=4\,\mathrm{m^2},\qquad A_2=1(2)=2\,\mathrm{m^2}\]</div><div class="formula" data-tts="La coordenada equis del centro es cuatro por dos, más dos por cero coma cinco, dividido por seis, igual a uno coma cinco metros.">\[x_{CM}=\frac{4(2)+2(0{,}5)}{4+2}=1{,}50\,\mathrm m\]</div><div class="formula" data-tts="La coordenada ye del centro es cuatro por cero coma cinco, más dos por dos, dividido por seis, igual a un metro.">\[y_{CM}=\frac{4(0{,}5)+2(2)}{4+2}=1{,}00\,\mathrm m\]</div><p>Resultado: \(CM=(1{,}50;1{,}00)\,\mathrm m\). En gravedad aproximadamente uniforme, ese punto coincide con el centro de gravedad. Para una geometría con vacíos pueden aplicarse áreas negativas; debe definirse primero una figura completa y restarle el área retirada.</p></div>
+</section>
+<section id="estabilidad"><h2>4. Estabilidad de cuerpos rígidos y vuelco</h2><p>La estabilidad permite anticipar qué sucede cuando se modifica la posición de un cuerpo o se aplica un empuje. Primero analizaremos el <strong>bloque apoyado en equilibrio</strong> y el corrimiento de la reacción normal; después estudiaremos el <strong>bloque inclinado sobre un vértice</strong>, donde el sentido del momento del peso determina si regresa o cae.</p><p>La estabilidad describe la respuesta de un sistema ante una perturbación pequeña. Si aparece una tendencia a recuperar la posición inicial, el equilibrio es <strong>estable</strong>. Si la perturbación aumenta, es <strong>inestable</strong>. Si permanece en una nueva posición de equilibrio, es <strong>indiferente</strong>.</p><figure data-tts="Tres estados de equilibrio dibujados: una bola en el fondo de un valle, estable; una bola en lo alto de una loma, inestable; y una bola sobre una superficie plana, indiferente."><svg aria-label="Tres tipos de equilibrio: estable en valle, inestable en cima e indiferente en superficie horizontal" viewbox="0 0 650 210"><g fill="none" stroke="#2e6683" stroke-width="5"><path d="M15 70 Q105 205 195 70"></path><path d="M235 170 Q325 20 415 170"></path><path d="M450 143H640"></path></g><g fill="#d59b42" stroke="#a56c23" stroke-width="2"><circle cx="105" cy="137" r="20"></circle><circle cx="325" cy="52" r="20"></circle><circle cx="545" cy="122" r="20"></circle></g><g fill="#24475e" font-size="17" text-anchor="middle"><text x="105" y="200">Estable</text><text x="325" y="200">Inestable</text><text x="545" y="200">Indiferente</text></g></svg><figcaption>Figura 2. Modelos cualitativos de estabilidad gravitatoria.</figcaption></figure><p>Cuando la energía potencial \(U\) depende de una coordenada \(q\), un equilibrio se localiza mediante \(dU/dq=0\). Un mínimo local de \(U\) corresponde a equilibrio estable y un máximo local a inestable; un potencial constante caracteriza el caso indiferente. Esta clasificación exige considerar los grados de libertad y restricciones del sistema.</p><h3>4.1. ¿Por qué se vuelca un bloque?</h3>
+<p>Consideremos un bloque de masa \(m\), ancho de base \(b\) y altura \(H\), apoyado sobre un suelo horizontal. Aplicamos una fuerza horizontal \(F\) hacia la derecha a una altura \(h\). Mientras el bloque permanezca en equilibrio, el suelo ejerce una fuerza normal resultante \(N\), vertical, y una fuerza de rozamiento estático \(f_s\), horizontal. La <strong>normal no tiene por qué actuar en el centro de la base</strong>: su línea de acción se desplaza hacia el borde derecho para contrarrestar el momento del empuje.</p>
+<figure data-tts="Bloque recto sobre el piso al recibir empuje horizontal a cierta altura. El peso desciende por el centro de masa, el rozamiento se opone al empuje, y la normal asciende desde un punto de la base que se desplaza hacia el borde delantero."><svg aria-label="Bloque empujado lateralmente con fuerza F a altura h, peso, rozamiento y normal desplazada hacia borde derecho" role="img" viewbox="0 0 780 315">
+<defs><marker id="ar10" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0 0L6 3L0 6z" fill="#b65b3b"></path></marker><marker id="ag10" markerheight="8" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0 0L6 3L0 6z" fill="#16806c"></path></marker></defs>
+<path d="M75 261H701" stroke="#607985" stroke-width="4"></path><rect fill="#d6e8f0" height="216" stroke="#215b7c" stroke-width="3" width="260" x="260" y="45"></rect><path d="M260 45V261M520 45V261" stroke="#215b7c" stroke-width="2"></path><circle cx="390" cy="153" fill="#172c42" r="5"></circle>
+<path d="M390 153v91" marker-end="url(#ar10)" stroke="#b65b3b" stroke-width="4"></path><path d="M520 111h124" marker-end="url(#ar10)" stroke="#b65b3b" stroke-width="4"></path><path d="M468 272V178" marker-end="url(#ag10)" stroke="#16806c" stroke-width="4"></path><path d="M390 273H309" marker-end="url(#ag10)" stroke="#16806c" stroke-width="4"></path>
+<path d="M544 111v150" stroke="#6d8290" stroke-dasharray="5 6" stroke-width="2"></path><path d="M260 286h260M260 279v14M520 279v14" stroke="#536a7a"></path><g fill="#243b4d" font-size="18"><text x="650" y="102">F</text><text x="401" y="222">mg</text><text x="477" y="179">N</text><text x="306" y="298">b</text><text x="318" y="267">fₛ</text><text x="550" y="190">h</text><text x="420" y="145">CM</text><text x="454" y="303">xₙ</text></g><path d="M390 293H468" stroke="#7d6c9f" stroke-dasharray="5 3" stroke-width="2"></path></svg><figcaption>Figura 2. Un empuje lateral produce un momento que desplaza hacia la derecha el punto de aplicación de la normal resultante. El esquema representa el equilibrio previo al vuelco (no necesariamente a escala).</figcaption></figure>
+<p>Definimos <strong>\(\delta\)</strong> como el desplazamiento horizontal de la normal respecto del <strong>centro de la base</strong>. La coordenada medida desde el borde izquierdo se designa <strong>\(x_N\)</strong>. Ambas magnitudes se relacionan por \(x_N=b/2+\delta\). Las ecuaciones de equilibrio son:</p>
+<div class="formula" data-tts="Equilibrio previo al vuelco. En equis: empuje menos rozamiento igual a cero. En ye: normal menos peso igual a cero. En momentos respecto del centro de la base, la normal desplazada una distancia delta compensa el momento del empuje y del rozamiento, cuya resultante deja la expresión delta igual a F por h dividido por m por g.">\[\begin{aligned}
+\sum F_x=0 &amp;: F-f_s=0\Rightarrow f_s=F\\
+\sum F_y=0 &amp;: N-mg=0\Rightarrow N=mg\\
+\sum\tau_C=0 &amp;: N\,\delta-F\left(h-\frac H2\right)-f_s\frac H2=0\\
+&amp;\Rightarrow N\delta-Fh=0\\
+&amp;\Rightarrow\boxed{\delta=\frac{Fh}{mg}}.
+\end{aligned}\]</div><p>El punto \(C\) es el centro de masa y \(\delta\) representa la distancia desde el centro de la base hasta la línea de acción de la normal. El término \(-f_sH/2\) corresponde al momento del rozamiento aplicado en el piso: <strong>no debe omitirse</strong> si calculamos momentos respecto de C. Para medir desde el borde izquierdo: \(x_N=b/2+\delta\).</p>
+<p>La resultante normal debe quedar dentro de la superficie de apoyo: <strong>\(-b/2\le\delta\le b/2\)</strong>, o de manera equivalente <strong>\(0\le x_N\le b\)</strong>. Al aumentar el empuje o su altura, la normal se desplaza hacia el borde derecho.</p>
+<p><strong>Condición en el borde derecho B.</strong> Al iniciarse el vuelco, \(x_N=b\), por lo que \(\delta=b/2\). También podemos tomar momentos directamente en B: tanto la normal como el rozamiento tienen brazo nulo; el empuje produce momento horario y el peso, antihorario.</p><div class="formula" data-tts="Al borde del vuelco. En horizontal: F menos rozamiento igual a cero. En vertical: normal menos m por g igual a cero. En momentos sobre el vértice B: el peso por la mitad de la base menos la fuerza por su altura igual a cero; de aquí la fuerza crítica de vuelco es m por g por b dividido por dos h.">\[\begin{aligned}
+\sum F_x=0 &amp;: F-f_s=0\\
+\sum F_y=0 &amp;: N-mg=0\\
+\sum\tau_B=0 &amp;: mg\frac b2-Fh+0N+0f_s=0\\
+&amp;\Rightarrow\boxed{F_v=\frac{mgb}{2h}}.
+\end{aligned}\]</div>
+<p>En el instante límite, la resultante normal pasa por la esquina inferior derecha, que se convierte en el pivote incipiente. Una fuerza apenas mayor, si no hay deslizamiento, produce aceleración angular. <strong>No es correcto ubicar siempre la normal en el centro geométrico del apoyo.</strong></p>
+<h3>4.2. ¿Se desliza antes de volcar?</h3>
+<p>El rozamiento estático disponible cumple \(f_s\leq \mu_s N\), con valor máximo \(\mu_s mg\) para este caso. El deslizamiento comienza al alcanzarse \(F_{\mathrm{deslizamiento}}=\mu_s mg\), siempre que el bloque no haya volcado antes. Comparar ambos umbrales es decisivo:</p><div class="formula" data-tts="Comparamos deslizamiento y vuelco. Las fuerzas horizontales se compensan. Las verticales también. Para el vuelco, momento del peso menos momento del empuje igual a cero. Para que no deslice, el rozamiento requerido debe ser menor o igual al máximo mu estático por normal.">\[\begin{aligned}
+\sum F_x=0 &amp;: F-f_s=0\\
+\sum F_y=0 &amp;: N-mg=0\\
+\sum\tau_B=0 &amp;: mg\frac b2-Fh=0\quad\text{(límite de vuelco)}\\
+\lvert f_s\rvert&amp;\leq\mu_sN=\mu_smg.
+\end{aligned}\]</div><p>El deslizamiento comienza cuando \(F=F_d=\mu_smg\). El vuelco incipiente exige \(F=F_v=mgb/(2h)\). Comparar esos dos umbrales permite anticipar el primer mecanismo de pérdida de equilibrio. En el umbral de deslizamiento, el bloque puede seguir apoyado sobre toda su base; en el de vuelco, la reacción normal llega al borde.</p>
+<div class="formula" data-tts="Fuerza crítica de vuelco: m por g por b sobre dos h. Fuerza crítica de deslizamiento: mu estático por m por g.">\[F_{\mathrm{vuelco}}=\frac{mgb}{2h},\qquad F_{\mathrm{deslizamiento}}=\mu_s mg\]</div>
+<table><thead><tr><th>Comparación</th><th>Comportamiento esperado al aumentar lentamente \(F\)</th></tr></thead><tbody><tr><td>\(b/(2h)&lt;\mu_s\)</td><td>Primero inicia el vuelco.</td></tr><tr><td>\(b/(2h)&gt;\mu_s\)</td><td>Primero comienza el deslizamiento.</td></tr><tr><td>\(b/(2h)=\mu_s\)</td><td>Ambos umbrales coinciden en este modelo ideal.</td></tr></tbody></table>
+<div class="example"><strong>Ejemplo 1 — un bloque empujado a diferentes alturas.</strong> Un bloque de \(m=40\,\mathrm{kg}\), ancho \(b=0{,}60\,\mathrm m\), altura \(H=1{,}20\,\mathrm m\), tiene \(\mu_s=0{,}50\). Se aplica horizontalmente una fuerza a altura \(h\). Tomamos \(g=9{,}81\,\mathrm{m/s^2}\).<p>El peso es \(mg=392{,}4\,\mathrm N\) y el umbral de deslizamiento es \(F_d=0{,}50(392{,}4)=196{,}2\,\mathrm N\). Por vuelco: \(F_v=392{,}4(0{,}30)/h=117{,}72/h\) en unidades SI.</p>
+<table><thead><tr><th>Altura del empuje</th><th>\(F_v\)</th><th>Qué ocurre primero</th></tr></thead><tbody><tr><td>\(h=0{,}30\,\mathrm m\)</td><td>\(392{,}4\,\mathrm N\)</td><td>Desliza a \(196{,}2\,\mathrm N\)</td></tr><tr><td>\(h=0{,}60\,\mathrm m\)</td><td>\(196{,}2\,\mathrm N\)</td><td>Umbrales simultáneos (ideal)</td></tr><tr><td>\(h=1{,}00\,\mathrm m\)</td><td>\(117{,}7\,\mathrm N\)</td><td>Vuelca antes de deslizar</td></tr></tbody></table>
+<p><strong>Seguimiento de la normal.</strong> Si \(h=1{,}00\,\mathrm m\) y \(F=80\,\mathrm N\), el corrimiento central es \(\delta=80(1{,}00)/392{,}4=0{,}204\,\mathrm m\). La posición desde el borde izquierdo resulta \(x_N=b/2+\delta=0{,}504\,\mathrm m\), aún dentro de la base de 0,60 m. Para \(F=117{,}72\,\mathrm N\), \(\delta=0{,}300\,\mathrm m\) y \(x_N=0{,}600\,\mathrm m=b\): la normal alcanza el borde y se inicia el vuelco.</p></div>
+<h3>4.3. Bloque ya inclinado: ¿regresa o termina cayendo?</h3>
+<p>El <em>inicio del vuelco por empuje</em> no significa que el cuerpo deba caer completamente. Si se retira la fuerza y el bloque ha girado un ángulo \(\theta\) alrededor de la esquina inferior derecha sin perder el contacto con ella, el peso puede generar un momento que lo haga regresar a su posición inicial o que continúe la caída. Todo depende de la posición vertical del centro de masa respecto del pivote.</p><p><strong>Modelo del bloque girado.</strong> Una vez retirado el empuje, las fuerzas externas son el peso \(mg\) y las reacciones del vértice B. Si el bloque está efectivamente evolucionando, <em>no podemos imponer</em> \(\sum F_x=\sum F_y=\sum\tau_B=0\): usamos las ecuaciones dinámicas y, solo en la posición crítica en reposo, las de equilibrio.</p><div class="formula" data-tts="Una vez inclinado, el bloque ya puede estar acelerando. En horizontal, reacción equis igual a masa por aceleración horizontal del centro. En vertical, reacción ye menos peso igual a masa por aceleración vertical. Sobre el pivote, momento del peso igual al momento de inercia respecto del pivote por aceleración angular.">\[\begin{aligned}
+\sum F_x&amp;=R_x=ma_{CM,x}\\
+\sum F_y&amp;=R_y-mg=ma_{CM,y}\\
+\sum\tau_B&amp;=mg\left(\frac H2\sin\theta-\frac b2\cos\theta\right)=I_B\alpha.
+\end{aligned}\]</div><p>El momento del peso es nulo cuando \(H\sin\theta-b\cos\theta=0\). Entonces \(\tan\theta_c=b/H\). Para \(\theta&lt;\theta_c\), ese momento es negativo y restaura la posición; para \(\theta&gt;\theta_c\), es positivo y favorece el giro. En el instante crítico, si además no hay movimiento, \(a_{CM,x}=a_{CM,y}=\alpha=0\), de modo que \(R_x=0\), \(R_y=mg\) y \(\sum\tau_B=0\). Es un equilibrio <strong>inestable</strong>.</p>
+<figure data-tts="Tres bloques geométricamente iguales, inclinados sobre su esquina inferior derecha B. En el primero, la vertical del peso cae a la izquierda del pivote y produce retorno; en el segundo pasa exactamente por B, posición crítica; en el tercero cae a la derecha y produce vuelco. Los puntos verdes señalan los centros de masa y las flechas verticales, el peso."><svg aria-label="Tres posiciones de un bloque al inclinarse en torno a una esquina: recupera, límite crítico y cae" role="img" viewbox="0 0 780 330">
+<defs>
+<marker id="arrowDown" markerheight="10" markerunits="strokeWidth" markerwidth="10" orient="auto" refx="5" refy="5">
+<path d="M1 1 L9 5 L1 9 z" fill="#2d5970"></path>
+</marker>
+</defs>
+<path d="M20 255H760" stroke="#627f8b" stroke-width="4"></path>
+<g fill="#d6e9f1" stroke="#246182" stroke-width="3">
+<g transform="translate(170 255) rotate(15)"><rect height="172" width="110" x="-110" y="-172"></rect></g>
+<g transform="translate(410 255) rotate(32.6)"><rect height="172" width="110" x="-110" y="-172"></rect></g>
+<g transform="translate(650 255) rotate(52)"><rect height="172" width="110" x="-110" y="-172"></rect></g>
+</g>
+<g stroke="#8ca0ac" stroke-dasharray="6 5" stroke-width="2">
+<path d="M139.2 147.7V255"></path>
+<path d="M410 142.9V255"></path>
+<path d="M683.9 148.7V255"></path>
+</g>
+<g marker-end="url(#arrowDown)" stroke="#2d5970" stroke-width="4">
+<path d="M139.2 147.7V198"></path>
+<path d="M410 142.9V193"></path>
+<path d="M683.9 148.7V199"></path>
+</g>
+<g fill="#16806c" stroke="#0f5f52" stroke-width="1.5">
+<circle cx="139.2" cy="147.7" r="6"></circle>
+<circle cx="410" cy="142.9" r="6"></circle>
+<circle cx="683.9" cy="148.7" r="6"></circle>
+</g>
+<g fill="#243f4e" stroke="#243f4e">
+<circle cx="170" cy="255" r="4"></circle>
+<circle cx="410" cy="255" r="4"></circle>
+<circle cx="650" cy="255" r="4"></circle>
+</g>
+<g fill="#3b5564" font-size="15">
+<text x="40" y="22">Proyección del CM dentro de la base de apoyo</text>
+<text x="287" y="22">Proyección del CM sobre el pivote</text>
+<text x="588" y="22">Proyección del CM fuera del apoyo</text>
+</g>
+<g fill="#2d5970" font-size="14">
+<text x="149" y="176">P = mg</text>
+<text x="420" y="171">P = mg</text>
+<text x="694" y="178">P = mg</text>
+</g>
+<g fill="#0f5f52" font-size="14">
+<text x="117" y="138">CM</text>
+<text x="388" y="133">CM</text>
+<text x="662" y="139">CM</text>
+</g>
+<g fill="#243f4e" font-size="14">
+<text x="176" y="251">B</text>
+<text x="416" y="251">B</text>
+<text x="656" y="251">B</text>
+</g>
+<g fill="#b85a3c" font-size="20">
+<text x="83" y="292">Recupera</text>
+<text x="371" y="292">Límite</text>
+<text x="606" y="292">Cae</text>
+</g>
+<g fill="#657b88" font-size="13">
+<text x="92" y="311">La vertical del peso cae antes del pivote.</text>
+<text x="349" y="311">La vertical del peso pasa por el pivote.</text>
+<text x="596" y="311">La vertical del peso cae más allá del pivote.</text>
+</g>
+</svg><figcaption>Figura 3. Esquema cualitativo de estabilidad frente al vuelco. El punto <strong>B</strong> representa el vértice de apoyo o pivote, el punto verde indica el <strong>centro de masa (CM)</strong> y el vector \(P=mg\) representa el peso. La posición de la vertical del peso respecto de \(B\) determina si el bloque recupera su posición, queda en equilibrio límite o continúa cayendo.</figcaption></figure>
+<p>Para un bloque homogéneo de altura \(H\) y base \(b\), el centro de masa está inicialmente a \(b/2\) del lateral y a \(H/2\) del suelo. El ángulo crítico de inclinación (medido desde la orientación vertical inicial del bloque) satisface:</p>
+<div class="formula" data-tts="La tangente del ángulo crítico es la base dividida por la altura. El ángulo crítico es arco tangente de b sobre H.">\[\boxed{\tan\theta_c=\frac{b}{H}\qquad\Rightarrow\qquad\theta_c=\arctan\!\left(\frac bH\right)}\]</div>
+<p>Para \(\theta&lt;\theta_c\), la gravedad genera un momento restaurador alrededor del vértice; para \(\theta&gt;\theta_c\), el momento tiende a aumentar la inclinación; en \(\theta=\theta_c\), el centro de masa está exactamente sobre el pivote y la energía potencial es máxima. Se supone que se retira el empuje, que el vértice sigue fijo y que se desprecia el impulso angular inicial: <strong>un bloque con velocidad angular suficiente podría superar el punto crítico aunque en ese instante \(\theta&lt;\theta_c\)</strong>.</p>
+<div class="example"><strong>Ejemplo 2 — recuperación o caída.</strong> Para el bloque anterior, \(b=0{,}60\,\mathrm m\), \(H=1{,}20\,\mathrm m\), \(\theta_c=\arctan(0{,}60/1{,}20)=26{,}6^\circ\). Si se lo inclina lentamente 15° y se lo suelta sin velocidad angular, recupera su apoyo horizontal; si se lo lleva a 35°, continúa volcando. A exactamente 26,6° está en equilibrio inestable: una pequeña perturbación a un lado u otro determina su evolución.</div>
+<div class="error"><strong>Distinción fundamental.</strong> <em>Desplazamiento de la normal</em> describe el equilibrio previo al despegue de un borde; <em>proyección del centro de masa sobre la base o el pivote</em> permite valorar la estabilidad de un cuerpo ya inclinado. Son análisis relacionados, pero no son el mismo criterio físico.</div>
+<h3>4.4. Simulación interactiva — corrimiento de la normal</h3>
+<p>En esta simulación se representa el equilibrio <em>antes</em> del despegue del borde. Podés variar la fuerza aplicada, la altura del empuje, la geometría del bloque y el rozamiento para observar cómo la reacción normal se desplaza sobre la base. Cuando la normal llega al extremo derecho, el sistema alcanza el <strong>límite de vuelco</strong>.</p>
+<div class="activity" id="activity-normal" data-tts="Predicción sobre la altura del empuje y el desplazamiento de la normal. A mayor altura, el momento del empuje aumenta y la normal se desplaza hacia el borde de vuelco mientras exista equilibrio.">
+<h4>Actividad 1 — Predicción del corrimiento de la normal</h4>
+<p class="instruction"><strong>1. Antes de experimentar:</strong> formulá una predicción.</p>
+<p class="question">Con el mismo bloque, la misma fuerza y el mismo coeficiente de rozamiento, aumentamos únicamente la altura de aplicación de la fuerza. ¿Cómo cambia la posición de la resultante normal mientras el bloque permanece en equilibrio?</p>
+<fieldset><legend>Seleccioná una respuesta</legend><label class="choice"><input type="radio" name="act-normal" value="left"/> Se desplaza hacia el borde izquierdo.</label><label class="choice"><input type="radio" name="act-normal" value="right"/> Se desplaza hacia el borde derecho.</label><label class="choice"><input type="radio" name="act-normal" value="same"/> Permanece en el centro.</label></fieldset>
+<div class="activity-actions"><button type="button" data-activity-check="normal">Comprobar predicción</button></div>
+<div class="feedback" id="feedback-normal" role="status" aria-live="polite" hidden></div>
+<p class="instruction"><strong>2. Exploración guiada:</strong> Mantené la fuerza, la masa, el ancho, la altura del bloque y el coeficiente de rozamiento constantes. Variá únicamente el control «Altura del empuje». Compará la posición de la normal antes y después. Si el bloque deja de estar en equilibrio, interpretá ese estado por separado.</p>
+<div class="reflection"><strong>3. Explicación y transferencia:</strong> ¿Por qué aumentar la altura puede favorecer el vuelco sin modificar la fuerza de empuje? <em>Respondé oralmente o en tu cuaderno, justificando con un argumento físico.</em></div>
+<p class="activity-status" id="status-normal">Esta actividad no registra datos personales. La comprobación se realiza en este navegador.</p>
+</div>
+<div class="sim" data-tts="Simulador del bloque empujado. Al aumentar la fuerza o la altura del empuje, la normal migra hacia el borde derecho de la base. Si antes se supera la fricción máxima, el cuerpo desliza en lugar de volcar. Pausamos para que pruebes los controles.">
+<div class="controls">
+<label>Fuerza aplicada \(F\): <strong id="forceOut">120 N</strong><input id="forceSlider" max="500" min="0" step="5" type="range" value="120"/></label>
+<label>Altura del empuje \(h\): <strong id="pushHeightOut">0,60 m</strong><input id="pushHeightSlider" max="1.20" min="0.10" step="0.01" type="range" value="0.60"/></label>
+<label>Ancho de base \(b\): <strong id="baseOut">0,60 m</strong><input id="baseSlider" max="1.20" min="0.30" step="0.01" type="range" value="0.60"/></label>
+<label>Altura del bloque \(H\): <strong id="blockHeightOut">1,20 m</strong><input id="blockHeightSlider" max="1.80" min="0.40" step="0.01" type="range" value="1.20"/></label>
+<label>Masa \(m\): <strong id="massOut">40 kg</strong><input id="massSlider" max="100" min="10" step="1" type="range" value="40"/></label>
+<label>Coeficiente \(\mu_s\): <strong id="muOut">0,50</strong><input id="muSlider" max="0.90" min="0.05" step="0.01" type="range" value="0.50"/></label>
+</div>
+<div class="simgrid">
+<svg aria-label="Simulación del corrimiento de la normal en un bloque empujado" id="normalScene" viewbox="0 0 720 320">
+<path d="M70 250H660" stroke="#708a99" stroke-width="5"></path>
+<rect fill="#dcecf4" height="160" id="normalBlock" rx="8" stroke="#2b6285" stroke-width="4" width="120" x="170" y="90"></rect>
+<path d="M230 90V250" id="midLine" stroke="#7fa1b5" stroke-dasharray="7 6" stroke-width="2"></path>
+<path d="M100 160H170" id="appliedForce" stroke="#b65638" stroke-width="5"></path>
+<path d="M170 160l-14 -9v18z" fill="#b65638" id="appliedForceHead"></path>
+<path d="M230 150V218" id="weightArrow" stroke="#2c566d" stroke-width="5"></path>
+<path d="M230 218l-11 -18h22z" fill="#2c566d" id="weightHead"></path>
+<path d="M230 282V250" id="normalArrow" stroke="#2a7a57" stroke-width="6"></path>
+<path d="M230 250l-11 18h22z" fill="#2a7a57" id="normalHead"></path>
+<path d="M230 250H170" id="frictionArrow" stroke="#8d6a1b" stroke-width="5"></path>
+<path d="M170 250l16 -10v20z" fill="#8d6a1b" id="frictionHead"></path>
+<path d="M290 250V285" id="edgeGuide" stroke="#b03b32" stroke-dasharray="6 5" stroke-width="2"></path>
+<circle cx="290" cy="250" fill="#b03b32" id="pivotDot" r="4"></circle>
+<g fill="#23465d" font-size="18">
+<text id="forceLabel" x="96" y="148">F</text>
+<text id="weightLabel" x="242" y="186">P = mg</text>
+<text id="normalLabel" x="238" y="276">N</text>
+<text id="frictionLabel" x="177" y="242">fₛ</text>
+<text x="294" y="298">borde de vuelco</text>
+</g>
+</svg>
+<div>
+<div class="formula" data-tts="En el simulador de normal: posición desde el borde izquierdo igual a mitad de la base más F por h dividido por m por g. Fuerza crítica de vuelco igual a m por g por b dividido por dos h. Fuerza crítica de deslizamiento igual a mu estático por m por g.">\[x_N=\frac{b}{2}+\frac{Fh}{mg},\qquad F_v=\frac{mgb}{2h},\qquad F_d=\mu_smg\]</div>
+<p class="miniout" id="normalReadout"></p>
+<p class="miniout" id="normalState"></p>
+<div class="legendline"><span><i class="swatch" style="background:#2a7a57"></i> Normal</span><span><i class="swatch" style="background:#b65638"></i> Fuerza aplicada</span><span><i class="swatch" style="background:#2c566d"></i> Peso</span><span><i class="swatch" style="background:#8d6a1b"></i> Rozamiento</span></div>
+<p class="small">La posición \(x_N\) se mide desde el borde izquierdo de la base. Mientras \(0&lt;x_N&lt;b\), la resultante normal permanece dentro del apoyo. Al llegar al extremo derecho, el bloque entra en el umbral del vuelco.</p>
+</div>
+</div>
+<div class="note"><strong>Idea para discutir en clase:</strong> si para un mismo bloque mantenés fija la fuerza y aumentás la altura \(h\), el brazo del empuje crece y la normal se desplaza más rápidamente hacia el borde. Si además \(F_d&lt;F_v\), el bloque <em>desliza antes</em> de volcar.</div>
+</div>
+<h3>4.5. Simulación interactiva — ¿vuelve, queda al límite o se vuelca?</h3>
+<p>Ahora el bloque se supone ya inclinado alrededor del vértice inferior derecho. El criterio relevante ya no es el corrimiento de la normal, sino la posición de la <strong>línea de acción del peso</strong> respecto del pivote. Si esa vertical cae hacia el lado interior del apoyo, el peso produce un momento restaurador; si cae exactamente sobre el pivote, el equilibrio es límite; si pasa al otro lado, el peso aumenta el vuelco.</p>
+<div class="activity" id="activity-tilt" data-tts="Predicción de estabilidad de un bloque: para una base de cero coma sesenta metros y altura de uno coma veinte metros, el ángulo crítico es veintiséis coma seis grados. A treinta y cinco grados el bloque tiende a volcar.">
+<h4>Actividad 2 — Estabilidad de un bloque inclinado</h4>
+<p class="instruction"><strong>1. Antes de experimentar:</strong> formulá una predicción.</p>
+<p class="question">Un bloque homogéneo tiene base de 0,60 metros y altura de 1,20 metros. Su ángulo crítico es aproximadamente 26,6 grados. Si se lo inclina 35 grados alrededor del vértice y se lo suelta desde el reposo, ¿qué tendencia tiene?</p>
+<fieldset><legend>Seleccioná una respuesta</legend><label class="choice"><input type="radio" name="act-tilt" value="return"/> Tiende a recuperar su posición inicial.</label><label class="choice"><input type="radio" name="act-tilt" value="fall"/> Tiende a volcar.</label><label class="choice"><input type="radio" name="act-tilt" value="neutral"/> Permanece en equilibrio indiferente.</label></fieldset>
+<div class="activity-actions"><button type="button" data-activity-check="tilt">Comprobar predicción</button></div>
+<div class="feedback" id="feedback-tilt" role="status" aria-live="polite" hidden></div>
+<p class="instruction"><strong>2. Exploración guiada:</strong> Fijá la base en 0,60 metros y la altura en 1,20 metros. Compará la línea vertical del peso para 15°, 26,5° y 35°. Observá de qué lado del pivote cae la proyección del centro de masa.</p>
+<div class="reflection"><strong>3. Explicación y transferencia:</strong> ¿Qué diferencia hay entre alcanzar el umbral y permanecer en una posición de equilibrio estable? <em>Respondé oralmente o en tu cuaderno, justificando con un argumento físico.</em></div>
+<p class="activity-status" id="status-tilt">Esta actividad no registra datos personales. La comprobación se realiza en este navegador.</p>
+</div>
+<div class="sim" data-tts="Simulador de bloque inclinado. El punto B es el pivote, y la línea vertical por el centro de masa muestra el brazo del peso. Si cae a la izquierda del pivote, el momento tiende a devolver el bloque; a la derecha, favorece la caída. Pausamos para permitir la exploración.">
+<div class="controls">
+<label>Ángulo de inclinación \(\theta\): <strong id="tiltOut">15°</strong><input id="tiltSlider" max="70" min="0" step="0.5" type="range" value="15"/></label>
+<label>Ancho de base \(b\): <strong id="tiltBaseOut">0,60 m</strong><input id="tiltBaseSlider" max="1.20" min="0.30" step="0.01" type="range" value="0.60"/></label>
+<label>Altura del bloque \(H\): <strong id="tiltHeightOut">1,20 m</strong><input id="tiltHeightSlider" max="1.80" min="0.40" step="0.01" type="range" value="1.20"/></label>
+</div>
+<div class="simgrid">
+<svg aria-label="Simulación de estabilidad de un bloque inclinado respecto de un pivote" id="tiltScene" viewbox="0 0 720 340">
+<path d="M90 265H655" stroke="#708a99" stroke-width="5"></path>
+<polygon fill="#dcecf4" id="tiltBlock" points="" stroke="#2b6285" stroke-width="4"></polygon>
+<circle cx="0" cy="0" fill="#23465d" id="tiltPivot" r="6"></circle>
+<circle cx="0" cy="0" fill="#d59b42" id="tiltCM" r="7"></circle>
+<path d="" id="tiltWeight" stroke="#2c566d" stroke-width="5"></path>
+<path d="" fill="#2c566d" id="tiltWeightHead"></path>
+<path d="" id="tiltLine" stroke="#b03b32" stroke-dasharray="7 6" stroke-width="3"></path>
+<g fill="#23465d" font-size="18">
+<text id="thetaLabel" x="135" y="65">θ</text>
+<text id="pivotLabel" x="0" y="0">Pivote</text>
+<text id="cmLabel" x="0" y="0">CM</text>
+</g>
+</svg>
+<div>
+<div class="formula" data-tts="En el simulador de estabilidad: ángulo crítico igual al arco tangente del ancho de base dividido por la altura del bloque.">\[\theta_c=\arctan\!\left(\frac{b}{H}\right)\]</div>
+<p class="miniout" id="tiltReadout"></p>
+<p class="miniout" id="tiltState"></p>
+<div class="legendline"><span><i class="swatch" style="background:#d59b42"></i> Centro de masa</span><span><i class="swatch" style="background:#b03b32"></i> Vertical del peso</span><span><i class="swatch" style="background:#2c566d"></i> Peso</span></div>
+<p class="small">La vertical roja indica dónde cae la línea de acción del peso respecto del punto de giro. En esta simulación se supone que el bloque se suelta lentamente, sin velocidad angular inicial apreciable.</p>
+</div>
+</div>
+<div class="note"><strong>Lectura del criterio:</strong> para \(\theta&lt;\theta_c\) el bloque tiende a <em>volver</em> a su posición original; para \(\theta=\theta_c\) está en <em>equilibrio inestable o límite</em>; y para \(\theta&gt;\theta_c\) el peso actúa del lado del vuelco y el bloque <em>cae</em>.</div>
+</div>
+</section>
+<section id="combinado"><h2>5. Puente con la unidad anterior: cantidad de movimiento angular</h2><h3>5.1. Cantidad de movimiento angular: repaso conceptual</h3>
+<p>En dinámica rotacional ya se estudió la cantidad de movimiento angular. La recuperamos aquí porque permite comprender que una rueda no es solamente un cuerpo que se traslada: también transporta movimiento asociado a su rotación. Para una partícula respecto de un punto <em>O</em>:</p>
+<div class="formula" data-tts="El momento angular de una partícula respecto de O es el producto vectorial de su posición respecto de O por su cantidad de movimiento lineal, igual a masa por velocidad.">\[\vec L_O=\vec r_{P/O}\times\vec p=\vec r_{P/O}\times m\vec v_P\]</div>
+<p>Para un cuerpo rígido que rota alrededor de un eje principal de simetría, en la dirección de ese eje, se cumple:</p>
+<div class="formula" data-tts="Para rotación plana respecto del centro de masa, momento angular igual a momento de inercia por velocidad angular. La suma de momentos externos es derivada temporal del momento angular, igual a momento de inercia por aceleración angular si el eje y la inercia permanecen fijos.">\[L_{CM}=I_{CM}\,\omega,\qquad \sum\tau_{CM}=\frac{dL_{CM}}{dt}=I_{CM}\alpha\]</div>
+<p>La forma \(\sum\tau_{CM}=I_{CM}\alpha\) supone un momento de inercia constante alrededor del eje considerado. Si el momento externo neto respecto de ese eje es cero, la componente correspondiente de la cantidad de movimiento angular permanece constante. Este repaso retoma contenidos desarrollados previamente; en esta unidad lo aplicaremos a la rototraslación.</p>
+<figure data-tts="Infografía sobre cantidad de movimiento angular. En el panel izquierdo se explica la cantidad de movimiento angular de una partícula respecto de un punto O. El vector de posición r sub pe barra o une el origen con la partícula P. El vector p igual a m por ve sub pe es tangente a la trayectoria en el punto P. El vector L sub o es perpendicular al plano definido por r y p, con sentido dado por la regla de la mano derecha. En el panel derecho se representa un cuerpo rígido que gira alrededor de un eje que pasa por su centro de masa. La cantidad de movimiento angular L sub C M es paralela al eje de rotación, la velocidad angular es omega y el momento de inercia I sub C M depende de la distribución de masa. Las expresiones destacadas son L sub o igual a r cruz p, L sub C M igual a I sub C M por omega y suma de torques respecto del centro de masa igual a d de L sub C M sobre d t, igual a I sub C M por alfa.">
+<img alt="Infografía sobre cantidad de movimiento angular: a la izquierda, una partícula respecto de un punto O con vector de posición, cantidad de movimiento tangente a la trayectoria y momento angular perpendicular al plano; a la derecha, un cuerpo rígido que rota alrededor de su centro de masa, con L sub CM, omega e I sub CM." src="imagenes/cantidad_movimiento_angular_particula_cuerpo_rigido.png" style="width:100%;max-width:1200px;display:block;margin:0 auto;border:1px solid #d6e3ea;border-radius:10px;"/>
+<figcaption>Figura 9. <strong>Cantidad de movimiento angular: de la partícula al cuerpo rígido.</strong> La infografía presenta, en un mismo esquema, dos situaciones complementarias. A la izquierda, el momento angular de una partícula respecto de un punto \(O\), donde el vector \(\vec p=m\vec v_P\) es tangente a la trayectoria y el vector \(\vec L_O\) es perpendicular al plano definido por \(\vec r_{P/O}\) y \(\vec p\). A la derecha, el caso de un cuerpo rígido que gira alrededor de un eje que pasa por su centro de masa, para el cual \(L_{CM}=I_{CM}\omega\) y \(\sum\tau_{CM}=dL_{CM}/dt=I_{CM}\alpha\).</figcaption>
+</figure>
+<p>Esta figura cumple una función de <strong>puente conceptual</strong> entre la partícula y el cuerpo rígido. En el primer caso, el momento angular surge del producto vectorial entre la posición y la cantidad de movimiento lineal; en el segundo, aparece ligado al momento de inercia y a la velocidad angular. Desde el punto de vista pedagógico, conviene remarcar que ambos casos comparten la misma idea física: describir el “estado de giro” del sistema respecto de un punto o de un eje de referencia.</p>
+<h3>5.2. Sistema de dos masas y polea con momento de inercia</h3>
+<p>Dos masas \(m_2&gt;m_1\) están unidas por una cuerda ideal, inextensible, que pasa por una polea de radio \(R\), momento de inercia \(I\) y eje fijo sin rozamiento. La cuerda no desliza sobre la polea. A diferencia de la polea ideal sin masa, las tensiones <strong>no son iguales</strong>: la diferencia genera el torque que acelera la polea.</p>
+<figure data-tts="Sistema de dos masas colgantes, una a cada lado de una polea con inercia. La tensión del lado derecho y la del izquierdo no son iguales cuando la polea acelera, ya que su diferencia origina el torque de rotación."><svg aria-label="Dos masas conectadas por cuerda sobre polea con inercia; tensiones T1 y T2, pesos y sentidos de aceleración" role="img" viewbox="0 0 720 330">
+<circle cx="360" cy="91" fill="#e4f0f5" r="51" stroke="#2b6285" stroke-width="4"></circle><circle cx="360" cy="91" fill="#24465c" r="6"></circle>
+<path d="M309 91V188M411 91V162" fill="none" stroke="#577588" stroke-width="4"></path>
+<rect fill="#dcecf4" height="70" rx="5" stroke="#2b6285" stroke-width="3" width="74" x="272" y="188"></rect>
+<rect fill="#dcecf4" height="94" rx="5" stroke="#2b6285" stroke-width="3" width="74" x="374" y="162"></rect>
+<path d="M309 218V170M411 190V144" stroke="#14836e" stroke-width="4"></path><path d="M309 170l-9 15h18zM411 144l-9 15h18z" fill="#14836e"></path>
+<path d="M309 248V303M411 249V310" stroke="#b85739" stroke-width="4"></path><path d="M309 303l-9-15h18zM411 310l-9-15h18z" fill="#b85739"></path>
+<text fill="#24465c" font-size="20" x="278" y="230">m₁</text><text fill="#24465c" font-size="20" x="390" y="213">m₂</text>
+<text fill="#14836e" font-size="18" x="244" y="173">T₁</text><text fill="#14836e" font-size="18" x="429" y="144">T₂</text>
+<text fill="#b85739" font-size="17" x="252" y="310">m₁g</text><text fill="#b85739" font-size="17" x="430" y="307">m₂g</text>
+<text fill="#24465c" font-size="18" x="454" y="68">I, R</text><text fill="#24465c" font-size="17" x="160" y="115">m₁ asciende</text><text fill="#24465c" font-size="17" x="468" y="250">m₂ desciende</text>
+</svg><figcaption>La diferencia entre tensiones proporciona el momento neto sobre la polea.</figcaption></figure>
+<p>Elegimos como positivo el ascenso de \(m_1\), el descenso de \(m_2\) y el giro correspondiente. Escribimos <strong>todas las ecuaciones relevantes</strong> para cada cuerpo:</p>
+<div class="formula" data-tts="Primera masa de la polea: la suma horizontal es cero. En vertical, tensión uno menos peso de masa uno igual a masa uno por aceleración.">\[\begin{aligned}\text{Masa }m_1:\quad&amp;\sum F_x=0,\\&amp;\sum F_y=T_1-m_1g=m_1a.\end{aligned}\]</div>
+<div class="formula" data-tts="Segunda masa: suma horizontal cero. En vertical, peso de masa dos menos tensión dos igual a masa dos por aceleración.">\[\begin{aligned}\text{Masa }m_2:\quad&amp;\sum F_x=0,\\&amp;\sum F_y=m_2g-T_2=m_2a.\end{aligned}\]</div>
+<div class="formula" data-tts="Polea de eje fijo: equilibrio de fuerzas horizontal y vertical en el eje, con reacciones correspondientes. Los momentos sobre el eje: tensión dos por radio menos tensión uno por radio igual a inercia por aceleración angular.">\[\begin{aligned}\text{Polea, eje fijo}:\quad&amp;\sum F_x=0,\qquad \sum F_y=0,\\&amp;\sum\tau_O=T_2R-T_1R=I\alpha.\end{aligned}\]</div>
+<p>En la polea, las reacciones del eje se ajustan para equilibrar las fuerzas traslacionales; el centro de la polea no acelera. El vínculo cinemático sin deslizamiento es \(a=R\alpha\). Por lo tanto:</p>
+<div class="formula" data-tts="Como aceleración angular igual a aceleración lineal sobre radio, diferencia de tensiones igual a inercia dividida por radio al cuadrado y multiplicada por aceleración.">\[(T_2-T_1)R=I\frac{a}{R}\quad\Longrightarrow\quad T_2-T_1=\frac{I}{R^2}a\]</div>
+<p>De las ecuaciones de las masas:</p>
+<div class="formula" data-tts="Despejamos: tensión uno igual a masa uno por g más a. Tensión dos igual a masa dos por g menos a.">\[T_1=m_1(g+a),\qquad T_2=m_2(g-a)\]</div>
+<div class="formula" data-tts="Reemplazando tensiones: masa dos por g menos a, menos masa uno por g más a, igual a inercia sobre radio al cuadrado por a.">\[m_2(g-a)-m_1(g+a)=\frac{I}{R^2}a\]</div>
+<div class="formula" data-tts="Agrupando: diferencia de masas por g igual a suma de las masas más inercia sobre radio cuadrado, todo multiplicado por aceleración.">\[(m_2-m_1)g=\left(m_1+m_2+\frac{I}{R^2}\right)a\]</div>
+<div class="formula" data-tts="Por tanto, aceleración igual a diferencia de masas por g dividido por suma de masas más inercia sobre radio al cuadrado.">\[\boxed{a=\frac{(m_2-m_1)g}{m_1+m_2+I/R^2}}\]</div>
+<div class="note"><strong>Interpretación:</strong> a mayor momento de inercia de la polea, menor aceleración de las masas. Si \(I\to0\), se recupera el modelo de polea ideal. Este es un <em>repaso de dinámica rotacional</em>, no un nuevo tema central de la Unidad 10.</div>
+<h3>5.3. Teorema de Steiner o de ejes paralelos</h3><p>Para muchos problemas de rototraslación resulta imprescindible calcular el momento de inercia respecto de un eje que no pasa por el centro de masa. Si conocemos el momento de inercia respecto de un eje paralelo que sí pasa por el centro de masa, podemos trasladarlo mediante el teorema de Steiner:</p><div class="formula" data-tts="Teorema de Steiner: momento de inercia respecto del eje O igual al momento de inercia central más masa total multiplicada por el cuadrado de la separación entre ejes.">
+\[\boxed{I_O=I_{CM}+Md^2}\]
+</div><p>donde \(I_O\) es el momento de inercia respecto del nuevo eje, \(I_{CM}\) es el momento de inercia respecto del eje paralelo que pasa por el centro de masa, \(M\) es la masa total y \(d\) es la distancia entre ambos ejes.</p><p><strong>Idea de la deducción.</strong> Si elegimos ejes cartesianos paralelos, separados horizontalmente una distancia \(d\), un elemento de masa \(dm\) tiene coordenadas \((x,y)\) medidas desde el centro de masa. Su distancia cuadrática al nuevo eje es \((x+d)^2+y^2\). Por tanto:</p><div class="formula" data-tts="La demostración empieza integrando la distancia al eje nuevo elevada al cuadrado: integral de la suma de equis más d al cuadrado más ye al cuadrado, respecto de la masa.">
+\[I_O=\int\big[(x+d)^2+y^2\big]\,dm\]
+</div><div class="formula" data-tts="Al desarrollar: integral de equis cuadrado más ye cuadrado; más dos d por la integral de equis; más d cuadrado por la integral de masa.">
+\[I_O=\int(x^2+y^2)\,dm+2d\int x\,dm+d^2\int dm\]
+</div><div class="formula" data-tts="Como el origen está en el centro de masa, la integral de equis se anula. Queda inercia central más m d cuadrado.">
+\[I_O=I_{CM}+0+Md^2\]
+</div><p>El término lineal desaparece porque el eje de referencia pasa por el centro de masa.</p><div class="example"><strong>Ejemplo 1 — disco respecto de un eje tangente.</strong> Para un disco macizo, \(I_{CM}=\tfrac12 MR^2\). Si el nuevo eje es tangente al borde y paralelo al eje central, entonces \(d=R\):<div class="formula" data-tts="Disco con eje tangente: inercia tangencial igual a inercia central más m por radio al cuadrado.">
+\[I_{tan}=I_{CM}+MR^2\]
+</div><div class="formula" data-tts="En disco macizo: un medio de m radio cuadrado más m radio cuadrado, igual a tres medios de m radio cuadrado.">
+\[I_{tan}=\frac12 MR^2+MR^2=\frac32 MR^2\]
+</div></div><div class="example"><strong>Ejemplo 2 — barra respecto de un extremo.</strong> Para una barra uniforme de longitud \(L\), \(I_{CM}=\tfrac1{12}ML^2\). Si se quiere el momento de inercia respecto de un eje perpendicular a la barra que pase por un extremo, entonces \(d=L/2\):<div class="formula" data-tts="Barra: inercia respecto del extremo igual a inercia central más masa por la mitad de la longitud al cuadrado.">
+\[I_{ext}=I_{CM}+M\left(\frac L2\right)^2\]
+</div><div class="formula" data-tts="Uno sobre doce de m L cuadrado más un cuarto de m L cuadrado equivale a un tercio de m L cuadrado.">
+\[I_{ext}=\frac1{12}ML^2+\frac14 ML^2=\frac13 ML^2\]
+</div></div><div class="note"><strong>Advertencia importante.</strong> El teorema de Steiner permite <em>trasladar momentos de inercia</em> entre ejes paralelos. Sin embargo, eso no significa que siempre pueda escribirse directamente la ecuación dinámica \(\sum\tau=I\alpha\) alrededor de cualquier punto móvil. Para las ecuaciones dinámicas hay que cuidar si el punto elegido es fijo en un sistema inercial o si corresponde trabajar respecto del centro de masa.</div></section><section id="cinematica"><h2>6. Rototraslación y rodadura sin deslizamiento</h2><h3>6.1. Rodadura sin deslizamiento y movimiento combinado: traslación y rotación</h3><p>Comenzamos con la condición de rodadura sin deslizamiento, porque es el caso físico más importante de la rototraslación en primer año: una rueda avanza y gira al mismo tiempo, sin resbalar sobre la superficie. A partir de esta idea se interpreta luego el movimiento combinado como suma de traslación del centro de masa y rotación alrededor de él.</p><p>Una rueda que avanza sobre un suelo inmóvil puede girar y trasladarse simultáneamente. Si el punto de contacto no desliza, su velocidad instantánea respecto del suelo es nula. Para una rueda circular de radio \(R\):</p><div class="formula" data-tts="Rodadura pura: velocidad del centro de masa igual a radio por velocidad angular; aceleración tangencial del centro igual a radio por aceleración angular.">
+\[\boxed{v_{CM}=R\omega},\qquad \boxed{a_{CM}=R\alpha}\]
+</div><p>La segunda relación se refiere a las componentes tangenciales a la trayectoria, para rodadura rectilínea sobre una superficie fija. El punto superior de la rueda tiene rapidez \(2v_{CM}\) respecto del suelo, mientras que el punto inferior tiene rapidez cero en el instante de contacto.</p><figure data-tts="Infografía de la condición de rodadura sin deslizamiento. Se comparan dos posiciones de la rueda. El avance horizontal del centro de masa es igual a la longitud de arco recorrida en el borde. Se destacan las relaciones s igual a R por fi, velocidad del centro de masa igual a R por omega, y que el punto de contacto tiene velocidad instantánea cero."><img alt="Infografía sobre la condición de rodadura sin deslizamiento, con dos posiciones de una rueda, el arco recorrido s, el ángulo phi, la relación s = R phi, la rapidez vCM = R omega y el punto de contacto con velocidad instantánea cero." src="imagenes/condicion_rodadura_sin_deslizamiento.png" style="width:100%;max-width:1100px;display:block;margin:0 auto;border:1px solid #d6e3ea;border-radius:10px;"/><figcaption>Figura 3. Condición de rodadura sin deslizamiento. La infografía muestra que el avance del centro de masa es igual a la longitud de arco recorrida en el borde de la rueda, de modo que \(s=R\varphi\) y, en consecuencia, \(v_{CM}=R\omega\). También se destaca que el punto de contacto con el suelo tiene velocidad instantánea nula.</figcaption></figure><p>El movimiento plano general de un cuerpo rígido puede descomponerse en la traslación de su centro de masa y una rotación respecto de ese centro. Esta descripción permite separar el movimiento global del cuerpo de los movimientos relativos de sus puntos.</p><div class="formula" data-tts="Velocidad de un punto P: velocidad del centro de masa más velocidad angular producto vectorial por el vector desde el centro de masa hasta P.">
+\[\boxed{\vec v_P=\vec v_{CM}+\vec\omega\times\vec r_{P/CM}}\]
+</div><div class="formula" data-tts="Aceleración de P: aceleración del centro de masa, más contribución tangencial alfa producto vectorial por radio, más contribución centrípeta omega producto vectorial por omega producto vectorial por radio.">
+\[\boxed{\vec a_P=\vec a_{CM}+\vec\alpha\times\vec r_{P/CM}+\vec\omega\times(\vec\omega\times\vec r_{P/CM})}\]
+</div><p>El término asociado a \(\alpha\) es tangencial y el último es centrípeto. Estas expresiones son válidas para puntos de un mismo cuerpo rígido y describen el movimiento respecto de un sistema inercial.</p><figure data-tts="Infografía de rodadura sin deslizamiento como suma de movimientos. El primer panel muestra una rotación pura en torno al centro de masa. El segundo panel muestra una traslación pura del centro de masa. El tercer panel muestra la combinación de ambos movimientos, dando como resultado una rodadura sin deslizamiento. El punto de contacto con el suelo tiene velocidad nula y el punto superior tiene velocidad doble que la del centro de masa.">
+<img alt="Infografía de rodadura sin deslizamiento como suma de movimientos: rotación pura, traslación pura y rodadura resultante" src="imagenes/rodadura_sin_deslizamiento_suma_de_movimientos.png" style="width:100%;max-width:1200px;display:block;margin:0 auto;border-radius:10px;"/>
+<figcaption>Figura 4. Rodadura sin deslizamiento como suma de movimientos. La imagen resume una idea clave de la rototraslación: el movimiento de una rueda puede interpretarse como la superposición de una traslación del centro de masa y una rotación alrededor de él.</figcaption>
+</figure><p>Desde el punto de vista pedagógico, esta descomposición permite interpretar con claridad por qué en la rodadura sin deslizamiento se cumple \(v_{CM}=R\omega\), por qué el punto inferior queda momentáneamente en reposo y por qué las velocidades de los distintos puntos de la rueda no son iguales, aun cuando todos pertenecen al mismo cuerpo rígido.</p>
+<h3>6.1.1. Velocidad de una partícula en posición arbitraria</h3>
+<p>En la rueda que rueda hacia la derecha, adoptamos el eje \(x\) hacia la derecha, el eje \(y\) hacia arriba y el giro horario con velocidad angular \(\vec\omega=-\omega\hat k\), donde \(\omega>0\) es su módulo. Sea \(P\) un punto de la periferia ubicado por el ángulo \(\beta\), medido desde la horizontal positiva.</p>
+<div class="formula" data-tts="La posición de pe relativa al centro de masa es radio por coseno de beta en dirección equis, más radio por seno de beta en dirección ye.">\[\vec r_{P/CM}=R\cos\beta\,\hat i+R\sin\beta\,\hat j\]</div>
+<div class="formula" data-tts="La velocidad angular es menos omega por k, porque el giro es horario. La velocidad del centro de masa es omega radio hacia la derecha.">\[\vec\omega=-\omega\hat k,\qquad\vec v_{CM}=R\omega\hat i\]</div>
+<div class="formula" data-tts="La velocidad de pe es la velocidad del centro de masa más el producto vectorial omega cruz posición relativa.">\[\vec v_P=R\omega\hat i+(-\omega\hat k)\times(R\cos\beta\hat i+R\sin\beta\hat j)\]</div>
+<div class="formula" data-tts="La componente horizontal es radio omega por uno más seno de beta. La componente vertical es menos radio omega por coseno de beta.">\[\boxed{v_{Px}=R\omega(1+\sin\beta)},\qquad\boxed{v_{Py}=-R\omega\cos\beta}\]</div>
+<figure data-tts="Rueda que avanza a la derecha y gira en sentido horario. Un punto P se encuentra sobre el cuadrante superior derecho. Su velocidad relativa de rotación es tangente y apunta hacia la derecha y hacia abajo; la velocidad del centro es horizontal hacia la derecha. La velocidad resultante de P también tiene componente vertical hacia abajo.">
+<svg role="img" aria-label="Composición vectorial de la velocidad de un punto del cuadrante superior derecho" viewBox="0 0 690 305"><path d="M30 255H655" stroke="#77929e" stroke-width="4"/><circle cx="285" cy="160" r="95" fill="#e0eef5" stroke="#276282" stroke-width="4"/><circle cx="285" cy="160" r="5" fill="#1a465e"/><circle cx="352" cy="93" r="6" fill="#b54c38"/><path d="M285 160L352 93" stroke="#8d6a1b" stroke-width="3"/><path d="M285 160H395" stroke="#177a5e" stroke-width="4"/><path d="M395 160l-13 -8v16z" fill="#177a5e"/><path d="M352 93L420 161" stroke="#8a49a9" stroke-width="4"/><path d="M420 161l-15 -5 10 -10z" fill="#8a49a9"/><path d="M352 93L530 161" stroke="#c44839" stroke-width="4"/><path d="M530 161l-15 -1 7 -13z" fill="#c44839"/><g fill="#1e4a61" font-size="17"><text x="294" y="153">CM</text><text x="364" y="82">P</text><text x="318" y="118">R</text><text x="394" y="151">vCM</text><text x="415" y="181">vrot</text><text x="538" y="166">vP</text><text x="168" y="54">Giro horario ↻</text></g></svg>
+<figcaption>Velocidades cualitativas para \(\beta=45^\circ\): verde, traslación del CM; violeta, velocidad relativa de giro; rojo, resultante. La longitud de las flechas es esquemática; la dirección se obtiene de las componentes.</figcaption></figure>
+<div class="example"><strong>Ejemplo numérico.</strong> Una rueda rueda a \(v_{CM}=2{,}00\,\mathrm{m/s}\). Para \(\beta=45^\circ\), con \(R\omega=v_{CM}\):<div class="formula" data-tts="La componente equis vale dos por uno más seno de cuarenta y cinco grados, igual a tres coma cuarenta y uno metros por segundo.">\[v_{Px}=2[1+\sin(45^\circ)]=3{,}41\,\mathrm{m/s}\]</div><div class="formula" data-tts="La componente ye vale menos dos por coseno de cuarenta y cinco grados, igual a menos uno coma cuarenta y uno metros por segundo.">\[v_{Py}=-2\cos(45^\circ)=-1{,}41\,\mathrm{m/s}\]</div><div class="formula" data-tts="El módulo de la velocidad es la raíz de tres coma cuarenta y uno al cuadrado más uno coma cuarenta y uno al cuadrado, aproximadamente tres coma sesenta y nueve metros por segundo.">\[|\vec v_P|=\sqrt{3{,}41^2+(-1{,}41)^2}=3{,}70\,\mathrm{m/s}\]</div><p>El vector apunta hacia la derecha y \(22{,}5^\circ\) por debajo de la horizontal, porque \(\tan^{-1}(1{,}41/3{,}41)=22{,}5^\circ\). Como verificación: en el punto superior \(\beta=90^\circ\) se obtiene \(2v_{CM}\) hacia la derecha; en el inferior \(\beta=-90^\circ\), velocidad nula.</p></div>
+<h3>6.2. Centro instantáneo de rotación</h3><p>En un movimiento plano con velocidad angular no nula existe un punto instantáneo de velocidad cero. Para rodadura sin deslizamiento sobre suelo fijo, coincide con el contacto. En ese instante las velocidades de los demás puntos pueden obtenerse como si el cuerpo girara alrededor del contacto:</p><figure data-tts="Infografía sobre el centro instantáneo de rotación. En rodadura sin deslizamiento, el punto de contacto O actúa como centro instantáneo. El centro de masa está a una distancia R y se mueve con rapidez R por omega. El punto superior P está a dos radios del centro instantáneo y se mueve con rapidez doble, dos R por omega."><img alt="Infografía del centro instantáneo de rotación en una rueda que rueda sin deslizar; se muestran el punto de contacto O como centro instantáneo, el centro de masa CM, el punto superior P, y las velocidades vCM=R omega y v=2R omega." src="imagenes/centro_instantaneo_rotacion.png" style="width:100%;max-width:1100px;display:block;margin:0 auto;border:1px solid #d6e3ea;border-radius:10px;"/><figcaption>Figura 5. Centro instantáneo de rotación en la rodadura sin deslizamiento. En cada instante, el punto de contacto con el suelo puede interpretarse como el centro instantáneo de rotación. Por eso, la rapidez de cada punto cumple \(v=\omega\rho\), donde \(\rho\) es su distancia al centro instantáneo.</figcaption></figure><div class="activity" id="activity-cir" data-tts="Predicción de velocidades en rodadura ideal. En el contacto con suelo fijo la velocidad es cero; en el punto superior es dos veces la velocidad del centro de masa.">
+<h4>Actividad 3 — Velocidades instantáneas en rodadura</h4>
+<p class="instruction"><strong>1. Antes de experimentar:</strong> formulá una predicción.</p>
+<p class="question">Para una rueda que rueda hacia la derecha sin deslizar sobre suelo fijo, ¿qué rapidez tienen el punto de contacto inferior y el punto superior, respectivamente?</p>
+<fieldset><legend>Seleccioná una respuesta</legend><label class="choice"><input type="radio" name="act-cir" value="twozero"/> Dos veces la velocidad del centro y cero.</label><label class="choice"><input type="radio" name="act-cir" value="same"/> Ambos tienen la velocidad del centro.</label><label class="choice"><input type="radio" name="act-cir" value="zerotwo"/> Cero y dos veces la velocidad del centro.</label></fieldset>
+<div class="activity-actions"><button type="button" data-activity-check="cir">Comprobar predicción</button></div>
+<div class="feedback" id="feedback-cir" role="status" aria-live="polite" hidden></div>
+<p class="instruction"><strong>2. Exploración guiada:</strong> Mové el ángulo de giro de la simulación y observá los vectores verde, violeta y rojo. Prestá especial atención a las posiciones extremas de la partícula: arriba y en contacto con el suelo.</p>
+<div class="reflection"><strong>3. Explicación y transferencia:</strong> ¿Por qué no corresponde tratar el contacto como centro fijo para calcular todas las aceleraciones? <em>Respondé oralmente o en tu cuaderno, justificando con un argumento físico.</em></div>
+<p class="activity-status" id="status-cir">Esta actividad no registra datos personales. La comprobación se realiza en este navegador.</p>
+</div>
+<div class="sim" data-tts="Simulación del centro instantáneo de rotación. La rueda rueda sin deslizar mientras una partícula marcada cambia su posición. En cada instante se dibujan la velocidad del centro de masa, la velocidad debida a la rotación alrededor del centro y la velocidad resultante del punto marcado."><div class="controls"><label>Ángulo de giro φ: <strong id="cirAngleOut">0°</strong><input id="cirAngle" max="360" min="0" step="1" type="range" value="0"/></label><label>Velocidad de animación: <strong id="cirSpeedOut">1,0×</strong><input id="cirSpeed" max="3" min="0.5" step="0.1" type="range" value="1.0"/></label><div><button id="cirPlay">Iniciar / pausar</button> <button id="cirReset">Reiniciar</button></div></div><svg aria-label="Simulación del centro instantáneo de rotación y de las velocidades de un punto de una rueda" id="cirScene" style="width:100%;margin-top:15px" viewbox="0 0 860 430"><defs><marker id="cirArrowGreen" viewBox="0 0 6 6" markerheight="8" markerunits="userSpaceOnUse" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0 0 L6 3 L0 6 z" fill="#1c8a5b"></path></marker><marker id="cirArrowPurple" viewBox="0 0 6 6" markerheight="8" markerunits="userSpaceOnUse" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0 0 L6 3 L0 6 z" fill="#6f3ca5"></path></marker><marker id="cirArrowRed" viewBox="0 0 6 6" markerheight="8" markerunits="userSpaceOnUse" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0 0 L6 3 L0 6 z" fill="#d24b30"></path></marker><marker id="cirArrowBrown" viewBox="0 0 6 6" markerheight="8" markerunits="userSpaceOnUse" markerwidth="8" orient="auto" refx="6" refy="3"><path d="M0 0 L6 3 L0 6 z" fill="#8d6a1b"></path></marker></defs><path d="M40 330H810" stroke="#6d8798" stroke-width="4"></path><circle cx="180" cy="250" fill="#dcecf4" id="cirWheel" r="80" stroke="#245f83" stroke-width="4"></circle><circle cx="180" cy="250" fill="#1c5577" id="cirCM" r="5"></circle><circle cx="180" cy="330" fill="#111" id="cirContact" r="7"></circle><circle cx="180" cy="170" fill="#c43631" id="cirParticle" r="7"></circle><path d="M180 250L180 170" id="cirRadiusLine" marker-end="url(#cirArrowBrown)" stroke="#8d6a1b" stroke-width="1.8"></path><path d="M180 250L218 250" id="cirVcm" marker-end="url(#cirArrowGreen)" stroke="#1c8a5b" stroke-width="2.4"></path><path d="M180 170L212 170" id="cirVrot" marker-end="url(#cirArrowPurple)" stroke="#6f3ca5" stroke-width="2.4"></path><path d="M180 170L226 170" id="cirVnet" marker-end="url(#cirArrowRed)" stroke="#d24b30" stroke-width="2.4"></path><path d="M180 250V330" id="cirGuide" stroke="#8ca0ac" stroke-dasharray="6 5" stroke-width="2"></path><text fill="#1c5577" font-size="20" font-weight="600" x="52" y="32">Velocidades instantáneas de una partícula de la rueda</text><text fill="#1c5577" font-size="16" id="cirLabelCM" x="192" y="242">CM</text><text fill="#c43631" font-size="16" id="cirLabelP" x="192" y="164">P</text><text fill="#111" font-size="16" x="145" y="364">O (C.I.R.)</text><text fill="#1c8a5b" font-size="16" id="cirTxtVcm" x="224" y="245">v<tspan baseline-shift="sub" font-size="12">CM</tspan></text><text fill="#6f3ca5" font-size="16" id="cirTxtVrot" x="216" y="164">v<tspan baseline-shift="sub" font-size="12">rot</tspan> = ω×r</text><text fill="#d24b30" font-size="16" id="cirTxtVnet" x="230" y="164">v<tspan baseline-shift="sub" font-size="12">P</tspan></text><text fill="#8d6a1b" font-size="16" id="cirTxtR" x="184" y="210">r</text><rect fill="#f8fbfd" height="145" rx="12" stroke="#c8dce8" style="display:none" width="370" x="420" y="315"></rect><text fill="#234b62" font-size="16" id="cirReadout" style="display:none" x="440" y="340">Datos: R = 1 y ω = 1 (escala de referencia).</text><text fill="#234b62" font-size="16" style="display:none" x="440" y="365">La velocidad neta del punto P se obtiene</text><text fill="#234b62" font-size="16" style="display:none" x="440" y="389">sumando vectorialmente v<tspan baseline-shift="sub" font-size="12">CM</tspan> y v<tspan baseline-shift="sub" font-size="12">rot</tspan> = ω×r.</text><text fill="#234b62" font-size="16" id="cirReadout2" style="display:none" x="440" y="412">v<tspan baseline-shift="sub" font-size="12">CM</tspan> = R·ω = 1·ω.   ρ = OP.</text><text fill="#234b62" font-size="16" id="cirReadout3" style="display:none" x="440" y="438">Resultado: |v<tspan baseline-shift="sub" font-size="12">P</tspan>| y ángulo de la velocidad neta.</text><rect fill="#fffdf8" height="110" rx="12" stroke="#ead8a6" width="420" x="360" y="35"></rect><text fill="#234b62" font-size="17" font-weight="600" x="380" y="67">Referencia por colores</text><line marker-end="url(#cirArrowGreen)" stroke="#1c8a5b" stroke-width="5" x1="387" x2="417" y1="88" y2="88"></line><line marker-end="url(#cirArrowPurple)" stroke="#6f3ca5" stroke-width="5" x1="387" x2="417" y1="113" y2="113"></line><text fill="#234b62" font-size="16" x="435" y="94">Verde: v<tspan baseline-shift="sub" font-size="12">CM</tspan> (traslación del CM)</text><line marker-end="url(#cirArrowRed)" stroke="#d24b30" stroke-width="5" x1="387" x2="417" y1="138" y2="138"></line><text fill="#234b62" font-size="16" x="435" y="119">Violeta: v<tspan baseline-shift="sub" font-size="12">rot</tspan> = ω×r (rotación)</text><text fill="#234b62" font-size="16" x="435" y="144">Rojo: v<tspan baseline-shift="sub" font-size="12">P</tspan> (velocidad neta del punto)</text></svg><p class="miniout" id="cirMini"><strong>Interpretación instantánea:</strong> el punto marcado <strong>P</strong> posee una velocidad neta <strong>v<sub>P</sub></strong> que resulta de sumar la velocidad de traslación del centro de masa <strong>v<sub>CM</sub></strong> y la velocidad relativa de rotación <strong>v<sub>rot</sub> = ω × r</strong>. La leyenda superior identifica los vectores por color. El punto marcado se mueve con velocidad neta <strong>v<sub>P</sub></strong>, obtenida al sumar <strong>v<sub>CM</sub></strong> y <strong>v<sub>rot</sub></strong>.</p></div><div class="formula" data-tts="Rapidez de cualquier punto P respecto del eje instantáneo I: velocidad angular multiplicada por su distancia al punto de giro instantáneo. Esta regla se aplica al cálculo de velocidades, no de aceleraciones en general.">\[v_P=\omega\,d_{P/I}\]</div><p>El punto instantáneo <em>I</em> simplifica el cálculo de velocidades, pero no debe tratarse automáticamente como un eje fijo para escribir ecuaciones de aceleración o de torque. Su posición puede cambiar continuamente.</p><div class="note"><strong>Interpretación geométrica:</strong> el centro de la rueda está a distancia \(R\) del contacto y se mueve a \(\omega R\); el punto superior está a distancia \(2R\) y se mueve a \(2\omega R\).</div><h3>6.3. ¿Qué es una cicloide y de dónde sale?</h3><p>Si en vez de seguir el centro de masa seguimos un <strong>punto de la periferia</strong> de la rueda, la trayectoria ya no es una recta. Cuando la rueda rueda sin deslizar, un punto del borde genera una curva llamada <strong>cicloide</strong>. Es la trayectoria que deja un punto de una circunferencia al rodar sobre una recta.</p><p>Tomemos el instante inicial con el punto marcado apoyado en el suelo. Si la rueda giró un ángulo \(\varphi\), por la condición de rodadura el centro avanzó horizontalmente una distancia \(R\varphi\). A eso hay que sumarle la posición del punto respecto del centro:</p><div class="formula" data-tts="Para obtener la cicloide: la coordenada horizontal del centro de la rueda es R por fi, y la altura del centro permanece igual a R.">
+\[x_C=R\varphi,\qquad y_C=R\]
+</div><div class="formula" data-tts="El punto marcado, respecto del centro, tiene desplazamiento horizontal menos R seno de fi, y vertical menos R coseno de fi.">
+\[x_{P/C}=-R\sin\varphi,\qquad y_{P/C}=-R\cos\varphi\]
+</div><div class="formula" data-tts="Por tanto, posición horizontal del punto P igual a R fi menos R seno de fi.">
+\[x_P=x_C+x_{P/C}=R\varphi-R\sin\varphi\]
+</div><div class="formula" data-tts="Posición vertical de P igual a R menos R coseno de fi.">
+\[y_P=y_C+y_{P/C}=R-R\cos\varphi\]
+</div><div class="formula" data-tts="La cicloide tiene ecuaciones paramétricas: equis igual a R por fi menos seno de fi; ye igual a R por uno menos coseno de fi. Fi se mide en radianes.">
+\[\boxed{x_P=R(\varphi-\sin\varphi),\qquad y_P=R(1-\cos\varphi)}\]
+</div><p>Estas ecuaciones paramétricas describen una <strong>cicloide</strong>. Cuando \(\varphi=0\), el punto está en el suelo. Cuando \(\varphi=\pi\), el punto alcanza la altura máxima \(2R\). Cuando \(\varphi=2\pi\), el punto vuelve al suelo y se completa un arco. Cada vuelta adicional produce un nuevo arco, de longitud horizontal \(2\pi R\).</p><div class="sim" data-tts="Animación de la cicloide. El punto rojo en el borde describe una curva con arcos y cúspides mientras la rueda rueda sin deslizar. El centro, en cambio, avanza horizontalmente. Probá el control de vueltas y compará ambas trayectorias."><div class="controls"><label>Radio \(R\): <strong id="cycRadiusOut">0,60 m</strong><input id="cycRadius" max="1.20" min="0.30" step="0.01" type="range" value="0.60"/></label><label>Ángulo de giro \(\varphi\): <strong id="cycAngleOut">0°</strong><input id="cycAngle" max="1080" min="0" step="1" type="range" value="0"/></label><label>Vueltas a representar: <strong id="cycTurnsOut">3</strong><select id="cycTurns"><option value="2">2 vueltas</option><option selected="" value="3">3 vueltas</option></select></label><label>Velocidad de animación: <strong id="cycSpeedOut">1,0×</strong><input id="cycSpeed" max="3" min="0.5" step="0.1" type="range" value="1.0"/></label><div><button id="cycPlay">Iniciar / pausar</button> <button id="cycReset">Reiniciar</button></div></div><svg aria-label="Simulación de una cicloide generada por un punto de una rueda" id="cycloidScene" style="width:100%;margin-top:15px" viewbox="0 0 760 320"><path d="M45 245H720" stroke="#6d8798" stroke-width="4"></path><path d="" fill="none" id="cycTrace" stroke="#b65638" stroke-width="4"></path><circle cx="120" cy="205" fill="#dcecf4" id="cycWheel" r="36" stroke="#245f83" stroke-width="4"></circle><circle cx="120" cy="205" fill="#143d57" id="cycCenter" r="4"></circle><path d="M120 205L120 241" id="cycRadiusLine" stroke="#739db2" stroke-width="3"></path><circle cx="120" cy="241" fill="#b65638" id="cycPoint" r="6"></circle><path d="M120 241V245" id="cycVertical" stroke="#b65638" stroke-dasharray="6 5" stroke-width="2"></path><text fill="#234b62" font-size="17" x="45" y="286">Trayectoria de un punto de la periferia: cicloide</text></svg><p aria-live="polite" class="miniout" id="cycReadout"></p></div><div class="note"><strong>Observación didáctica:</strong> la cicloide no describe el movimiento del centro de masa, sino el de un punto particular del borde. Si se eligiera un punto interior o exterior a la rueda, aparecerían otras curvas emparentadas, como la cicloide acortada o la alargada.</div><div class="error"><strong>Error frecuente:</strong> que la velocidad del punto de contacto sea cero no significa que su aceleración sea cero. La aceleración puede incluir una componente centrípeta no nula.</div></section>
+<section id="dinamica"><h2>7. Dinámica de un cuerpo que rueda</h2><p>El análisis dinámico combina la segunda ley de Newton para el centro de masa con la ecuación rotacional respecto de ese centro:</p><div class="formula" data-tts="Para la dinámica de rodadura: suma vectorial de fuerzas externas igual a masa por aceleración del centro de masa, y suma de momentos respecto del centro de masa igual a inercia central por aceleración angular.">\[\sum\vec F_{ext}=M\vec a_{CM},\qquad \sum\tau_{CM}=I_{CM}\alpha\]</div><h3>Rodadura por un plano inclinado</h3><p>Para un cuerpo de masa \(M\), radio \(R\) y momento de inercia \(I_{CM}\), que desciende sin deslizar por un plano de ángulo \(\theta\), elegimos positivo hacia abajo de la pendiente. La fuerza de rozamiento estático \(f_s\) apunta hacia arriba del plano en este modelo sin torque motor:</p><div class="formula" data-tts="En el eje paralelo a la pendiente: componente gravitatoria m g seno de theta menos rozamiento estático igual a masa por aceleración del centro.">\[Mg\sin\theta-f_s=Ma_{CM}\]</div><div class="formula" data-tts="Momento por rozamiento: rozamiento por radio igual a inercia central por alfa. En rodadura pura, aceleración del centro igual a radio por alfa.">\[f_sR=I_{CM}\alpha,\qquad a_{CM}=R\alpha\]</div><p>Al sustituir y despejar:</p><div class="formula" data-tts="Aceleración de la rueda al descender: g seno de theta dividido por uno más la inercia central dividida por m radio al cuadrado.">\[\boxed{a_{CM}=\frac{g\sin\theta}{1+I_{CM}/(MR^2)}}\]</div><div class="formula" data-tts="Fuerza de rozamiento requerida: inercia central dividida por radio al cuadrado, todo multiplicado por aceleración del centro.">\[f_s=\frac{I_{CM}}{R^2}\,a_{CM}\]</div><p>El rozamiento debe ser suficiente para sostener la condición de rodadura: \(|f_s|\leq\mu_sN\), con \(N=Mg\cos\theta\). Si no se satisface, el cuerpo desliza y estas ecuaciones dejan de describir completamente su movimiento.</p><div class="error"><strong>Distinción esencial:</strong> el rozamiento estático no se calcula siempre como \(\mu_sN\); esa expresión representa su valor máximo posible. En rodadura ideal sobre una superficie fija, el rozamiento estático no realiza trabajo neto sobre el cuerpo en el punto de contacto.</div>
+<h3>7.1. Desarrollo completo: cilindro que desciende por un plano inclinado</h3>
+<p>Supongamos un cuerpo rígido circular de masa \(M\), radio \(R\), momento de inercia \(I_{CM}\), sobre un plano fijo de ángulo \(\theta\). Definimos: eje \(x\) paralelo al plano y positivo hacia abajo; eje \(y\) normal y positivo hacia afuera; giro positivo en el sentido de descenso. El rozamiento estático apunta cuesta arriba cuando no existe un torque motor adicional.</p>
+<figure data-tts="Diagrama de cuerpo libre de un cilindro en un plano inclinado. Peso vertical aplicado al centro de masa, normal perpendicular al plano y rozamiento estático hacia arriba de la pendiente. Eje equis hacia abajo de la pendiente y eje ye normal hacia afuera.">
+<svg role="img" aria-label="Cilindro sobre plano inclinado: peso, normal, rozamiento y ejes" viewBox="0 0 690 325"><path d="M65 280L590 115" stroke="#557487" stroke-width="7"/><g transform="translate(330 135) rotate(-17.45)"><circle r="65" fill="#dcecf4" stroke="#2a6183" stroke-width="4"/><circle r="5" fill="#183d55"/></g><path d="M330 135V265" stroke="#b54c38" stroke-width="5"/><path d="M330 265l-9 -17h18z" fill="#b54c38"/><path d="M349 196L311 73" stroke="#197e6b" stroke-width="5"/><path d="M311 73l2 17 17 -5z" fill="#197e6b"/><path d="M348 195L443 165" stroke="#8655a7" stroke-width="5"/><path d="M443 165l-18 -3 5 17z" fill="#8655a7"/><g fill="#17445c" font-size="19"><text x="342" y="258">Mg</text><text x="316" y="68">N</text><text x="445" y="162">fₛ</text><text x="490" y="160">θ</text><text x="515" y="300">x hacia abajo</text><text x="360" y="82">y normal</text></g></svg>
+<figcaption>Esquema de fuerzas y convención de ejes. Los vectores son cualitativos: la normal es perpendicular al plano, el rozamiento estático se opone a la tendencia de deslizamiento relativo y el peso es vertical.</figcaption></figure>
+<p><strong>1. Sumatoria de fuerzas paralelas:</strong> el peso aporta \(+Mg\sin\theta\) y el rozamiento \(-f_s\).</p>
+<div class="formula" data-tts="Suma de fuerzas en equis igual a masa por aceleración del centro. Eme ge seno de teta menos rozamiento igual a eme por aceleración.">\[\boxed{\sum F_x=Mg\sin\theta-f_s=Ma_{CM}}\]</div>
+<p><strong>2. Sumatoria de fuerzas normales:</strong> el centro de masa no se acelera en esa dirección mientras conserva el contacto con el plano.</p>
+<div class="formula" data-tts="Suma de fuerzas en ye: normal menos eme ge coseno de teta, igual a masa por aceleración normal, que es cero.">\[\boxed{\sum F_y=N-Mg\cos\theta=Ma_y=0}\]</div>
+<div class="formula" data-tts="La normal equivale al peso multiplicado por el coseno del ángulo de inclinación: N igual a M por g por coseno de teta.">\[\boxed{N=Mg\cos\theta}\]</div>
+<p><strong>3. Sumatoria de momentos respecto del CM:</strong> tanto el peso como la normal pasan por el centro de masa, así que sus momentos son cero; el rozamiento tiene brazo \(R\).</p>
+<div class="formula" data-tts="Suma de torques alrededor del centro de masa igual a momento de inercia por aceleración angular. Momento del peso cero, momento de la normal cero, más fuerza de rozamiento por radio, igual a i sub centro por alfa.">\[\boxed{\sum\tau_{CM}=0+0+f_sR=I_{CM}\alpha}\]</div>
+<p><strong>4. Restricción cinemática:</strong> para rodadura sin deslizamiento sobre superficie fija:</p>
+<div class="formula" data-tts="La aceleración del centro de masa es igual al radio por la aceleración angular. Entonces alfa es la aceleración del centro dividida por el radio.">\[\boxed{a_{CM}=R\alpha\quad\Longrightarrow\quad\alpha=\frac{a_{CM}}R}\]</div>
+<p><strong>5. Eliminación de incógnitas:</strong> sustituimos la aceleración angular en momentos y luego el rozamiento en la ecuación longitudinal.</p>
+<div class="formula" data-tts="El torque del rozamiento es fuerza de rozamiento por radio. Al reemplazar alfa, el rozamiento vale momento de inercia sobre radio al cuadrado, multiplicado por la aceleración del centro.">\[f_sR=I_{CM}\frac{a_{CM}}R\quad\Longrightarrow\quad f_s=\frac{I_{CM}}{R^2}a_{CM}\]</div>
+<div class="formula" data-tts="La componente del peso sobre la pendiente, menos momento de inercia sobre radio al cuadrado por aceleración, es igual a masa por aceleración del centro.">\[Mg\sin\theta-\frac{I_{CM}}{R^2}a_{CM}=Ma_{CM}\]</div>
+<div class="formula" data-tts="La componente del peso sobre la pendiente es igual a la aceleración del centro por la suma de la masa y el momento de inercia dividido por radio al cuadrado.">\[Mg\sin\theta=a_{CM}\left(M+\frac{I_{CM}}{R^2}\right)\]</div>
+<div class="formula" data-tts="Despejando la aceleración del centro: gravedad por seno del ángulo, dividido por uno más el momento de inercia sobre masa por radio al cuadrado.">\[\boxed{a_{CM}=\frac{g\sin\theta}{1+I_{CM}/(MR^2)}}\]</div>
+<p><strong>6. Comprobación del rozamiento disponible.</strong> No basta con calcular la aceleración: también debemos verificar que el rozamiento requerido no supere su límite estático.</p>
+<div class="formula" data-tts="El rozamiento estático requerido se calcula a partir del momento de inercia y la aceleración. Para que exista rodadura sin deslizamiento debe ser menor o igual que mu estático por la normal.">\[f_s=\frac{I_{CM}}{R^2}\frac{g\sin\theta}{1+I_{CM}/(MR^2)},\qquad |f_s|\leq\mu_sN=\mu_sMg\cos\theta\]</div>
+<div class="example"><strong>Ejemplo numérico completo.</strong> Cilindro macizo de \(M=4{,}00\,\mathrm{kg}\), \(R=0{,}20\,\mathrm m\) y \(\theta=30^\circ\), para el cual \(I_{CM}=\frac12MR^2=0{,}080\,\mathrm{kg\,m^2}\). Usamos \(g=9{,}81\,\mathrm{m/s^2}\).<div class="formula" data-tts="Sustituyendo los datos en la fórmula de aceleración del centro se obtiene tres coma veintisiete metros por segundo al cuadrado.">\[a_{CM}=\frac{9{,}81\sin30^\circ}{1+0{,}080/[4(0{,}20)^2]}=3{,}27\,\mathrm{m/s^2}\]</div><div class="formula" data-tts="La fuerza normal es igual a cuatro por nueve coma ochenta y uno por coseno de treinta grados, aproximadamente treinta y tres coma noventa y ocho newtons.">\[N=4(9{,}81)\cos30^\circ=33{,}98\,\mathrm N\]</div><div class="formula" data-tts="La fuerza de rozamiento estático resulta seis coma cincuenta y cuatro newtons.">\[f_s=\frac{0{,}080}{(0{,}20)^2}(3{,}27)=6{,}54\,\mathrm N\]</div><div class="formula" data-tts="La aceleración angular se obtiene como tres coma veintisiete dividido por cero coma veinte: dieciséis coma treinta y cinco radianes por segundo al cuadrado.">\[\alpha=\frac{3{,}27}{0{,}20}=16{,}35\,\mathrm{rad/s^2}\]</div><p>Si \(\mu_s=0{,}25\), el límite es \(\mu_sN=0{,}25(33{,}98)=8{,}50\,\mathrm N\). Como \(6{,}54<8{,}50\), **la rodadura sin deslizamiento es posible**. Si \(\mu_s=0{,}10\), el límite sería \(3{,}40\,\mathrm N\): no podría sostenerse ese modelo de rodadura.</p></div>
+</section>
+<section id="energia"><h2>8. Teorema trabajo–energía para rototraslación</h2><p>La energía cinética de un cuerpo rígido en movimiento plano se separa en dos contribuciones: la energía de traslación del centro de masa y la energía de rotación respecto de él.</p><div class="formula" data-tts="Energía cinética total: un medio de masa por velocidad del centro al cuadrado, más un medio de momento de inercia central por velocidad angular al cuadrado.">\[\boxed{K=\frac12 Mv_{CM}^2+\frac12 I_{CM}\omega^2}\]</div><p>Para rodadura sin deslizamiento, \(\omega=v_{CM}/R\), por lo que:</p><div class="formula" data-tts="Usando omega igual a velocidad sobre radio, la energía cinética total es un medio de masa por velocidad al cuadrado, multiplicado por uno más la razón inercia entre masa por radio al cuadrado.">\[K=\frac12 Mv_{CM}^2\left(1+\frac{I_{CM}}{MR^2}\right)\]</div>
+<h3>8.1. ¿Por qué el rozamiento estático no realiza trabajo neto durante la rodadura ideal?</h3>
+<p>Esta afirmación parece contradictoria: al bajar una rueda por un plano, el rozamiento estático \(\vec f_s\) suele apuntar hacia arriba de la pendiente, produce una torca sobre el centro de masa y permite que el cuerpo aumente su velocidad angular. <strong>Que produzca torque no implica que entregue o quite energía mecánica total.</strong></p>
+<figure data-tts="Rueda en rodadura pura sobre un plano inclinado. El centro de masa está marcado dentro del disco: desde allí salen el peso P vertical hacia abajo y el vector velocidad del centro de masa paralelo a la pendiente, hacia abajo. En el contacto actúa el rozamiento estático, dirigido hacia arriba de la pendiente. La velocidad instantánea del punto material de contacto es cero."><svg aria-label="Rueda sobre plano inclinado: fuerza de rozamiento estático hacia arriba del plano, centro de masa y punto de contacto instantáneamente en reposo" role="img" viewbox="0 0 760 310">
+<path d="M100 140L650 270" fill="none" stroke="#526f83" stroke-width="7"></path>
+<g transform="translate(400 194) rotate(13.30)"><circle cx="0" cy="-70" fill="#e0eef5" r="67" stroke="#286486" stroke-width="4"></circle><circle cx="0" cy="-70" fill="#1d4259" r="5"></circle><path d="M0 -70V-3" stroke="#799aaa" stroke-dasharray="6 5" stroke-width="3"></path></g>
+<path d="M400 194L315 174" stroke="#b66b32" stroke-width="5"></path><path d="M315 174l17 -6 -4 17z" fill="#b66b32"></path>
+<path d="M416.1 125.9V204.9" stroke="#b14e43" stroke-width="4"></path><path d="M416.1 204.9l-9 -15h18z" fill="#b14e43"></path>
+<path d="M416.1 125.9l87 20.5" stroke="#25816b" stroke-width="5"></path><path d="M503.1 146.4l-15 -13 -4 17z" fill="#25816b"></path>
+<g fill="#1e4158" font-size="19"><text x="285" y="160">fₛ</text><text x="430" y="180">P = mg</text><text x="515" y="140">v<tspan baseline-shift="sub" font-size="13">CM</tspan></text><text x="425" y="268">Contacta sin deslizar</text><text x="420" y="290">v<tspan baseline-shift="sub" font-size="13">contacto</tspan> = 0</text></g>
+</svg><figcaption>Rueda en rodadura sin deslizamiento sobre un plano inclinado. El peso y la velocidad del centro de masa parten del CM; el rozamiento estático actúa en el contacto y la velocidad instantánea de ese punto es nula respecto del plano fijo.</figcaption></figure>
+<p><strong>Demostración 1 — potencia de la fuerza en su punto de aplicación.</strong> El trabajo elemental de una fuerza aplicada en un punto material de velocidad \(\vec v_A\) es \(dW=\vec F\cdot d\vec r_A\). Por lo tanto:</p>
+<div class="formula" data-tts="Potencia instantánea del rozamiento: derivada del trabajo de rozamiento respecto del tiempo, igual al producto escalar de la fuerza de rozamiento por la velocidad del punto de contacto A.">\[\mathcal P_f=\frac{dW_f}{dt}=\vec f_s\cdot\vec v_A\]</div>
+<p>Si la rueda rueda sin deslizar sobre un piso inmóvil, el punto material de la rueda que está instantáneamente en contacto con ese piso cumple:</p>
+<div class="formula" data-tts="La velocidad del punto de contacto A es la suma de velocidad del centro más contribución de rotación: en rodadura pura sobre suelo inmóvil, es cero.">\[\vec v_A=\vec v_{CM}+\vec\omega\times\vec r_{A/CM}=\vec 0\]</div>
+<p>En consecuencia, la potencia de la fuerza de rozamiento en cada instante y su trabajo acumulado durante el intervalo son:</p>
+<div class="formula" data-tts="De ahí que la potencia del rozamiento estático sea fuerza escalar por velocidad nula; por lo tanto cero.">\[\boxed{\mathcal P_f=\vec f_s\cdot\vec0=0}\]</div>
+<div class="formula" data-tts="El trabajo del rozamiento desde el instante inicial al final es la integral temporal de la potencia nula: trabajo neto cero.">\[\boxed{W_f=\int_{t_i}^{t_f}\mathcal P_f\,dt=\int_{t_i}^{t_f}0\,dt=0}\]</div>
+<p><strong>Demostración 2 — descomposición entre traslación y rotación.</strong> Tomemos el caso del cilindro que rueda cuesta abajo y fijemos el sentido positivo del desplazamiento del centro de masa hacia abajo de la pendiente. El rozamiento estático tiene magnitud \(f_s\) y apunta cuesta arriba. Al recorrer una distancia \(ds\), su contribución al cambio de energía de traslación es negativa:</p>
+<div class="formula" data-tts="Si se descompone el balance energético, la contribución traslacional asociada al rozamiento es menos fuerza de rozamiento por desplazamiento del centro.">\[dW_{f,\mathrm{tras}}=\vec f_s\cdot d\vec r_{CM}=-f_s\,ds\]</div>
+<p>Simultáneamente, respecto del centro de masa el rozamiento genera una torca de magnitud \(\tau_{CM}=f_sR\), en el sentido del giro. Su contribución a la energía cinética de rotación es positiva:</p>
+<div class="formula" data-tts="La contribución rotacional asociada al mismo rozamiento es momento respecto del centro por ángulo recorrido, igual a fuerza por radio por diferencial de ángulo.">\[dW_{f,\mathrm{rot}}=\tau_{CM}\,d\varphi=f_sR\,d\varphi\]</div>
+<p>Por la condición geométrica de rodadura sin deslizamiento, \(ds=R\,d\varphi\), y entonces:</p>
+<div class="formula" data-tts="Sumando traslación y rotación: menos fuerza por desplazamiento más fuerza por radio por ángulo. Como desplazamiento igual a radio por ángulo en rodadura pura, los términos se cancelan exactamente.">\[\begin{aligned}dW_{f,\mathrm{total}}&amp;=dW_{f,\mathrm{tras}}+dW_{f,\mathrm{rot}}\\&amp;=-f_s\,ds+f_sR\,d\varphi\\&amp;=-f_sR\,d\varphi+f_sR\,d\varphi\\&amp;=\boxed{0}\end{aligned}\]</div>
+<p>El rozamiento estático <strong>redistribuye</strong> la energía cinética entre traslación y rotación, pero en rodadura ideal sobre un soporte fijo no cambia la energía mecánica total del cuerpo. La gravedad es la que aporta la energía al descender una altura.</p>
+<div class="example"><strong>Ejemplo numérico — cilindro macizo sobre un plano de 30°.</strong> Para \(m=6\,\mathrm{kg}\) e \(I_{CM}=\tfrac12 mR^2\), las ecuaciones \(mg\sin\theta-f_s=ma\), \(f_sR=I\alpha\) y \(a=R\alpha\) llevan a \(a=g\sin\theta/(1+1/2)=3{,}27\,\mathrm{m/s^2}\), y \(f_s=\tfrac12 ma=9{,}81\,\mathrm N\). Si el centro desciende \(s=2{,}00\,\mathrm m\):
+<div class="formula" data-tts="En el ejemplo, el aporte traslacional del rozamiento es menos nueve coma ochenta y uno por dos metros, igual a menos diecinueve coma sesenta y dos julios.">\[W_{f,\mathrm{tras}}=-9{,}81(2{,}00)=-19{,}62\,\mathrm J\]</div>
+<div class="formula" data-tts="El aporte rotacional es más nueve coma ochenta y uno por dos metros, igual a más diecinueve coma sesenta y dos julios.">\[W_{f,\mathrm{rot}}=+9{,}81(2{,}00)=+19{,}62\,\mathrm J\]</div>
+<div class="formula" data-tts="La suma de ambas contribuciones es menos diecinueve coma sesenta y dos más diecinueve coma sesenta y dos, igual a cero julios.">\[\boxed{W_{f,\mathrm{total}}=-19{,}62+19{,}62=0\,\mathrm J}\]</div>
+</div>
+<div class="error"><strong>Condiciones de validez.</strong> El resultado no significa que <em>todo rozamiento</em> haga trabajo cero. Si hay deslizamiento, una cinta transportadora móvil, deformaciones disipativas o resistencia a la rodadura, la potencia de contacto puede ser distinta de cero. Tampoco significa que la fuerza de rozamiento estático sea necesariamente cero: puede ser no nula y provocar una aceleración angular.</div>
+<h3>8.2. Trabajo y potencia asociados a un torque</h3>
+<p>Si el torque produce una rotación elemental \(d\varphi\), la contribución rotacional al trabajo y la potencia se calculan mediante:</p>
+<div class="formula" data-tts="Trabajo rotacional diferencial: torque por pequeño giro. El trabajo total es la integral del torque respecto del ángulo entre la posición inicial y la final.">\[dW_{\mathrm{rot}}=\tau\,d\varphi,\qquad W_{\mathrm{rot}}=\int_{\varphi_i}^{\varphi_f}\tau\,d\varphi\]</div>
+<div class="formula" data-tts="Potencia de rotación: torque multiplicado por velocidad angular.">\[\mathcal P_{\mathrm{rot}}=\tau\omega\]</div>
+<p>Cuando el torque es constante, \(W_{\mathrm{rot}}=\tau\,\Delta\varphi\). Estas expresiones permiten analizar motores, ejes y transmisiones. En un cuerpo que se traslada y gira, para calcular la potencia total de una fuerza debe utilizarse la velocidad del punto donde se aplica, o sumar correctamente sus contribuciones traslacional y rotacional.</p>
+<p>El teorema trabajo–energía expresa que el trabajo neto de las fuerzas externas sobre el cuerpo equivale a la variación de su energía cinética total: \(W_{ext}=\Delta K\). Si únicamente la gravedad realiza trabajo y no hay pérdidas, \(K_i+U_i=K_f+U_f\).</p><p>Para un cuerpo que parte del reposo y desciende una altura vertical \(h\):</p><div class="formula" data-tts="Conservación de energía desde una altura h: masa por gravedad por h igual a un medio de masa por rapidez del centro al cuadrado, más un medio de inercia central por rapidez del centro al cuadrado dividida por radio al cuadrado.">\[Mgh=\frac12 Mv_{CM}^2+\frac12 I_{CM}\frac{v_{CM}^2}{R^2}\]</div><div class="formula" data-tts="Despejando: velocidad del centro igual a la raíz cuadrada de dos g h, dividido por uno más inercia entre masa por radio al cuadrado.">\[\boxed{v_{CM}=\sqrt{\frac{2gh}{1+I_{CM}/(MR^2)}}}\]</div><p>La energía potencial gravitatoria se reparte entre las dos formas de energía cinética. Por ello, un cuerpo que rueda suele alcanzar una rapidez menor que la de un cuerpo ideal que desliza sin rozamiento desde la misma altura.</p></section>
+<section id="comparacion"><h2>9. ¿Qué cuerpo llega primero?</h2><p>Es útil escribir el momento de inercia como \(I_{CM}=kMR^2\), donde \(k\) depende de la distribución de masa. En un mismo plano inclinado, para rodadura sin deslizamiento y partiendo del reposo:</p><div class="formula" data-tts="La aceleración del centro de masa de un cuerpo que rueda por una pendiente es g seno de theta dividido por uno más k, donde k indica la distribución de la masa respecto del eje.">\[a_{CM}=\frac{g\sin\theta}{1+k}\]</div><table><thead><tr><th>Cuerpo homogéneo</th><th>\(k=I/(MR^2)\)</th><th>\(a/(g\sin\theta)\)</th></tr></thead><tbody><tr><td>Esfera maciza</td><td>\(2/5\)</td><td>\(5/7\approx0.714\)</td></tr><tr><td>Cilindro o disco macizo</td><td>\(1/2\)</td><td>\(2/3\approx0.667\)</td></tr><tr><td>Esfera hueca de pared fina</td><td>\(2/3\)</td><td>\(3/5=0.600\)</td></tr><tr><td>Aro de pared fina</td><td>\(1\)</td><td>\(1/2=0.500\)</td></tr></tbody></table><p>Con iguales condiciones iniciales y suficiente rozamiento estático, la esfera maciza llega antes, seguida del cilindro, la esfera hueca y el aro. La diferencia se explica por cómo se distribuye la masa respecto del eje de rotación.</p></section>
+<section id="simulacion"><h2>10. Laboratorio virtual: cuerpos en un plano inclinado</h2><p>Modificá la inclinación y la longitud del plano, seleccioná un cuerpo y observá cómo evoluciona su posición. El modelo supone rodadura ideal sin deslizamiento, sin resistencia del aire y con aceleración constante.</p><div class="activity" id="activity-rolling" data-tts="Predicción comparativa sobre rodadura. A igual pendiente, la esfera maciza llega antes que el aro fino, porque presenta un menor cociente entre momento de inercia y masa por radio cuadrado.">
+<h4>Actividad 4 — Distribución de masa y aceleración</h4>
+<p class="instruction"><strong>1. Antes de experimentar:</strong> formulá una predicción.</p>
+<p class="question">Dos cuerpos de igual masa y radio parten desde el reposo por el mismo plano inclinado, sin deslizar. ¿Cuál alcanza primero el final: la esfera maciza o el aro fino?</p>
+<fieldset><legend>Seleccioná una respuesta</legend><label class="choice"><input type="radio" name="act-rolling" value="ring"/> El aro fino.</label><label class="choice"><input type="radio" name="act-rolling" value="sphere"/> La esfera maciza.</label><label class="choice"><input type="radio" name="act-rolling" value="equal"/> Llegan juntos.</label></fieldset>
+<div class="activity-actions"><button type="button" data-activity-check="rolling">Comprobar predicción</button></div>
+<div class="feedback" id="feedback-rolling" role="status" aria-live="polite" hidden></div>
+<p class="instruction"><strong>2. Exploración guiada:</strong> Fijá el mismo ángulo y longitud de plano. Seleccioná primero «Esfera maciza» y registrá el tiempo de llegada; reiniciá, seleccioná «Aro fino» y repetí. Compará los tiempos sin modificar los demás parámetros.</p>
+<div class="reflection"><strong>3. Explicación y transferencia:</strong> ¿Por qué la masa desaparece de la expresión de la aceleración bajo este modelo? <em>Respondé oralmente o en tu cuaderno, justificando con un argumento físico.</em></div>
+<p class="activity-status" id="status-rolling">Esta actividad no registra datos personales. La comprobación se realiza en este navegador.</p>
+</div>
+<div class="sim" data-tts="Simulador de rodadura por un plano inclinado. Cambiá el ángulo y el tipo de cuerpo para comparar la aceleración. Con igual pendiente, una esfera maciza llega antes que un aro fino porque tiene menor razón entre momento de inercia y masa por radio cuadrado."><div class="controls"><label>Ángulo: <strong id="angleOut">25°</strong><input id="angle" max="45" min="5" type="range" value="25"/></label><label>Longitud de recorrido: <strong id="lenOut">5 m</strong><input id="len" max="10" min="2" step=".5" type="range" value="5"/></label><label>Cuerpo<select id="shape"><option value="0.4">Esfera maciza</option><option value="0.5">Cilindro macizo</option><option value="0.6666666667">Esfera hueca</option><option value="1">Aro fino</option></select></label><div><button id="start">Iniciar / continuar</button> <button id="reset">Reiniciar</button></div></div><svg aria-label="Simulación de rodadura sobre plano inclinado" id="scene" style="width:100%;margin-top:15px" viewbox="0 0 720 300"><path d="M80 60L630 250" id="slope" stroke="#446f89" stroke-width="8"></path><circle cx="80" cy="42" fill="#db9c3e" id="ball" r="19" stroke="#7b501b" stroke-width="3"></circle><path d="M80 42L99 42" id="spoke" stroke="#704714" stroke-width="4"></path><text fill="#234b62" font-size="17" x="30" y="287">Modelo ideal de rodadura sin deslizamiento</text></svg><p aria-live="polite" id="readout"><strong>Tiempo:</strong> 0.00 s · <strong>Recorrido:</strong> 0.00 m · <strong>Velocidad:</strong> 0.00 m/s</p></div><div class="note"><strong>Para analizar:</strong> ¿cómo cambia el tiempo de llegada al aumentar \(k\)? ¿Qué sucede si aumenta la inclinación? ¿Por qué no aparece la masa en la expresión de la aceleración?</div></section>
+<section id="ejemplos"><h2>11. Ejemplos guiados de integración</h2>
+<div class="note" data-tts="Protocolo común de resolución. Primero identificar los datos y la incógnita. Luego declarar hipótesis y ejes. En tercer lugar describir el diagrama de cuerpo libre. Después escribir todas las ecuaciones físicas relevantes antes de despejar. Finalmente sustituir, expresar unidades y comprobar la coherencia del resultado."><strong>Procedimiento de resolución utilizado en la unidad.</strong> En cada problema se distinguen ocho operaciones: <strong>(1)</strong> situación y datos, <strong>(2)</strong> hipótesis, <strong>(3)</strong> diagrama de cuerpo libre, <strong>(4)</strong> ejes y signos, <strong>(5)</strong> ecuaciones completas, <strong>(6)</strong> desarrollo algebraico, <strong>(7)</strong> cálculo con unidades y <strong>(8)</strong> interpretación y comprobación. En algunos problemas, como el energético, no todas las ecuaciones dinámicas son necesarias: debe justificarse por qué se utiliza un método y no otro.</div>
+<h3>Ejemplo A. Cilindro macizo que desciende por un plano</h3>
+<p><strong>1. Situación y datos.</strong> Un cilindro homogéneo parte del reposo y rueda sin deslizar por un plano inclinado de <span>\(\theta=30^\circ\)</span>. Determinar su aceleración con <span>\(g=9{,}81\,\mathrm{m/s^2}\)</span>. No se asignan masa ni radio porque el resultado puede expresarse independientemente de sus valores.</p>
+<p><strong>2. Hipótesis.</strong> Cilindro rígido y macizo, plano fijo, rozamiento estático suficiente, sin resistencia del aire ni pérdidas por deformación. Su momento de inercia es <span>\(I_{CM}=\tfrac12 MR^2\)</span>.</p>
+<p><strong>3. Diagrama de cuerpo libre.</strong> Actúan el peso <span>\(M\vec g\)</span>, vertical hacia abajo y aplicado en el CM; la normal <span>\(\vec N\)</span>, perpendicular al plano en el contacto; y el rozamiento estático <span>\(\vec f_s\)</span>, dirigido cuesta arriba. Para la representación de los vectores, consultar el gráfico de 7.1.</p>
+<p><strong>4. Ejes y signos.</strong> Adoptamos <span>\(+x\)</span> cuesta abajo, <span>\(+y\)</span> perpendicular hacia fuera del plano, y sentido de giro descendente como positivo para <span>\(\alpha\)</span>.</p>
+<p><strong>5. Ecuaciones completas.</strong> Las leyes de Newton y de rotación, con la condición de rodadura, son:</p>
+<div class="formula" data-tts="En la dirección del plano: masa por gravedad por seno de treinta grados menos rozamiento igual a masa por aceleración. En la normal: normal menos masa por gravedad por coseno de treinta grados igual a cero. Respecto del centro: rozamiento por radio igual a inercia por aceleración angular. La aceleración del centro es radio por aceleración angular.">\[\begin{aligned}\sum F_x &: Mg\sin\theta-f_s=Ma_{CM}\\ \sum F_y &: N-Mg\cos\theta=0\\ \sum\tau_{CM} &: f_sR=I_{CM}\alpha\\ &a_{CM}=R\alpha.\end{aligned}\]</div>
+<p><strong>6. Desarrollo algebraico.</strong> De la ecuación de momentos se obtiene <span>\(f_s=I_{CM}a_{CM}/R^2\)</span>. Al sustituir en el eje paralelo al plano:</p>
+<div class="formula" data-tts="Masa por gravedad por seno del ángulo igual a aceleración por la suma de masa más inercia sobre radio cuadrado.">\[Mg\sin\theta=a_{CM}\left(M+\frac{I_{CM}}{R^2}\right)\]</div>
+<div class="formula" data-tts="Aceleración igual a gravedad seno del ángulo dividida por uno más inercia central sobre masa por radio al cuadrado.">\[a_{CM}=\frac{g\sin\theta}{1+I_{CM}/(MR^2)}\]</div>
+<p><strong>7. Cálculo numérico.</strong> Para un cilindro macizo, <span>\(I_{CM}/(MR^2)=1/2\)</span>:</p>
+<div class="formula" data-tts="Aceleración igual a nueve coma ochenta y uno por seno de treinta grados dividido por uno coma cinco: tres coma veintisiete metros por segundo al cuadrado.">\[\boxed{a_{CM}=\frac{9{,}81\,\mathrm{m/s^2}\,\sin30^\circ}{1+1/2}=3{,}27\,\mathrm{m/s^2}}\]</div>
+<p><strong>8. Interpretación y comprobación.</strong> Se cumple <span>\(0&lt;a_{CM}&lt;g\sin30^\circ=4{,}905\,\mathrm{m/s^2}\)</span>: la aceleración es menor que la de un cuerpo que deslizara libremente sin rozamiento. La normal es <span>\(N=Mg\cos30^\circ\)</span>, y el rozamiento requerido es <span>\(f_s=Ma_{CM}/2\)</span>. Para confirmar que la hipótesis de rodadura es viable hay que verificar <span>\(f_s\leq\mu_sN\)</span>, lo que se completa en el ejemplo C.</p>
+<h3>Ejemplo B. Energía y rapidez al final del recorrido</h3>
+<p><strong>1. Situación y datos.</strong> Una esfera maciza parte del reposo y rueda sin deslizar descendiendo una altura vertical <span>\(h=1{,}40\,\mathrm m\)</span>. Calcular la rapidez final; adoptar <span>\(g=9{,}81\,\mathrm{m/s^2}\)</span>.</p>
+<p><strong>2. Hipótesis.</strong> La esfera es rígida, el plano es fijo, no hay deslizamiento, ni resistencia del aire ni pérdidas disipativas. Se utiliza <span>\(I_{CM}=\tfrac25MR^2\)</span>.</p>
+<p><strong>3. Fuerzas y elección del método.</strong> Actúan peso, normal y rozamiento estático. El peso realiza trabajo asociado al descenso vertical; la normal y el rozamiento estático no realizan trabajo neto sobre la esfera ideal en rodadura pura. Por eso resulta más económico usar conservación de energía que resolver nuevamente las fuerzas y torques.</p>
+<p><strong>4. Referencia.</strong> Tomamos el nivel final como altura potencial cero y la energía cinética inicial igual a cero.</p>
+<p><strong>5. Ecuación energética completa.</strong></p>
+<div class="formula" data-tts="Energía potencial inicial igual a energía de traslación final más energía de rotación final: masa gravedad altura igual a un medio de masa velocidad cuadrada más un medio de inercia por omega al cuadrado.">\[Mgh=\frac12 Mv_{CM}^2+\frac12 I_{CM}\omega^2,\qquad v_{CM}=R\omega\]</div>
+<p><strong>6. Despeje.</strong> Sustituyendo la condición de rodadura y la inercia de la esfera maciza:</p>
+<div class="formula" data-tts="La rapidez al cuadrado es dos gravedad altura dividido por uno más dos quintos.">\[Mgh=\frac12 Mv_{CM}^2\left(1+\frac25\right)\quad\Rightarrow\quad v_{CM}^2=\frac{2gh}{1+2/5}\]</div>
+<p><strong>7. Resultado con unidades.</strong></p>
+<div class="formula" data-tts="Rapidez final igual a raíz de dos por nueve coma ochenta y uno por uno coma cuarenta dividido por uno coma cuatro. Resultado cuatro coma cuarenta y tres metros por segundo.">\[\boxed{v_{CM}=\sqrt{\frac{2(9{,}81\,\mathrm{m/s^2})(1{,}40\,\mathrm m)}{1+2/5}}=4{,}43\,\mathrm{m/s}}\]</div>
+<p><strong>8. Comprobación e interpretación.</strong> La caída libre desde la misma altura produciría <span>\(\sqrt{2gh}=5{,}24\,\mathrm{m/s}\)</span>, superior a la rapidez de la esfera que rueda. La diferencia es consistente con que, al final, la energía cinética se reparte entre traslación y rotación. La masa y el radio se cancelan en este modelo.</p>
+<h3>Ejemplo C. ¿Se cumple la condición de no deslizamiento?</h3>
+<p><strong>1. Situación y datos.</strong> Retomamos el cilindro macizo del ejemplo A, que desciende por <span>\(30^\circ\)</span>. Determinar el coeficiente de rozamiento estático mínimo <span>\(\mu_{s,\min}\)</span> para que efectivamente pueda rodar sin deslizar.</p>
+<p><strong>2. Hipótesis y diagrama de fuerzas.</strong> Se mantienen las hipótesis del ejemplo A y su diagrama: peso, normal y rozamiento estático hacia arriba de la pendiente. La fuerza de rozamiento necesaria <em>no</em> se supone igual a <span>\(\mu_sN\)</span> salvo en el valor límite buscado.</p>
+<p><strong>3. Ejes y ecuaciones.</strong> Con <span>\(+x\)</span> cuesta abajo y <span>\(+y\)</span> normal hacia fuera:</p>
+<div class="formula" data-tts="Las ecuaciones son: peso por seno menos rozamiento igual a masa aceleración; normal igual a masa gravedad coseno; rozamiento por radio igual a inercia por aceleración angular; aceleración igual a radio por alfa.">\[\begin{aligned}Mg\sin\theta-f_s&=Ma_{CM},\\N&=Mg\cos\theta,\\f_sR&=I_{CM}\alpha,\\a_{CM}&=R\alpha.\end{aligned}\]</div>
+<p><strong>4. Despeje de la fuerza requerida.</strong> Escribimos <span>\(k=I_{CM}/(MR^2)\)</span>; para el cilindro macizo, <span>\(k=1/2\)</span>. De las ecuaciones anteriores:</p>
+<div class="formula" data-tts="Rozamiento sobre masa gravedad igual a k entre uno más k por seno de theta. Para cilindro macizo es un tercio por seno de theta.">\[\frac{f_s}{Mg}=\frac{k}{1+k}\sin\theta=\frac13\sin30^\circ=\frac16\]</div>
+<p><strong>5. Condición estática límite.</strong> La rodadura sin deslizamiento requiere <span>\(f_s\leq\mu_sN\)</span>, de modo que:</p>
+<div class="formula" data-tts="Mu estático mínimo igual a rozamiento necesario sobre normal; para este cilindro es tangente de treinta grados dividida por tres, aproximadamente cero coma ciento noventa y dos.">\[\mu_{s,\min}=\frac{f_s}{N}=\frac{\tfrac16Mg}{Mg\cos30^\circ}=\frac13\tan30^\circ\]</div>
+<p><strong>6. Resultado y verificación.</strong></p>
+<div class="formula" data-tts="Coeficiente de rozamiento estático mínimo igual a cero coma ciento noventa y dos. Es adimensional.">\[\boxed{\mu_{s,\min}=0{,}192\ \text{(adimensional)}}\]</div>
+<p><strong>7. Interpretación.</strong> Para <span>\(\mu_s\geq0{,}192\)</span>, el modelo de rodadura ideal es compatible con las fuerzas requeridas. Para valores menores, falla la condición de adherencia y hay que reformular el problema incluyendo deslizamiento; no alcanza con seguir usando <span>\(a_{CM}=R\alpha\)</span>.</p>
+<div class="note"><strong>Control integrador.</strong> Los ejemplos A y C usan un mismo modelo dinámico: primero se resuelve la aceleración y luego se comprueba que el rozamiento pueda sostenerla. El ejemplo B utiliza energía porque las fuerzas de contacto no realizan trabajo neto sobre el cuerpo en la rodadura ideal. Ambas vías deben conducir a resultados compatibles con las hipótesis declaradas.</div>
+</section>
+
+<section id="autoevaluacion">
+<h2>12. Autoevaluación integradora de la Unidad 10</h2>
+<div class="quiz-intro" data-tts="Autoevaluación de la unidad diez. Quince preguntas de opción múltiple agrupadas en equilibrio, estabilidad, momento angular, rodadura y trabajo energía. Respondé todas las que puedas y presioná corregir respuestas. Recibirás una explicación por pregunta y orientaciones para repasar. No se solicita ningún dato personal ni se envían respuestas a un servidor.">
+<p><strong>Propósito:</strong> comprobar la interpretación de situaciones físicas, la elección de ecuaciones y la coherencia de los resultados. Las 15 preguntas combinan conceptos, lectura de modelos y cálculos breves. Cada respuesta correcta vale un punto; <strong>la puntuación es orientativa y no representa una calificación de parcial</strong>.</p>
+<p><strong>Cómo realizarla:</strong> respondé las preguntas, seleccioná <em>Corregir respuestas</em> y revisá la devolución de cada ítem. Las preguntas sin respuesta se contabilizan como pendientes y no suman puntos. Podés repetir la actividad con <em>Nuevo intento</em>. Para preservar su valor formativo, las soluciones solo aparecen después de corregir.</p>
+</div>
+<div class="sim" id="quizGuide" data-tts="Cuestionario de cierre con quince preguntas. Cada ítem propone cuatro respuestas y una sola es correcta. Es recomendable intentar cada respuesta antes de consultar las explicaciones. Al corregir, se informa un resultado por tema y se justifican los aciertos y los errores. El lector presenta estas instrucciones, mientras que las preguntas se pueden leer y responder con los controles de la página.">
+  <div class="quiz-toolbar"><strong id="quizProgressText" aria-live="polite">0 de 15 respondidas</strong><div class="quiz-progress" role="progressbar" aria-label="Progreso del cuestionario" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0" id="quizProgress"><div id="quizProgressBar"></div></div></div>
+  <div id="quizQuestions" aria-label="Preguntas de la autoevaluación"></div>
+  <div class="quiz-actions"><button type="button" id="quizGrade">Corregir respuestas</button><button type="button" class="secondary" id="quizRetry">Nuevo intento</button></div>
+  <div class="quiz-summary" id="quizSummary" role="status" aria-live="polite" hidden></div>
+  <p class="quiz-hint">El cuestionario funciona directamente en esta página, incluso sin conexión una vez cargada. Las respuestas se mantienen solo durante este intento en el navegador y no se transmiten a terceros.</p>
+</div>
+</section>
+<div class="note"><strong>Etapa 6 · Juego integrador:</strong> Poné a prueba los contenidos de dinámica rotacional y rototraslación en un tablero de 36 casillas con preguntas, devolución y exportación JSON V2. <a href="juego_integrador.html" target="_blank" rel="noopener">Abrir el juego integrador ↗</a></div><section id="cierre"><h2>Síntesis conceptual y bibliografía</h2><p>El equilibrio de un sólido rígido exige balance de fuerzas y momentos. La estabilidad depende de cómo responde el sistema a pequeñas perturbaciones. Los pares de fuerzas pueden producir un momento aunque la fuerza resultante sea nula. Cuando un cuerpo se traslada y rota, las velocidades de sus puntos se obtienen combinando el movimiento del centro de masa con la rotación relativa. En la rodadura sin deslizamiento, la condición \(v_{CM}=R\omega\) conecta ambos movimientos. El momento de inercia determina qué parte de la energía se destina a rotación y modifica la aceleración. En la rodadura ideal sobre un soporte fijo, la potencia del rozamiento estático es cero porque el punto material de contacto está instantáneamente en reposo; su contribución negativa a la traslación y positiva a la rotación se cancelan.</p><h3 id="bibliografia-anexo">Anexo — Bibliografía recomendada</h3><p>Young y Freedman, <em>Física universitaria</em>, vol. 1, 12.ª ed., sección 10.3; Serway y Jewett, <em>Física para ciencias e ingeniería</em>, vol. 1, 7.ª ed., sección 10.9; Giancoli, <em>Física: principios con aplicaciones</em>, vol. 1, 6.ª ed., capítulo 8; Tipler y Mosca, <em>Física para la ciencia y la tecnología</em>, vol. 1, 5.ª ed., capítulos 9 y 12.</p><p><strong>Trabajo formativo:</strong> las actividades vinculadas con las simulaciones permiten formular hipótesis, contrastarlas con el modelo y explicar las diferencias entre predicción y resultado.</p></section></article></main><footer>Física I · Unidad 10 · Material de trabajo para revisión académica</footer><script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const fmt=(n,d=2)=>n.toLocaleString('es-AR',{minimumFractionDigits:d,maximumFractionDigits:d});
+
+  let t=0,running=false,last=0;
+  const updateRoll=()=>{
+    const deg=+$('angle').value, L=+$('len').value, k=+$('shape').value;
+    const a=9.81*Math.sin(deg*Math.PI/180)/(1+k);
+    const s=Math.min(L,0.5*a*t*t);
+    const v=s>=L?Math.sqrt(2*a*L):a*t;
+    $('angleOut').textContent=deg+'°';
+    $('lenOut').textContent=String(L).replace('.',',')+' m';
+    $('readout').innerHTML=`<strong>Tiempo:</strong> ${fmt(t,2)} s · <strong>Recorrido:</strong> ${fmt(s,2)} m · <strong>Velocidad:</strong> ${fmt(v,2)} m/s · <strong>Aceleración:</strong> ${fmt(a,2)} m/s²`;
+    const rad=deg*Math.PI/180, x0=80, y0=45, scale=Math.min(500/(L*Math.cos(rad)),190/(L*Math.sin(rad)));
+    const x1=x0+L*scale*Math.cos(rad), y1=y0+L*scale*Math.sin(rad);
+    const x=x0+s*scale*Math.cos(rad), y=y0+s*scale*Math.sin(rad);
+    const nx=Math.sin(rad), ny=-Math.cos(rad), cx=x+20*nx, cy=y+20*ny;
+    $('slope').setAttribute('d',`M${x0} ${y0}L${x1} ${y1}`);
+    $('ball').setAttribute('cx',cx); $('ball').setAttribute('cy',cy);
+    const spin=s*scale/20;
+    $('spoke').setAttribute('d',`M${cx} ${cy}L${cx+19*Math.cos(spin)} ${cy+19*Math.sin(spin)}`);
+    if(s>=L) running=false;
+  };
+  function frame(now){ if(running){ if(last) t+=Math.min((now-last)/1000,0.06); last=now; updateRoll(); } else last=0; requestAnimationFrame(frame); }
+  $('start').onclick=()=>{running=!running; last=0;};
+  $('reset').onclick=()=>{running=false; t=0; last=0; updateRoll();};
+  ['angle','len','shape'].forEach(id=>$(id).addEventListener('input',()=>{running=false;t=0;last=0;updateRoll();}));
+  updateRoll(); requestAnimationFrame(frame);
+
+  const updateNormal=()=>{
+    const g=9.81;
+    const F=+$('forceSlider').value;
+    let h=+$('pushHeightSlider').value;
+    const b=+$('baseSlider').value;
+    const H=+$('blockHeightSlider').value;
+    const m=+$('massSlider').value;
+    const mu=+$('muSlider').value;
+    if(h>H){ h=H; $('pushHeightSlider').value=H; }
+    $('pushHeightSlider').max=H.toFixed(2);
+    $('forceOut').textContent=`${Math.round(F)} N`;
+    $('pushHeightOut').textContent=`${fmt(h,2)} m`;
+    $('baseOut').textContent=`${fmt(b,2)} m`;
+    $('blockHeightOut').textContent=`${fmt(H,2)} m`;
+    $('massOut').textContent=`${Math.round(m)} kg`;
+    $('muOut').textContent=fmt(mu,2);
+    const mg=m*g;
+    const xShift=F*h/mg;
+    const xLeft=b/2 + xShift;
+    const xClamped=Math.max(0,Math.min(b,xLeft));
+    const Fv=mg*b/(2*h);
+    const Fd=mu*mg;
+    const scale=150/Math.max(b,H);
+    const w=b*scale, hh=H*scale;
+    const left=170, groundY=250, top=groundY-hh;
+    const cmX=left+w/2, cmY=top+hh/2;
+    const yForce=groundY-h*scale;
+    const xN=left+xClamped*scale;
+    const edgeX=left+w;
+    $('normalBlock').setAttribute('x',left); $('normalBlock').setAttribute('y',top);
+    $('normalBlock').setAttribute('width',w); $('normalBlock').setAttribute('height',hh);
+    $('midLine').setAttribute('d',`M${cmX} ${top}V${groundY}`);
+    $('appliedForce').setAttribute('d',`M${left-70} ${yForce}H${left}`);
+    $('appliedForceHead').setAttribute('d',`M${left} ${yForce}l-14 -9v18z`);
+    $('weightArrow').setAttribute('d',`M${cmX} ${cmY-18}V${cmY+52}`);
+    $('weightHead').setAttribute('d',`M${cmX} ${cmY+52}l-11 -18h22z`);
+    $('normalArrow').setAttribute('d',`M${xN} ${groundY+30}V${groundY}`);
+    $('normalHead').setAttribute('d',`M${xN} ${groundY}l-11 18h22z`);
+    $('frictionArrow').setAttribute('d',`M${xN} ${groundY}H${xN-58}`);
+    $('frictionHead').setAttribute('d',`M${xN-58} ${groundY}l16 -10v20z`);
+    $('edgeGuide').setAttribute('d',`M${edgeX} ${groundY}V285`);
+    $('pivotDot').setAttribute('cx',edgeX); $('pivotDot').setAttribute('cy',groundY);
+    $('forceLabel').setAttribute('x',left-65); $('forceLabel').setAttribute('y',yForce-12);
+    $('weightLabel').setAttribute('x',cmX+12); $('weightLabel').setAttribute('y',cmY+20);
+    $('normalLabel').setAttribute('x',xN+10); $('normalLabel').setAttribute('y',groundY+26);
+    $('frictionLabel').setAttribute('x',xN-54); $('frictionLabel').setAttribute('y',groundY-8);
+    $('normalReadout').innerHTML=`<strong>Posición de la normal:</strong> x<sub>N</sub> = ${fmt(xClamped,3)} m desde el borde izquierdo (${fmt(100*xClamped/b,1)} % de la base).<br><strong>Umbrales:</strong> F<sub>v</sub> = ${fmt(Fv,1)} N y F<sub>d</sub> = ${fmt(Fd,1)} N.`;
+    let state='', cls='status-ok';
+    const relEq=Math.abs(Fv-Fd)/Math.max(Fv,Fd);
+    if(relEq<0.03 && Math.abs(F-Fv)/Math.max(Fv,1)<0.05){
+      state='deslizamiento y vuelco prácticamente simultáneos'; cls='status-warn';
+    } else if(Fd < Fv && F >= Fd){
+      state='el bloque desliza antes de que la normal llegue al borde'; cls='status-warn';
+    } else if(xShift < b/2 - 1e-6){
+      state='la normal permanece dentro de la base: el apoyo todavía puede sostener el equilibrio'; cls='status-ok';
+    } else if(Math.abs(xShift - b/2) <= 1e-3 || Math.abs(F-Fv)/Math.max(Fv,1) < 0.02){
+      state='la normal alcanzó el borde derecho: límite de vuelco'; cls='status-warn';
+    } else {
+      state='la posición teórica de la normal cae fuera de la base: si no desliza antes, el bloque tiende a volcar'; cls='status-bad';
+    }
+    const comparacion = Fd < Fv ? 'Para estos parámetros, el deslizamiento es más fácil que el vuelco.' : (Fd > Fv ? 'Para estos parámetros, el vuelco ocurre antes que el deslizamiento.' : 'Ambos umbrales son muy parecidos.');
+    $('normalState').innerHTML=`<span class="statuspill ${cls}">${state}</span><br>${comparacion}`;
+  };
+  ['forceSlider','pushHeightSlider','baseSlider','blockHeightSlider','massSlider','muSlider'].forEach(id=>$(id).addEventListener('input',updateNormal));
+  updateNormal();
+
+  const updateTilt=()=>{
+    const deg=+$('tiltSlider').value;
+    const b=+$('tiltBaseSlider').value;
+    const H=+$('tiltHeightSlider').value;
+    $('tiltOut').textContent=`${fmt(deg,1)}°`;
+    $('tiltBaseOut').textContent=`${fmt(b,2)} m`;
+    $('tiltHeightOut').textContent=`${fmt(H,2)} m`;
+    const theta=deg*Math.PI/180;
+    const thetaC=Math.atan(b/H);
+    const thetaCdeg=thetaC*180/Math.PI;
+    const scale=170/Math.max(b,H);
+    const w=b*scale, hh=H*scale;
+    const px=500, py=265;
+    const rot=(x,y)=>({x:px + x*Math.cos(theta) - y*Math.sin(theta), y:py + x*Math.sin(theta) + y*Math.cos(theta)});
+    const BL=rot(-w,0), TL=rot(-w,-hh), TR=rot(0,-hh), BR={x:px,y:py};
+    $('tiltBlock').setAttribute('points',`${BL.x},${BL.y} ${TL.x},${TL.y} ${TR.x},${TR.y} ${BR.x},${BR.y}`);
+    $('tiltPivot').setAttribute('cx',px); $('tiltPivot').setAttribute('cy',py);
+    const CM=rot(-w/2,-hh/2);
+    $('tiltCM').setAttribute('cx',CM.x); $('tiltCM').setAttribute('cy',CM.y);
+    $('tiltWeight').setAttribute('d',`M${CM.x} ${CM.y-8}V${CM.y+72}`);
+    $('tiltWeightHead').setAttribute('d',`M${CM.x} ${CM.y+72}l-11 -18h22z`);
+    $('tiltLine').setAttribute('d',`M${CM.x} ${CM.y}V${py}`);
+    $('pivotLabel').setAttribute('x',px+10); $('pivotLabel').setAttribute('y',py+22);
+    $('cmLabel').setAttribute('x',CM.x+10); $('cmLabel').setAttribute('y',CM.y-10);
+    $('thetaLabel').setAttribute('x',px-100); $('thetaLabel').setAttribute('y',py-20);
+    const dx=(CM.x-px)/scale;
+    $('tiltReadout').innerHTML=`<strong>Ángulo crítico:</strong> θ<sub>c</sub> = ${fmt(thetaCdeg,1)}°.<br><strong>Posición de la vertical del peso:</strong> queda ${fmt(Math.abs(dx),3)} m ${dx<0 ? 'hacia el lado interior del apoyo' : (dx>0 ? 'más allá del pivote, del lado del vuelco' : 'exactamente sobre el pivote')}.`;
+    let state='', cls='status-ok';
+    if(Math.abs(deg-thetaCdeg) < 0.4){
+      state='equilibrio límite o inestable'; cls='status-warn';
+    } else if(deg < thetaCdeg){
+      state='el peso produce un momento restaurador: el bloque vuelve a su posición inicial'; cls='status-ok';
+    } else {
+      state='el peso actúa del lado del vuelco: el bloque continúa cayendo'; cls='status-bad';
+    }
+    $('tiltState').innerHTML=`<span class="statuspill ${cls}">${state}</span>`;
+  };
+  ['tiltSlider','tiltBaseSlider','tiltHeightSlider'].forEach(id=>$(id).addEventListener('input',updateTilt));
+  updateTilt();
+
+  let cycRunning=false, cycLast=0;
+  const updateCycloid=()=>{
+    const R=+$('cycRadius').value;
+    const deg=+$('cycAngle').value;
+    const speed=+$('cycSpeed').value;
+    const turns=+$('cycTurns').value;
+    const limit=360*turns;
+    if(deg>limit) { $('cycAngle').value=limit; }
+    $('cycAngle').max=String(limit);
+    $('cycTurnsOut').textContent=turns;
+    $('cycRadiusOut').textContent=`${fmt(R,2)} m`;
+    $('cycAngleOut').textContent=`${Math.round(Math.min(deg,limit))}° · ${fmt(Math.min(deg,limit)/360,2)} vueltas`;
+    $('cycSpeedOut').textContent=`${fmt(speed,1)}×`;
+    const phi=Math.min(deg,limit)*Math.PI/180;
+    const xStart=72;
+    const scale=Math.min(66,625/(2*Math.PI*turns*R+2*R));
+    const groundY=245;
+    const Rp=R*scale;
+    const cx=xStart + Rp*phi;
+    const cy=groundY - Rp;
+    const px=cx - Rp*Math.sin(phi);
+    const py=cy + Rp*Math.cos(phi);
+    $('cycWheel').setAttribute('cx',cx); $('cycWheel').setAttribute('cy',cy); $('cycWheel').setAttribute('r',Rp);
+    $('cycCenter').setAttribute('cx',cx); $('cycCenter').setAttribute('cy',cy);
+    $('cycPoint').setAttribute('cx',px); $('cycPoint').setAttribute('cy',py);
+    $('cycRadiusLine').setAttribute('d',`M${cx} ${cy}L${px} ${py}`);
+    $('cycVertical').setAttribute('d',`M${px} ${py}V${groundY}`);
+    const steps=Math.max(12, Math.floor(Math.min(deg,limit)/3));
+    let d='';
+    for(let i=0;i<=steps;i++){
+      const a=(Math.min(deg,limit)*i/steps)*Math.PI/180;
+      const tx=xStart + Rp*a - Rp*Math.sin(a);
+      const ty=groundY - Rp + Rp*Math.cos(a);
+      d += (i===0?`M${tx} ${ty}`:` L${tx} ${ty}`);
+    }
+    $('cycTrace').setAttribute('d',d);
+    const xMeters=R*(phi-Math.sin(phi));
+    const yMeters=R*(1-Math.cos(phi));
+    $('cycReadout').innerHTML=`<strong>Ecuaciones paramétricas:</strong> x = R(φ − senφ), y = R(1 − cosφ).<br><strong>Estado actual:</strong> φ = ${fmt(phi,2)} rad, x = ${fmt(xMeters,3)} m, y = ${fmt(yMeters,3)} m.`;
+  };
+  function cycloidFrame(now){
+    if(cycRunning){
+      const speed=+$('cycSpeed').value;
+      if(cycLast){
+        let deg = +$('cycAngle').value + (now-cycLast)*0.06*speed;
+        if(deg>=360*(+$('cycTurns').value)){deg=360*(+$('cycTurns').value); cycRunning=false;}
+        $('cycAngle').value=deg;
+        updateCycloid();
+      }
+      cycLast=now;
+    } else {
+      cycLast=0;
+    }
+    requestAnimationFrame(cycloidFrame);
+  }
+  $('cycPlay').onclick=()=>{cycRunning=!cycRunning; cycLast=0;};
+  $('cycReset').onclick=()=>{cycRunning=false; cycLast=0; $('cycAngle').value=0; updateCycloid();};
+  $('cycTurns').addEventListener('change',()=>{cycRunning=false;cycLast=0;const limit=360*(+$('cycTurns').value);$('cycAngle').max=limit;if(+$('cycAngle').value>limit)$('cycAngle').value=limit;updateCycloid();});
+  ['cycRadius','cycAngle','cycSpeed'].forEach(id=>$(id).addEventListener('input',()=>{if(id!=='cycSpeed') cycRunning=false; updateCycloid();}));
+  updateCycloid();
+  requestAnimationFrame(cycloidFrame);
+})();
+</script><script>(()=>{
+  'use strict';
+  const $=id=>document.getElementById(id);
+  const panel=$('readerPanel'); if(!panel)return;
+  const supported=('speechSynthesis' in window && 'SpeechSynthesisUtterance' in window);
+  const sectionSelect=$('readerSection');
+  const voiceSelect=$('readerVoice');
+  let playlist=[],pos=0,session=0,active=false,paused=false,currentUtt=null;
+  const overridesKey='FisicaI_U10_guiones_v2';
+  let overrides={}; try{overrides=JSON.parse(localStorage.getItem(overridesKey)||'{}')||{}}catch(_){overrides={}}
+  const sections=Array.from(document.querySelectorAll('article > section'));
+  // Conservar el texto LaTeX antes de que MathJax reemplace los nodos del DOM.
+  // El archivo MathJax se carga con defer: este bloque se ejecuta primero.
+  const originalSpeechSource=new WeakMap();
+  document.querySelectorAll('article p,article h2,article h3,article h4,article .note,article .error,article .example,article .formula,article figcaption,article td,article th').forEach(el=>{
+    originalSpeechSource.set(el,el.textContent);
+  });
+  const greekNames={
+    'α':'alfa','β':'beta','γ':'gamma','δ':'delta','Δ':'delta','θ':'teta',
+    'ϕ':'fi','φ':'fi','ω':'omega','Ω':'omega','ρ':'rho','τ':'tau',
+    'μ':'mu','π':'pi','λ':'lambda','σ':'sigma','Σ':'sumatoria',
+  };
+  const normalizeMathText=raw=>{
+    let s=String(raw||'').trim();
+    // La conversión es exclusiva de contenido matemático, no del párrafo completo.
+    s=s.replace(/\\(?:left|right|big|Big|bigg|Bigg)/g,'');
+    s=s.replace(/\\(?:,|;|!|quad|qquad)/g,' ');
+    s=s.replace(/\\(?:mathrm|operatorname|text)\s*\{([^{}]*)\}/g,' $1 ');
+    s=s.replace(/\\(?:boxed|vec|hat|overrightarrow)\s*\{([^{}]*)\}/g,' $1 ');
+    s=s.replace(/\\(?:dfrac|tfrac|frac)\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g,' ($1) dividido por ($2) ');
+    s=s.replace(/\\sqrt\s*\{([^{}]*)\}/g,' raíz cuadrada de $1 ');
+    s=s.replace(/\\(?:cdot|times)/g,' multiplicado por ');
+    s=s.replace(/\\leq|≤/g,' menor o igual que ');
+    s=s.replace(/\\geq|≥/g,' mayor o igual que ');
+    s=s.replace(/\\neq|≠/g,' distinto de ');
+    s=s.replace(/\\approx|≈/g,' aproximadamente igual a ');
+    s=s.replace(/\\sum|∑/g,' sumatoria de ');
+    const greek=[['varphi','fi'],['phi','fi'],['theta','teta'],['alpha','alfa'],['beta','beta'],['gamma','gamma'],['omega','omega'],['rho','rho'],['tau','tau'],['mu','mu'],['pi','pi'],['Delta','delta'],['delta','delta'],['lambda','lambda']];
+    // Variables con significado físico definido para este apunte.
+    s=s.replace(/a_\{CM\}|a_CM/g,'aceleración del centro de masa');
+    s=s.replace(/v_\{CM\}|v_CM/g,'velocidad del centro de masa');
+    s=s.replace(/I_\{CM\}|I_CM/g,'momento de inercia respecto del centro de masa');
+    s=s.replace(/L_\{CM\}|L_CM/g,'momento angular del centro de masa');
+    s=s.replace(/R\s*\\alpha|R\s*α/g,'radio multiplicado por aceleración angular');
+    s=s.replace(/R\s*\\omega|R\s*ω/g,'radio multiplicado por velocidad angular');
+    s=s.replace(/\\alpha|α/g,'aceleración angular');
+    s=s.replace(/\\omega|ω/g,'velocidad angular');
+    for(const [k,v] of greek) s=s.replace(new RegExp('\\\\'+k+'(?![a-zA-Z])','g'),v);
+    // Primero se convierten símbolos griegos restantes; una R aislada es el radio.
+    s=s.replace(/[αβγδΔθϕφωΩρτμπλσΣ]/g,c=>greekNames[c]||c);
+    s=s.replace(/\bR\b/g,'radio');
+    s=s.replace(/\bCM\b/g,'centro de masa');
+    s=s.replace(/_\{([^}]*)\}/g,' subíndice $1 ');
+    s=s.replace(/_([A-Za-z0-9]+)/g,' subíndice $1 ');
+    s=s.replace(/\^\{([^}]*)\}/g,' elevado a $1 ');
+    s=s.replace(/\^([A-Za-z0-9+-]+)/g,' elevado a $1 ');
+    s=s.replace(/=/g,' igual a ');
+    s=s.replace(/\+/g,' más ');
+    s=s.replace(/−|(?<![A-Za-z])- /g,' menos ');
+    s=s.replace(/\\(?:sin|sen)/g,' seno ');
+    s=s.replace(/\\cos/g,' coseno ');
+    s=s.replace(/[{}\\]/g,' ');
+    s=s.replace(/\s+/g,' ').trim();
+    return s;
+  };
+  const speakMathInText=raw=>String(raw||'')
+    .replace(/\\\(([\s\S]*?)\\\)/g,(_,m)=>' '+normalizeMathText(m)+' ')
+    .replace(/\\\[([\s\S]*?)\\\]/g,(_,m)=>' '+normalizeMathText(m)+' ')
+    .replace(/\s+/g,' ').trim();
+  const extract=el=>{
+    const preserved=originalSpeechSource.get(el);
+    if(preserved!==undefined)return speakMathInText(preserved);
+    const c=el.cloneNode(true);
+    c.querySelectorAll('mjx-container').forEach(x=>{
+      const ann=x.querySelector('annotation[encoding="application/x-tex"]');
+      const expression=ann?.textContent||x.getAttribute('aria-label')||x.textContent||'';
+      x.replaceWith(document.createTextNode(' '+normalizeMathText(expression)+' '));
+    });
+    c.querySelectorAll('svg,script,style,button,input,select,textarea').forEach(x=>x.remove());
+    return speakMathInText(c.textContent);
+  };
+  const formulaSafe=el=>{
+    if(el.dataset.tts)return el.dataset.tts;
+    return extract(el); // Sin advertencias genéricas ni omisión de la expresión.
+  };
+  const describeTable=el=>{
+    const rows=Array.from(el.querySelectorAll('tr'));
+    const txt=rows.map(row=>Array.from(row.querySelectorAll('th,td')).map(extract).join('. ')).slice(0,9).join('. Fila siguiente. ');
+    return 'Tabla. '+txt;
+  };
+  function itemsOfSection(sec,mode){
+    const nodes=Array.from(sec.querySelectorAll('h2,h3,h4,p,.formula,figure,table,.sim,.activity,.note,.error,.example'));
+    const a=[];
+    for(const el of nodes){
+      if(el.closest('.sim') && !el.classList.contains('sim'))continue;
+      if(el.closest('.activity') && !el.classList.contains('activity'))continue;
+      if(el.closest('figure') && el.tagName!=='FIGURE')continue;
+      if(el.closest('.formula') && !el.classList.contains('formula'))continue;
+      const box=el.parentElement?.closest('.note,.error,.example');
+      // A callout owns its prose; internal formulas/figures/tables are separate narrated items.
+      if(box && !['formula','figure','table'].some(cls=>el.classList?.contains(cls)||el.tagName===cls.toUpperCase()))continue;
+      if(mode==='key' && el.tagName==='P')continue;
+      let voice='';
+      if(el.classList.contains('formula'))voice=formulaSafe(el);
+      else if(el.tagName==='FIGURE')voice='Gráfico. '+(el.dataset.tts||extract(el));
+      else if(el.tagName==='TABLE')voice=describeTable(el);
+      else if(el.classList.contains('sim'))voice='Simulación interactiva. '+(el.dataset.tts||'Explorá los controles y observá el resultado.');
+      else if(el.classList.contains('activity'))voice='Actividad de predicción. '+(el.dataset.tts||extract(el));
+      else if(['note','error','example'].some(cls=>el.classList.contains(cls))){
+        const clone=el.cloneNode(true);
+        clone.querySelectorAll('.formula,figure,table,.sim').forEach(n=>n.remove());
+        voice=(el.classList.contains('note')?'Nota importante. ':el.classList.contains('error')?'Advertencia. ':'Ejemplo o aplicación. ')+(el.dataset.tts||extract(clone));
+      }
+      else voice=extract(el);
+      if(!voice.trim())continue;
+      a.push({el,id:sec.id+':'+a.length,base:voice});
+    }
+    return a;
+  }
+
+  function populate(){
+    sections.forEach(s=>{const opt=document.createElement('option');opt.value=s.id;opt.textContent=s.querySelector('h2')?.textContent||s.id;sectionSelect.append(opt)});
+    sectionSelect.value=sections[0]?.id||'';
+    rebuild();
+  }
+  function rebuild(){
+    const sec=document.getElementById(sectionSelect.value);
+    if(!sec){playlist=[];pos=0;updateDisplay();return;}
+    const mode=$('readerMode').value;
+    if($('readerScope').value==='continuous'){
+      const start=sections.indexOf(sec);
+      playlist=sections.slice(start).flatMap(s=>itemsOfSection(s,mode));
+    }else{
+      playlist=itemsOfSection(sec,mode);
+    }
+    pos=0; updateDisplay();
+  }
+  function textFor(i){const item=playlist[i]; return item?(overrides[item.id]??item.base):''}
+  function cleanFocus(){document.querySelectorAll('.reader-current').forEach(x=>x.classList.remove('reader-current'))}
+  function updateDisplay(){
+    cleanFocus();
+    if(!playlist.length){$('readerStatus').textContent='No se encontraron fragmentos para esta sección.';$('readerScript').textContent='';return}
+    pos=Math.min(Math.max(pos,0),playlist.length-1);
+    let item=playlist[pos];
+    if($('readerScope').value==='continuous'){
+      const parentSection=item.el.closest('section');
+      if(parentSection && sectionSelect.value!==parentSection.id)sectionSelect.value=parentSection.id;
+    }
+    item.el.classList.add('reader-current');
+    $('readerScript').textContent=textFor(pos);
+    $('readerStatus').textContent=`Fragmento ${pos+1} de ${playlist.length} · ${paused?'Pausado':active?'Reproduciendo':'Listo para leer'}.`;
+  }
+  let voices=[];
+  function listVoices(){
+    voices=window.speechSynthesis?.getVoices()||[];
+    const prev=voiceSelect.value;
+    voiceSelect.innerHTML='';
+    const opt=document.createElement('option');opt.value='';opt.textContent='Voz española automática';voiceSelect.append(opt);
+    voices.forEach((v,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=`${v.name} (${v.lang})`;voiceSelect.append(o)});
+    if([...voiceSelect.options].some(o=>o.value===prev))voiceSelect.value=prev;
+  }
+  function selectVoice(){
+    const i=Number(voiceSelect.value);
+    if(voiceSelect.value!=='' && voices[i])return voices[i];
+    return voices.find(v=>/^es[-_]/i.test(v.lang))||null;
+  }
+  function hardCancel(){
+    session++; active=false;paused=false;currentUtt=null;
+    try{speechSynthesis.cancel()}catch(_){ }
+  }
+  function announceUnsupported(){
+    $('readerStatus').textContent='Este navegador no dispone de síntesis de voz. Los guiones siguen disponibles para consulta y edición.';
+  }
+  function speak(){
+    if(!supported){announceUnsupported();return}
+    if(!active||paused||pos>=playlist.length)return;
+    const generation=session;
+    const item=playlist[pos];
+    updateDisplay();
+    try{item.el.scrollIntoView({behavior:'smooth',block:'center'})}catch(_){}
+    const msg=new SpeechSynthesisUtterance(textFor(pos));
+    msg.lang='es-AR';msg.rate=Number($('readerRate').value)||1;msg.pitch=1;
+    const voice=selectVoice();if(voice)msg.voice=voice;
+    currentUtt=msg;
+    msg.onend=()=>{if(generation!==session||!active||paused)return;pos++;if(pos>=playlist.length){hardCancel();pos=playlist.length-1;updateDisplay();$('readerStatus').textContent='Lectura de la sección finalizada.';return}window.setTimeout(()=>{if(generation===session)speak()},180)};
+    msg.onerror=(e)=>{if(generation!==session)return;if(e.error==='interrupted'||e.error==='canceled')return;pos++;if(pos<playlist.length){$('readerStatus').textContent='No se pudo leer un fragmento; continúo con el siguiente.';window.setTimeout(()=>{if(generation===session&&active&&!paused)speak()},300)}else{hardCancel();$('readerStatus').textContent='Lectura finalizada con un error en el último fragmento.'}};
+    try{speechSynthesis.speak(msg)}catch(_){hardCancel();announceUnsupported()}
+  }
+  function start(){
+    if(!supported){announceUnsupported();return}
+    if(paused){paused=false;active=true;try{speechSynthesis.resume()}catch(_){};updateDisplay();return}
+    hardCancel();active=true;speak();
+  }
+  function jump(delta){const was=active&&!paused;hardCancel();pos=Math.max(0,Math.min(playlist.length-1,pos+delta));updateDisplay();if(was){active=true;speak()}}
+  $('readerToggle').onclick=()=>{
+    const collapsed=panel.classList.toggle('collapsed');
+    $('readerToggle').textContent=collapsed?'Abrir lector':'Ocultar lector';
+    $('readerToggle').setAttribute('aria-expanded',String(!collapsed));
+    document.body.classList.toggle('reader-space',!collapsed);
+  };
+  $('readerPlay').onclick=start;
+  $('readerPause').onclick=()=>{if(!supported)return;if(!active)return;if(paused){paused=false;speechSynthesis.resume()}else{paused=true;speechSynthesis.pause()}updateDisplay()};
+  $('readerStop').onclick=()=>{hardCancel();updateDisplay()};
+  $('readerPrev').onclick=()=>jump(-1);
+  $('readerNext').onclick=()=>jump(1);
+  sectionSelect.onchange=()=>{hardCancel();rebuild()};
+  $('readerMode').onchange=()=>{hardCancel();rebuild()};
+  $('readerScope').onchange=()=>{hardCancel();rebuild()};
+  $('readerRate').oninput=()=>{$('readerRateValue').textContent=Number($('readerRate').value).toFixed(1).replace('.',',')+'×'};
+  $('readerEditBtn').onclick=()=>{if(!playlist.length)return;$('readerEditBox').hidden=false;$('readerEditor').value=textFor(pos);$('readerEditor').focus()};
+  $('readerCancelEdit').onclick=()=>{$('readerEditBox').hidden=true};
+  $('readerSave').onclick=()=>{if(!playlist.length)return;const value=$('readerEditor').value.trim();if(!value)return;overrides[playlist[pos].id]=value;try{localStorage.setItem(overridesKey,JSON.stringify(overrides))}catch(_){};$('readerEditBox').hidden=true;hardCancel();updateDisplay()};
+  $('readerRestore').onclick=()=>{if(!playlist.length)return;delete overrides[playlist[pos].id];try{localStorage.setItem(overridesKey,JSON.stringify(overrides))}catch(_){};$('readerEditBox').hidden=true;hardCancel();updateDisplay()};
+  $('readerExport').onclick=()=>{
+    const data={apunte:'Física I Unidad 10',version:'guiones-tts-1',exportado:new Date().toISOString(),cambios:overrides};
+    const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='unidad10_guiones_docentes.json';a.click();window.setTimeout(()=>URL.revokeObjectURL(url),1000);
+  };
+  if(supported){listVoices();speechSynthesis.addEventListener?.('voiceschanged',listVoices)}
+  else {['readerPlay','readerPause','readerPrev','readerNext','readerStop'].forEach(id=>$(id).disabled=true);announceUnsupported()}
+  window.addEventListener('pagehide',()=>{if(supported)hardCancel()});
+  populate();
+})();
+</script>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id); if(!$('cirScene')) return;
+  let cirRunning=false, cirLast=0;
+  const fmt=(n,d=2)=>Number(n).toFixed(d).replace('.',',');
+  function setArrow(path,x1,y1,x2,y2){ path.setAttribute('d',`M${x1} ${y1}L${x2} ${y2}`); }
+  function updateCIR(){
+    const R=1, deg=+$('cirAngle').value, speed=+$('cirSpeed').value; $('cirAngleOut').textContent=`${Math.round(deg)}°`; $('cirSpeedOut').textContent=`${fmt(speed,1)}×`; const phi=deg*Math.PI/180, scale=80; const Rp=R*scale; const groundY=330; const cx=150+Rp*phi, cy=groundY-Rp; const alpha=Math.PI/2 - phi; const rx=Rp*Math.cos(alpha), ry=Rp*Math.sin(alpha); const px=cx+rx, py=cy-ry;
+    $('cirWheel').setAttribute('cx',cx); $('cirWheel').setAttribute('cy',cy); $('cirWheel').setAttribute('r',Rp);
+    $('cirCM').setAttribute('cx',cx); $('cirCM').setAttribute('cy',cy);
+    $('cirContact').setAttribute('cx',cx); $('cirContact').setAttribute('cy',groundY);
+    $('cirParticle').setAttribute('cx',px); $('cirParticle').setAttribute('cy',py);
+    $('cirRadiusLine').setAttribute('d',`M${cx} ${cy}L${px} ${py}`); $('cirGuide').setAttribute('d',`M${cx} ${cy}V${groundY}`);
+    $('cirLabelCM').setAttribute('x',cx+10); $('cirLabelCM').setAttribute('y',cy-8);
+    $('cirLabelP').setAttribute('x',px+10); $('cirLabelP').setAttribute('y',py-8); $('cirTxtR').setAttribute('x',(cx+px)/2+8); $('cirTxtR').setAttribute('y',(cy+py)/2-4);
+    const omega=1;
+     // Velocities drawn with same common vector scale, 40px for R*omega.
+     const arrowScale=40;
+     const vcm={x:arrowScale,y:0};
+     const vrot={x:arrowScale*ry/Rp, y:-arrowScale*rx/Rp};
+     const vnet={x:vcm.x+vrot.x, y:vcm.y+vrot.y};
+    setArrow($('cirVcm'),cx,cy,cx+vcm.x,cy-vcm.y); setArrow($('cirVrot'),px,py,px+vrot.x,py-vrot.y); setArrow($('cirVnet'),px,py,px+vnet.x,py-vnet.y);
+    $('cirTxtVcm').setAttribute('x',cx+vcm.x+8); $('cirTxtVcm').setAttribute('y',cy-6); $('cirTxtVrot').setAttribute('x',px+vrot.x+8); $('cirTxtVrot').setAttribute('y',py-vrot.y-6); $('cirTxtVnet').setAttribute('x',px+vnet.x+8); $('cirTxtVnet').setAttribute('y',py-vnet.y-8); 
+    const rho=Math.hypot(px-cx, py-groundY)/scale; const magNet=Math.hypot(vnet.x,vnet.y)/40; let angNet=Math.atan2(vnet.y,vnet.x)*180/Math.PI; if(Math.abs(angNet)<0.05) angNet=0;
+    $('cirReadout').textContent='Datos: R = 1 y ω = 1 (escala de referencia).'; $('cirReadout2').textContent=`vCM = R·ω = 1·ω.  ρ = ${fmt(rho,2)} = OP.`; $('cirReadout3').textContent=`Resultado: |vP| = ${fmt(magNet,2)}·ω, ángulo = ${fmt(angNet,1)}°.`; $('cirMini').innerHTML='<strong>Interpretación instantánea:</strong> el punto marcado <strong>P</strong> posee una velocidad neta <strong>v<sub>P</sub></strong> que resulta de sumar la velocidad de traslación del centro de masa <strong>v<sub>CM</sub></strong> y la velocidad relativa de rotación <strong>v<sub>rot</sub> = ω × r</strong>. La leyenda superior identifica los vectores por color. El punto marcado se mueve con velocidad neta <strong>v<sub>P</sub></strong>, obtenida al sumar <strong>v<sub>CM</sub></strong> y <strong>v<sub>rot</sub></strong>.';
+  }
+  function cirFrame(now){
+    if(cirRunning){
+      const speed=+$('cirSpeed').value; if(cirLast){ let deg=+$('cirAngle').value + (now-cirLast)*0.06*speed; if(deg>=360){deg=360; cirRunning=false;} $('cirAngle').value=deg; updateCIR(); } cirLast=now;
+    } else cirLast=0; requestAnimationFrame(cirFrame);
+  }
+  $('cirPlay').onclick=()=>{cirRunning=!cirRunning; cirLast=0;}; $('cirReset').onclick=()=>{cirRunning=false; cirLast=0; $('cirAngle').value=0; updateCIR();};
+  ['cirAngle','cirSpeed'].forEach(id=>$(id).addEventListener('input',()=>{ if(id!=='cirSpeed') cirRunning=false; updateCIR(); }));
+  updateCIR(); requestAnimationFrame(cirFrame);
+})();
+</script>
+<script>
+/* Actividades formativas V1.4: comprobar, explicar y explorar (sin evaluación sumativa). */
+(()=>{
+  const data={
+    normal:{answer:'right',text:'El torque del empuje aumenta con la altura; en equilibrio, la normal migra hacia el borde derecho, hasta el límite del vuelco.'},
+    tilt:{answer:'fall',text:'La vertical del peso supera el pivote para 35 grados, que es mayor que el ángulo crítico de 26,6 grados: el momento del peso favorece la caída.'},
+    cir:{answer:'zerotwo',text:'En el contacto las contribuciones traslacional y rotacional se cancelan. Arriba se suman: la rapidez es dos veces la del centro de masa.'},
+    rolling:{answer:'sphere',text:'La esfera tiene k = 2/5 y el aro k = 1; como a = g seno del ángulo / (1 + k), la esfera acelera más y llega antes.'}
+  };
+  for(const [key,item] of Object.entries(data)){
+    const box=document.getElementById('activity-'+key);
+    if(!box)continue;
+    const btn=box.querySelector('[data-activity-check]');
+    const out=document.getElementById('feedback-'+key);
+    btn?.addEventListener('click',()=>{
+      const selected=box.querySelector('input[type="radio"]:checked');
+      if(!selected){out.hidden=false;out.dataset.result='review';out.textContent='Elegí primero una respuesta para registrar tu predicción.';return;}
+      const ok=selected.value===item.answer;
+      out.hidden=false;out.dataset.result=ok?'ok':'review';
+      out.textContent=(ok?'Predicción correcta. ':'Revisá tu predicción. ')+item.text+' Ahora comprobalo manipulando el simulador.';
+    });
+  }
+})();
+</script>
+<script>
+(()=>{
+'use strict';
+const root=document.getElementById('quizQuestions');if(!root)return;
+const questions=[
+ {area:'Equilibrio y fuerzas paralelas',level:'Conceptual',q:'Para un cuerpo rígido en equilibrio estático plano, ¿qué condiciones deben cumplirse simultáneamente?',opts:['Solo \\(\\sum F_x=0\\).','\\(\\sum F_x=0\\), \\(\\sum F_y=0\\) y \\(\\sum\\tau_O=0\\).','Solo \\(\\sum\\tau_O=0\\).','Que cada fuerza sea igual a todas las demás.'],ans:1,why:'La resultante de fuerzas debe anularse en ambas direcciones y el momento resultante también debe ser nulo. Una resultante de fuerzas cero no garantiza por sí sola equilibrio rotacional.',review:'Sección 1: condiciones de equilibrio.'},
+ {area:'Equilibrio y fuerzas paralelas',level:'Aplicación',q:'Dos fuerzas verticales hacia abajo, de 100 N en \\(x=0\\) y 200 N en \\(x=3\\,\\mathrm m\\), actúan sobre una barra. ¿Dónde se ubica la resultante?',opts:['\\(x_R=1,0\\,\\mathrm m\\).','\\(x_R=1,5\\,\\mathrm m\\).','\\(x_R=2,0\\,\\mathrm m\\).','\\(x_R=3,0\\,\\mathrm m\\).'],ans:2,why:'La fuerza resultante es 300 N hacia abajo; para conservar el momento, \\(x_R=(100\\cdot0+200\\cdot3)/300=2,0\\,\\mathrm m\\).',review:'Sección 2: fuerzas paralelas.'},
+ {area:'Equilibrio y fuerzas paralelas',level:'Interpretación',q:'Dos fuerzas paralelas de igual intensidad, sentidos opuestos y líneas de acción separadas forman un par. ¿Cuál es su efecto?',opts:['Fuerza neta distinta de cero y momento nulo.','Fuerza neta nula y momento neto no nulo.','Fuerza neta nula y momento siempre nulo.','Aceleración traslacional necesariamente distinta de cero.'],ans:1,why:'Un par de fuerzas produce momento \\(M=Fd\\), aunque su resultante de fuerzas sea cero. Su momento no depende del origen usado para calcularlo.',review:'Sección 2: pares de fuerzas.'},
+ {area:'Centro de gravedad y estabilidad',level:'Conceptual',q:'¿Cuándo coinciden el centro de gravedad y el centro de masa de un cuerpo?',opts:['Siempre y en cualquier campo gravitatorio.','Únicamente cuando el cuerpo es esférico.','En un campo gravitatorio aproximadamente uniforme.','Solo si el cuerpo no gira.'],ans:2,why:'El centro de masa depende de la distribución de masa; el centro de gravedad representa la resultante de los pesos. En un campo gravitatorio prácticamente uniforme ambos coinciden.',review:'Sección 3: centro de gravedad.'},
+ {area:'Centro de gravedad y estabilidad',level:'Aplicación',q:'Un bloque tiene \\(m=40\\,\\mathrm{kg}\\), \\(b=0,60\\,\\mathrm m\\) y recibe un empuje horizontal a altura \\(h=1,00\\,\\mathrm m\\). ¿Cuál es la fuerza crítica de vuelco, con \\(g=9,81\\,\\mathrm{m/s^2}\\)?',opts:['\\(58,86\\,\\mathrm N\\).','\\(117,72\\,\\mathrm N\\).','\\(196,20\\,\\mathrm N\\).','\\(392,40\\,\\mathrm N\\).'],ans:1,why:'Tomando momentos respecto del borde, \\(F_v=mgb/(2h)=40(9,81)(0,60)/(2\\cdot1,00)=117,72\\,\\mathrm N\\).',review:'Sección 4.1: criterio de vuelco.'},
+ {area:'Centro de gravedad y estabilidad',level:'Interpretación',q:'En un bloque que gira sobre una esquina fija, ¿qué caracteriza el ángulo crítico \\(\\theta_c=\\arctan(b/H)\\)?',opts:['Se anula el peso.','La normal adquiere necesariamente su máximo.','La vertical del peso pasa exactamente por el pivote.','El rozamiento siempre cambia de sentido.'],ans:2,why:'En la posición crítica, la línea de acción del peso pasa por el pivote y su momento respecto de ese punto es nulo. Es una posición de equilibrio inestable.',review:'Sección 4.3: estabilidad de un bloque inclinado.'},
+ {area:'Momento angular e inercia',level:'Conceptual',q:'Para una partícula respecto de un punto O, ¿qué expresión define su momento angular?',opts:['\\(\\vec L_O=\\vec r_{P/O}\\times m\\vec v_P\\).','\\(\\vec L_O=m\\vec a\\).','\\(\\vec L_O=\\vec r+\\vec p\\).','\\(L_O=F/R\\).'],ans:0,why:'El momento angular es el producto vectorial entre la posición respecto de O y la cantidad de movimiento lineal. Es perpendicular al plano formado por ambos vectores.',review:'Sección 5.1: cantidad de movimiento angular.'},
+ {area:'Momento angular e inercia',level:'Aplicación',q:'Para un disco macizo con \\(I_{CM}=\\tfrac12MR^2\\), ¿cuánto vale su momento de inercia respecto de un eje paralelo y tangente al borde?',opts:['\\(\\tfrac14MR^2\\).','\\(\\tfrac12MR^2\\).','\\(MR^2\\).','\\(\\tfrac32MR^2\\).'],ans:3,why:'Por Steiner, \\(I_{tan}=I_{CM}+MR^2=\\tfrac12MR^2+MR^2=\\tfrac32MR^2\\).',review:'Sección 5.3: teorema de Steiner.'},
+ {area:'Momento angular e inercia',level:'Interpretación',q:'En el sistema de dos masas conectado por una cuerda y polea con inercia, ¿por qué pueden ser diferentes las tensiones a ambos lados?',opts:['Porque la cuerda ideal cambia su masa.','Porque la diferencia de tensiones proporciona el torque para acelerar la polea.','Porque ambas masas necesariamente aceleran en sentidos iguales.','Porque el momento de inercia siempre es nulo.'],ans:1,why:'El torque neto sobre la polea es \\((T_2-T_1)R=I\\alpha\\). Con inercia y aceleración angular, las tensiones generalmente difieren.',review:'Sección 5.2: polea con inercia.'},
+ {area:'Rototraslación y rodadura',level:'Conceptual',q:'Una rueda rueda hacia la derecha sin deslizar sobre el suelo inmóvil. ¿Qué rapidez tiene su punto material de contacto en ese instante?',opts:['\\(0\\).','\\(v_{CM}\\).','\\(2v_{CM}\\).','\\(R^2\\omega\\).'],ans:0,why:'La traslación hacia la derecha y la rotación relativa hacia la izquierda se cancelan en el contacto. Se trata de un reposo instantáneo, no de aceleración nula.',review:'Sección 6.1 y 6.2: rodadura y centro instantáneo.'},
+ {area:'Rototraslación y rodadura',level:'Aplicación',q:'La rapidez del centro de una rueda en rodadura ideal es \\(3\\,\\mathrm{m/s}\\). ¿Qué rapidez tiene su punto superior?',opts:['\\(0\\,\\mathrm{m/s}\\).','\\(1,5\\,\\mathrm{m/s}\\).','\\(3\\,\\mathrm{m/s}\\).','\\(6\\,\\mathrm{m/s}\\).'],ans:3,why:'La distancia del punto superior al centro instantáneo de rotación es \\(2R\\): \\(v_{sup}=\\omega(2R)=2v_{CM}=6\\,\\mathrm{m/s}\\).',review:'Sección 6.2: centro instantáneo.'},
+ {area:'Rototraslación y rodadura',level:'Interpretación',q:'Para una rueda que se traslada hacia la derecha con giro horario, ¿cómo se obtiene la velocidad de un punto arbitrario P?',opts:['Solo con \\(\\vec v_{CM}\\).','Sumando vectorialmente \\(\\vec v_{CM}\\) y \\(\\vec\\omega\\times\\vec r_{P/CM}\\).','Multiplicando la masa por el radio.','Sumando las magnitudes de todas las velocidades sin atender a sus direcciones.'],ans:1,why:'La velocidad del punto es \\(\\vec v_P=\\vec v_{CM}+\\vec\\omega\\times\\vec r_{P/CM}\\). La suma es vectorial; el resultado puede tener componentes horizontal y vertical.',review:'Sección 6.1.1: velocidad en posición arbitraria.'},
+ {area:'Dinámica, trabajo y energía',level:'Aplicación',q:'Un cilindro macizo rueda sin deslizar por un plano de \\(30^\\circ\\). Con \\(g=9,81\\,\\mathrm{m/s^2}\\), ¿cuánto vale su aceleración?',opts:['\\(1,64\\,\\mathrm{m/s^2}\\).','\\(3,27\\,\\mathrm{m/s^2}\\).','\\(4,91\\,\\mathrm{m/s^2}\\).','\\(9,81\\,\\mathrm{m/s^2}\\).'],ans:1,why:'Para el cilindro macizo, \\(I/(MR^2)=1/2\\). Entonces \\(a=g\\sin30^\\circ/(1+1/2)=3,27\\,\\mathrm{m/s^2}\\).',review:'Secciones 7.1 y 11: dinámica del cilindro.'},
+ {area:'Dinámica, trabajo y energía',level:'Conceptual',q:'¿Por qué el rozamiento estático no realiza trabajo neto sobre una rueda ideal que rueda sobre un piso fijo sin deslizar?',opts:['Porque necesariamente no existe fuerza de rozamiento.','Porque el punto material de contacto tiene velocidad instantánea nula respecto del piso.','Porque la rueda no puede acelerarse.','Porque el torque del rozamiento es siempre cero.'],ans:1,why:'La potencia del rozamiento es \\(\\mathcal P_f=\\vec f_s\\cdot\\vec v_A\\). En el contacto con el piso fijo, \\(\\vec v_A=0\\), por lo que esa potencia es cero, aunque exista fuerza y torque.',review:'Sección 8.1: trabajo del rozamiento estático.'},
+ {area:'Dinámica, trabajo y energía',level:'Interpretación',q:'En idéntico plano inclinado, con rodadura sin deslizamiento y desde el reposo, ¿qué cuerpo alcanza primero el final?',opts:['Aro de pared fina.','Esfera hueca de pared fina.','Cilindro macizo.','Esfera maciza.'],ans:3,why:'La aceleración es \\(a=g\\sin\\theta/(1+k)\\). La esfera maciza tiene el menor \\(k=2/5\\), por lo que alcanza la mayor aceleración entre los cuerpos comparados.',review:'Secciones 9 y 10: comparación de cuerpos.'}
+];
+// Preguntas propias del apunte: respuestas e índices forman parte del material didáctico.
+const container=document.getElementById('quizQuestions');
+const gradeBtn=document.getElementById('quizGrade');
+const retryBtn=document.getElementById('quizRetry');
+const summary=document.getElementById('quizSummary');
+const countEl=document.getElementById('quizProgressText');
+const bar=document.getElementById('quizProgressBar');
+const progress=document.getElementById('quizProgress');
+let graded=false;
+const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const mathText=s=>String(s).replaceAll('\\\\','\\');
+function render(){
+ graded=false;
+ root.innerHTML=questions.map((q,i)=>`<article class="quiz-question" id="qz-${i}">
+ <div class="quiz-meta">Pregunta ${i+1} de ${questions.length} · ${escapeHtml(q.area)} · ${escapeHtml(q.level)}</div>
+ <h3 id="qz-label-${i}">${mathText(q.q)}</h3>
+ <fieldset class="quiz-options" aria-labelledby="qz-label-${i}">
+ ${q.opts.map((opt,j)=>`<label class="quiz-option"><input type="radio" name="quiz_${i}" value="${j}"/><span>${mathText(opt)}</span></label>`).join('')}
+ </fieldset><div class="quiz-feedback" id="qz-feedback-${i}" aria-live="off"></div>
+ </article>`).join('');
+ gradeBtn.disabled=false; summary.hidden=true;summary.innerHTML=''; updateProgress();
+ if(window.MathJax?.typesetPromise){window.MathJax.typesetPromise([container]).catch(()=>{});}
+}
+function selected(i){let n=root.querySelector(`input[name="quiz_${i}"]:checked`);return n?Number(n.value):null}
+function updateProgress(){let n=questions.filter((q,i)=>selected(i)!==null).length;countEl.textContent=`${n} de ${questions.length} respondidas`;bar.style.width=`${100*n/questions.length}%`;progress.setAttribute('aria-valuenow',n)}
+function grade(){if(graded)return;graded=true;let correct=0;let blank=0;const stats=new Map();
+ questions.forEach((q,i)=>{
+  const choice=selected(i),ok=choice===q.ans,unanswered=choice===null;
+  if(ok)correct++;if(unanswered)blank++;
+  const current=stats.get(q.area)||{ok:0,total:0};current.total++;if(ok)current.ok++;stats.set(q.area,current);
+  let card=document.getElementById(`qz-${i}`); card.setAttribute('aria-invalid',ok?'false':'true');
+  card.querySelectorAll('input').forEach(input=>{input.disabled=true;let label=input.closest('label');if(Number(input.value)===q.ans)label.classList.add('is-correct');else if(input.checked)label.classList.add('is-wrong')});
+  let f=document.getElementById(`qz-feedback-${i}`);f.className='quiz-feedback visible'+(ok?'':' bad');
+  f.innerHTML=`<strong>${ok?'Respuesta correcta.':unanswered?'Sin responder.':'Respuesta a revisar.'}</strong> ${mathText(q.why)}<div class="quiz-hint"><strong>Para repasar:</strong> ${escapeHtml(q.review)}</div>`;
+ });
+ const pct=Math.round(100*correct/questions.length);
+ const rows=[...stats.entries()].map(([name,v])=>`<tr><td>${escapeHtml(name)}</td><td>${v.ok} de ${v.total}</td><td>${v.ok<v.total?'Repasar':'Consolidado'}</td></tr>`).join('');
+ const weak=[...stats.entries()].filter(([name,v])=>v.ok<v.total).map(([name])=>name);
+ summary.hidden=false;
+ summary.innerHTML=`<h3>Resultado de la autoevaluación</h3><p><strong>${correct} de ${questions.length} respuestas correctas (${pct} %)</strong>. ${blank?`Quedaron ${blank} preguntas sin responder.`:'Respondidas todas las preguntas.'}</p><table class="quiz-results-table"><thead><tr><th>Tema</th><th>Aciertos</th><th>Orientación</th></tr></thead><tbody>${rows}</tbody></table><p><strong>Orientación de estudio:</strong> ${weak.length?`Volvé a las explicaciones y ejemplos asociados a ${escapeHtml(weak.join('; '))}.`:'Los cinco bloques están consolidados en este intento. Probá resolver los ejemplos sin consultar el desarrollo.'}</p><p class="quiz-hint">Revisá debajo de cada pregunta la fundamentación y las referencias a las secciones del apunte. La actividad no registra una nota oficial.</p>`;
+ gradeBtn.disabled=true;updateProgress();
+ if(window.MathJax?.typesetPromise){window.MathJax.typesetPromise([container,summary]).catch(()=>{});}
+ summary.scrollIntoView({behavior:'smooth',block:'start'});
+}
+root.addEventListener('change',()=>{if(!graded)updateProgress()});
+gradeBtn.addEventListener('click',grade);
+retryBtn.addEventListener('click',()=>{render();root.scrollIntoView({behavior:'smooth',block:'start'});});
+render();
+})();
+</script>
+</body></html>
